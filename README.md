@@ -25,6 +25,11 @@
  * Share events with other organizations/collabs 
  * MeetUp app functionalities(meet up with group events)
  * Direct Messaging??
+ After signing up for an event, you get an email that allows you to save the event to your calendar
+ add google sign in
+ 
+ 
+ 
 
 ## 2. Screen Archetypes
 
