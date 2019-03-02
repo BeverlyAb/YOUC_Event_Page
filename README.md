@@ -105,7 +105,7 @@ OPTIONAL
        * Option to comment
        
 ### Wireframes
-![App Draft]ScreenTransitions.jpeg
+![App Draft](ScreenTransitions.jpeg)
 
 ### App Pitch Presentation
 // TODO: Add link to Pitch Presentation Deck
