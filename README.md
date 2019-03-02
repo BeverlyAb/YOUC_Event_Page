@@ -7,6 +7,19 @@
 * Hermain Hanif
 * Beverly Abadines Quon
 
+### App Description
+YOUC Event Page connects UCI students to events happening all over campus!
+
+### App Idea Evaluation
+- Mobile: This app can be used anywhere and lets students organize all the cool events happening near them. 
+It integrates features such as maps, camera, location, and event summaries using tableviews.
+- Story: It helps students be more aware of events happening. Clubs and other organizations would love have to this.
+- Market: For now it is targeted to UCI students, but it can be expanded to other universities, businesses, and admins.
+   Yes, it provides the huge value of connecting everyone. 
+- Habit: Whenever students are free and want to attend events based on their interest, they can use our app! Users can create events too! 
+- Scope: It is challenging and the work is split up into at least 5 different goals, yet it all has to integrate  together. 
+Yes, even without the optional goals, YOUC Event Page is still meritable app. Our team sees the vision for this app. 
+
 ## 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
@@ -90,3 +103,10 @@ OPTIONAL
        * Recommended events based on interests
        * Gray out/ delete? events that have passed or user attended
        * Option to comment
+       
+### Wireframes
+
+---
+
+### App Pitch Presentation
+// TODO: Add link to Pitch Presentation Deck
