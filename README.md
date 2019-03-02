@@ -1,11 +1,11 @@
 # YOUC Event Page
 
 ## Developers
-Derek Chang
-Tejal Patel
-Richard Absin
-Hermain Hanif
-Beverly Abadines Quon
+* Derek Chang
+* Tejal Patel
+* Richard Absin
+* Hermain Hanif
+* Beverly Abadines Quon
 
 ## 1. User Stories (Required and Optional)
 
