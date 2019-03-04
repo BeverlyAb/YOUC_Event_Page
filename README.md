@@ -41,6 +41,7 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 **Optional Nice-to-have Stories*
  * Other universities/colleges can use
  * Notifications
+ * if user wants to see and edit the event they just posted
  * Share events with other users 
  * Share events with other organizations/collabs 
  * MeetUp app functionalities(meet up with group events)
