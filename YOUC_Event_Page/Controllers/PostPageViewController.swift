@@ -19,7 +19,6 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var coverView: UIImageView!
-    @IBOutlet weak var tagField: UITextField!
     
     @IBOutlet weak var dateValueField: UITextField!
     

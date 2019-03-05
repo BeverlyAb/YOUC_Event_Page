@@ -11,13 +11,14 @@
 		1F7117D8D4985C284F3095A7 /* Pods_YOUC_Event_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22663EDED71D26E83F7F02F /* Pods_YOUC_Event_Page.framework */; };
 		26DBAAFCCB1563B97628952E /* Pods_YOUC_Event_PageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CAC59A376BD43F9A37872A /* Pods_YOUC_Event_PageTests.framework */; };
 		B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */; };
-		B01DA2CF2228C1AC00F87BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */; };
 		B01DA2D22228C1AC00F87BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D02228C1AC00F87BF0 /* Main.storyboard */; };
 		B01DA2D42228C1AE00F87BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D32228C1AE00F87BF0 /* Assets.xcassets */; };
 		B01DA2D72228C1AE00F87BF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D52228C1AE00F87BF0 /* LaunchScreen.storyboard */; };
 		B01DA2E22228C1AE00F87BF0 /* YOUC_Event_PageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2E12228C1AE00F87BF0 /* YOUC_Event_PageTests.swift */; };
 		B01DA2ED2228C1AE00F87BF0 /* YOUC_Event_PageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2EC2228C1AE00F87BF0 /* YOUC_Event_PageUITests.swift */; };
 		B08AA5A1222E37110033A132 /* PostPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AA5A0222E37110033A132 /* PostPageViewController.swift */; };
+		B08AA5A3222E56570033A132 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AA5A2222E56570033A132 /* TagViewController.swift */; };
+		B08AA5A5222E5B4E0033A132 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08AA5A4222E5B4E0033A132 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 		7E7BB5CB78E6CAA1945AD2AE /* Pods-YOUC_Event_PageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B01DA2C92228C1AC00F87BF0 /* YOUC_Event_Page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOUC_Event_Page.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B01DA2D12228C1AC00F87BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B01DA2D32228C1AE00F87BF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B01DA2D62228C1AE00F87BF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		B01DA2EC2228C1AE00F87BF0 /* YOUC_Event_PageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YOUC_Event_PageUITests.swift; sourceTree = "<group>"; };
 		B01DA2EE2228C1AE00F87BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B08AA5A0222E37110033A132 /* PostPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPageViewController.swift; sourceTree = "<group>"; };
+		B08AA5A2222E56570033A132 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		B08AA5A4222E5B4E0033A132 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B22663EDED71D26E83F7F02F /* Pods_YOUC_Event_Page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YOUC_Event_Page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADD231EF57AD7307FFF611 /* Pods-YOUC_Event_PageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageUITests/Pods-YOUC_Event_PageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDDF684E1156BE5CE30C190F /* Pods-YOUC_Event_PageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,8 +182,9 @@
 		B01DA2FC2228C6F400F87BF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */,
 				B08AA5A0222E37110033A132 /* PostPageViewController.swift */,
+				B08AA5A2222E56570033A132 /* TagViewController.swift */,
+				B08AA5A4222E5B4E0033A132 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -434,8 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B01DA2CF2228C1AC00F87BF0 /* ViewController.swift in Sources */,
+				B08AA5A3222E56570033A132 /* TagViewController.swift in Sources */,
 				B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */,
+				B08AA5A5222E5B4E0033A132 /* MapViewController.swift in Sources */,
 				B08AA5A1222E37110033A132 /* PostPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
