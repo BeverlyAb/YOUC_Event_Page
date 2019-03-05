@@ -19,30 +19,31 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var coverView: UIImageView!
-    
+
     @IBOutlet weak var dateValueField: UITextField!
     
     @IBAction func onSubmitButton(_ sender: Any) {
-        let post = PFObject(className: "Events")
-        
-        post["author"] = PFUser.current()!
-        post["eventName"] = eventNameField.text!
-        post["description"] = descriptionField.text!
-       // post["location"] =
-        post["date"] = dateValueField.text!
-        let imageData = coverView.image!.pngData()
-        let file = PFFileObject(data: imageData!)
-        post["coverImage"] = file
-        
-        post.saveInBackground{(success, error) in
-            if (success){
-                self.dismiss(animated: true, completion: nil)
-                print("saved")
-            }else {
-                print("fail")
-            }
-            
-        }
+//        let post = PFObject(className: "Events")
+//
+//        post["author"] = PFUser.current()!
+//        post["eventName"] = eventNameField.text!
+//        post["description"] = descriptionField.text!
+//       // post["location"] =
+//        post["date"] = dateValueField.text!
+//        let imageData = coverView.image!.pngData()
+//        let file = PFFileObject(data: imageData!)
+//        post["coverImage"] = file
+//        //post["tags"] = array of strings
+//
+//        post.saveInBackground{(success, error) in
+//            if (success){
+//                self.dismiss(animated: true, completion: nil)
+//                print("saved")
+//            }else {
+//                print("fail")
+//            }
+//
+//        }
     }
     //-----------------------Date--------------------------------------
     
@@ -50,10 +51,10 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
         dateValueField.text = dateFormatter.string(from: (sender as AnyObject).date)
-
     }
     
     //-----------------------Album Cover--------------------------------
+
     @IBAction func onShootButton(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -67,6 +68,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         
         present(picker, animated: true, completion: nil)
     }
+    
+    
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
