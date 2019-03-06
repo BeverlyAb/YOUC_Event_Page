@@ -67,7 +67,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let user = event["author"] as! PFUser
         cell.eventAuthorLabel.text = user.username
         
-        cell.eventSummaryLabel.text = event["summary"]
+        cell.eventSummaryLabel.text = event["summary"] as! String
         
         return cell
         
