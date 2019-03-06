@@ -30,9 +30,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let user = PFUser.current()!
-        profileUserNameLabel.text = user.username
-        eventsCountLabel.text = "0"
+//        let user = PFUser.current()!
+//        profileUserNameLabel.text = user.username
+        eventsCountLabel.text = String(going_events.count)
         getEvents()
         
         
@@ -40,37 +40,52 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func getEvents() {
         let query = PFQuery(className: "User")
-        query.includeKey("Event")
-        query.includeKey("createdAt")
+        query.includeKey("events")
+        query.includeKey("events.author")
+//        query.includeKey("createdAt")
 //        query.whereKey("Event_user", equalTo: PFUser.current()!)
         query.addDescendingOrder("createdAt")
-        query.findObjectsInBackground { (going_events, error) in
-            if going_events != nil {
-                self.going_events = going_events!
-                self.tableView.reloadData()
-            }
-        }
+//        if PFUser.current().events() != nil {
+//            self.going_events = PFUser.current().events()
+//              self.tableView.reloadData()
+//        }
+        
+        
+        
+        
+//        query.findObjectsInBackground { (going_events, error) in
+//            if going_events != nil {
+//                self.going_events = going_events!
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
-    @IBAction func onAddEventClicked(_ sender: Any) {
-    }
+//    @IBAction func onAddEventClicked(_ sender: Any) {
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return going_events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let event = going_events[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoingEventsTableViewCell") as! GoingEventsTableViewCell
         
-        let user = event["author"] as! PFUser
-        cell.eventAuthorLabel.text = user.username
-        
-        cell.eventSummaryLabel.text = event["summary"]
-        
+        if going_events != nil {
+            let event = going_events[indexPath.row]
+            
+            let user = event["author"] as! PFUser
+            cell.eventAuthorLabel.text = user.username
+            
+    //        cell.eventSummaryLabel.text = event["description"]
+            
+    //        cell.dateLabel.text = event["date"]
+
+        }
+        else {
+            cell.eventSummaryLabel.text = "Add events you want to go to!"
+        }
         return cell
-        
         
     }
     

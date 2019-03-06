@@ -9,9 +9,9 @@
 import UIKit
 
 class GoingEventsTableViewCell: UITableViewCell {
-    @IBOutlet weak var eventImageView: UIView!
     @IBOutlet weak var eventAuthorLabel: UILabel!
     @IBOutlet weak var eventSummaryLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
