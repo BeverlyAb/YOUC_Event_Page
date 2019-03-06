@@ -10,6 +10,8 @@
 		1BC3E7F765A3DAF6B50A5433 /* Pods_YOUC_Event_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C7F9A58BA3285494A13C40 /* Pods_YOUC_Event_Page.framework */; };
 		36FF0BA1EB227F6D8CDA3F91 /* Pods_YOUC_Event_PageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F6D55DDFA267068F61894B /* Pods_YOUC_Event_PageTests.framework */; };
 		A9A3E7E2030707F21B4D414D /* Pods_YOUC_Event_PageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0AA08FCA0F7D5BDE6DDF31A /* Pods_YOUC_Event_PageUITests.framework */; };
+		AD306DF8223033D200921D9D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD306DF7223033D200921D9D /* ProfileViewController.swift */; };
+		AD306DFA2230343900921D9D /* GoingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD306DF92230343900921D9D /* GoingEventsTableViewCell.swift */; };
 		B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */; };
 		B01DA2CF2228C1AC00F87BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */; };
 		B01DA2D22228C1AC00F87BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D02228C1AC00F87BF0 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		0011F7E7BAB6F5FB9FAC7437 /* Pods-YOUC_Event_PageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageUITests/Pods-YOUC_Event_PageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		03BBB313D8D9FD1783069B63 /* Pods-YOUC_Event_PageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageUITests/Pods-YOUC_Event_PageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5DCA1DCE173F13D20A110E0 /* Pods-YOUC_Event_PageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD306DF7223033D200921D9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AD306DF92230343900921D9D /* GoingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingEventsTableViewCell.swift; sourceTree = "<group>"; };
 		B01DA2C92228C1AC00F87BF0 /* YOUC_Event_Page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOUC_Event_Page.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */,
 				B01DA2D32228C1AE00F87BF0 /* Assets.xcassets */,
 				B01DA2D82228C1AE00F87BF0 /* Info.plist */,
+				AD306DF7223033D200921D9D /* ProfileViewController.swift */,
+				AD306DF92230343900921D9D /* GoingEventsTableViewCell.swift */,
 			);
 			path = YOUC_Event_Page;
 			sourceTree = "<group>";
@@ -429,6 +435,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD306DF8223033D200921D9D /* ProfileViewController.swift in Sources */,
+				AD306DFA2230343900921D9D /* GoingEventsTableViewCell.swift in Sources */,
 				B01DA2CF2228C1AC00F87BF0 /* ViewController.swift in Sources */,
 				B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */,
 			);
