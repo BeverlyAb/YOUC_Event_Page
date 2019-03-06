@@ -65,13 +65,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return going_events.count
+        if going_events.count != 0 {
+            return going_events.count
+        }
+        else {
+            return 2
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoingEventsTableViewCell") as! GoingEventsTableViewCell
         
-        if going_events != nil {
+        if going_events.count != 0 {
             let event = going_events[indexPath.row]
             
             let user = event["author"] as! PFUser
@@ -83,7 +88,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         }
         else {
-            cell.eventSummaryLabel.text = "Add events you want to go to!"
+            print( "in here" )
+//            cell.dateLabel.text = ""
+            cell.eventAuthorLabel.text = ""
+            cell.eventSummaryLabel.text = "Add events in here!"
         }
         return cell
         
