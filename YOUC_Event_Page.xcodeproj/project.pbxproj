@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BC3E7F765A3DAF6B50A5433 /* Pods_YOUC_Event_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C7F9A58BA3285494A13C40 /* Pods_YOUC_Event_Page.framework */; };
+		36FF0BA1EB227F6D8CDA3F91 /* Pods_YOUC_Event_PageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F6D55DDFA267068F61894B /* Pods_YOUC_Event_PageTests.framework */; };
+		A9A3E7E2030707F21B4D414D /* Pods_YOUC_Event_PageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0AA08FCA0F7D5BDE6DDF31A /* Pods_YOUC_Event_PageUITests.framework */; };
 		B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */; };
 		B01DA2CF2228C1AC00F87BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */; };
 		B01DA2D22228C1AC00F87BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D02228C1AC00F87BF0 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0011F7E7BAB6F5FB9FAC7437 /* Pods-YOUC_Event_PageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageUITests/Pods-YOUC_Event_PageUITests.release.xcconfig"; sourceTree = "<group>"; };
+		03BBB313D8D9FD1783069B63 /* Pods-YOUC_Event_PageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageUITests/Pods-YOUC_Event_PageUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5DCA1DCE173F13D20A110E0 /* Pods-YOUC_Event_PageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B01DA2C92228C1AC00F87BF0 /* YOUC_Event_Page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOUC_Event_Page.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,12 @@
 		B01DA2E82228C1AE00F87BF0 /* YOUC_Event_PageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YOUC_Event_PageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2EC2228C1AE00F87BF0 /* YOUC_Event_PageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YOUC_Event_PageUITests.swift; sourceTree = "<group>"; };
 		B01DA2EE2228C1AE00F87BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F6D55DDFA267068F61894B /* Pods_YOUC_Event_PageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YOUC_Event_PageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D995F5D2253B66846D9CD86F /* Pods-YOUC_Event_Page.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_Page.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_Page/Pods-YOUC_Event_Page.debug.xcconfig"; sourceTree = "<group>"; };
+		E0AA08FCA0F7D5BDE6DDF31A /* Pods_YOUC_Event_PageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YOUC_Event_PageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7C7F9A58BA3285494A13C40 /* Pods_YOUC_Event_Page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YOUC_Event_Page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9CF440511BDC438F3BF2257 /* Pods-YOUC_Event_PageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD5759F29AF44EC584F3A2B2 /* Pods-YOUC_Event_Page.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_Page.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_Page/Pods-YOUC_Event_Page.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BC3E7F765A3DAF6B50A5433 /* Pods_YOUC_Event_Page.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FF0BA1EB227F6D8CDA3F91 /* Pods_YOUC_Event_PageTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A3E7E2030707F21B4D414D /* Pods_YOUC_Event_PageUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C30DDF9157F8899D9B1BFB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7C7F9A58BA3285494A13C40 /* Pods_YOUC_Event_Page.framework */,
+				C1F6D55DDFA267068F61894B /* Pods_YOUC_Event_PageTests.framework */,
+				E0AA08FCA0F7D5BDE6DDF31A /* Pods_YOUC_Event_PageUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B01DA2C02228C1AC00F87BF0 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				B01DA2E02228C1AE00F87BF0 /* YOUC_Event_PageTests */,
 				B01DA2EB2228C1AE00F87BF0 /* YOUC_Event_PageUITests */,
 				B01DA2CA2228C1AC00F87BF0 /* Products */,
+				DB08784C0AD0C2B3D7F198FF /* Pods */,
+				6C30DDF9157F8899D9B1BFB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +184,19 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		DB08784C0AD0C2B3D7F198FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D995F5D2253B66846D9CD86F /* Pods-YOUC_Event_Page.debug.xcconfig */,
+				FD5759F29AF44EC584F3A2B2 /* Pods-YOUC_Event_Page.release.xcconfig */,
+				A5DCA1DCE173F13D20A110E0 /* Pods-YOUC_Event_PageTests.debug.xcconfig */,
+				F9CF440511BDC438F3BF2257 /* Pods-YOUC_Event_PageTests.release.xcconfig */,
+				03BBB313D8D9FD1783069B63 /* Pods-YOUC_Event_PageUITests.debug.xcconfig */,
+				0011F7E7BAB6F5FB9FAC7437 /* Pods-YOUC_Event_PageUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B01DA2F12228C1AE00F87BF0 /* Build configuration list for PBXNativeTarget "YOUC_Event_Page" */;
 			buildPhases = (
+				2C6807B3A0ABED6B744D2401 /* [CP] Check Pods Manifest.lock */,
 				B01DA2C52228C1AC00F87BF0 /* Sources */,
 				B01DA2C62228C1AC00F87BF0 /* Frameworks */,
 				B01DA2C72228C1AC00F87BF0 /* Resources */,
+				8DFD679C059CD21C9668D90D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B01DA2F42228C1AE00F87BF0 /* Build configuration list for PBXNativeTarget "YOUC_Event_PageTests" */;
 			buildPhases = (
+				1726566164A9C31350620F40 /* [CP] Check Pods Manifest.lock */,
 				B01DA2D92228C1AE00F87BF0 /* Sources */,
 				B01DA2DA2228C1AE00F87BF0 /* Frameworks */,
 				B01DA2DB2228C1AE00F87BF0 /* Resources */,
@@ -199,6 +242,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B01DA2F72228C1AE00F87BF0 /* Build configuration list for PBXNativeTarget "YOUC_Event_PageUITests" */;
 			buildPhases = (
+				0EA3EDBF026AF410598BA10A /* [CP] Check Pods Manifest.lock */,
 				B01DA2E42228C1AE00F87BF0 /* Sources */,
 				B01DA2E52228C1AE00F87BF0 /* Frameworks */,
 				B01DA2E62228C1AE00F87BF0 /* Resources */,
@@ -282,6 +326,103 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EA3EDBF026AF410598BA10A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YOUC_Event_PageUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1726566164A9C31350620F40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YOUC_Event_PageTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C6807B3A0ABED6B744D2401 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YOUC_Event_Page-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DFD679C059CD21C9668D90D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YOUC_Event_Page/Pods-YOUC_Event_Page-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YOUC_Event_Page/Pods-YOUC_Event_Page-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B01DA2C52228C1AC00F87BF0 /* Sources */ = {
@@ -462,6 +603,7 @@
 		};
 		B01DA2F22228C1AE00F87BF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D995F5D2253B66846D9CD86F /* Pods-YOUC_Event_Page.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +621,7 @@
 		};
 		B01DA2F32228C1AE00F87BF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD5759F29AF44EC584F3A2B2 /* Pods-YOUC_Event_Page.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +639,7 @@
 		};
 		B01DA2F52228C1AE00F87BF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DCA1DCE173F13D20A110E0 /* Pods-YOUC_Event_PageTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +660,7 @@
 		};
 		B01DA2F62228C1AE00F87BF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9CF440511BDC438F3BF2257 /* Pods-YOUC_Event_PageTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +681,7 @@
 		};
 		B01DA2F82228C1AE00F87BF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03BBB313D8D9FD1783069B63 /* Pods-YOUC_Event_PageUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +701,7 @@
 		};
 		B01DA2F92228C1AE00F87BF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0011F7E7BAB6F5FB9FAC7437 /* Pods-YOUC_Event_PageUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
