@@ -11,6 +11,7 @@
 		A1BE16CB5F60BD8B50FF8B70 /* Pods_YOUC_Event_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1651F82E7CF24966947B7FBF /* Pods_YOUC_Event_Page.framework */; };
 		AD306DF4222EB94900921D9D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD306DF3222EB94900921D9D /* ProfileViewController.swift */; };
 		AD306DF6222EBACA00921D9D /* GoingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD306DF5222EBACA00921D9D /* GoingEventsTableViewCell.swift */; };
+		AD306DFC2230659800921D9D /* ProfileCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD306DFB2230659800921D9D /* ProfileCameraViewController.swift */; };
 		B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */; };
 		B01DA2CF2228C1AC00F87BF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CE2228C1AC00F87BF0 /* ViewController.swift */; };
 		B01DA2D22228C1AC00F87BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D02228C1AC00F87BF0 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		AC8488451F55476D259EFD88 /* Pods-YOUC_Event_PageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD306DF3222EB94900921D9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD306DF5222EBACA00921D9D /* GoingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingEventsTableViewCell.swift; sourceTree = "<group>"; };
+		AD306DFB2230659800921D9D /* ProfileCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCameraViewController.swift; sourceTree = "<group>"; };
 		AD51DDD9364264C354C895BA /* Pods-YOUC_Event_Page.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_Page.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_Page/Pods-YOUC_Event_Page.release.xcconfig"; sourceTree = "<group>"; };
 		B01DA2C92228C1AC00F87BF0 /* YOUC_Event_Page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOUC_Event_Page.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				B01DA2D82228C1AE00F87BF0 /* Info.plist */,
 				AD306DF3222EB94900921D9D /* ProfileViewController.swift */,
 				AD306DF5222EBACA00921D9D /* GoingEventsTableViewCell.swift */,
+				AD306DFB2230659800921D9D /* ProfileCameraViewController.swift */,
 			);
 			path = YOUC_Event_Page;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				AD306DF6222EBACA00921D9D /* GoingEventsTableViewCell.swift in Sources */,
 				B01DA2CF2228C1AC00F87BF0 /* ViewController.swift in Sources */,
 				B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */,
+				AD306DFC2230659800921D9D /* ProfileCameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

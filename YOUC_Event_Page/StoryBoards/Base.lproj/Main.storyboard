@@ -126,6 +126,47 @@
             </objects>
             <point key="canvasLocation" x="2048.8000000000002" y="999.85007496251887"/>
         </scene>
+        <!--Profile Camera View Controller-->
+        <scene sceneID="EsR-3A-diP">
+            <objects>
+                <viewController id="FNK-2R-gIO" customClass="ProfileCameraViewController" customModule="YOUC_Event_Page" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="COO-OC-euG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="kBx-Qr-NR9">
+                                <rect key="frame" x="105" y="126" width="164" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ikx-x4-v57" appends="YES" id="rMQ-b7-O2M"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sik-6y-9B5">
+                                <rect key="frame" x="16" y="285" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onUserSubmitButton:" destination="FNK-2R-gIO" eventType="touchUpInside" id="RMl-re-qn1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NK2-jE-AwM"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileUserImage" destination="kBx-Qr-NR9" id="am2-gv-hjs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgW-mi-Vbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ikx-x4-v57">
+                    <connections>
+                        <action selector="cameraButtonClicked:" destination="FNK-2R-gIO" id="mjZ-fc-sk8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2957.5999999999999" y="999.85007496251887"/>
+        </scene>
         <!--Post Event-->
         <scene sceneID="hDY-Qu-1Du">
             <objects>
