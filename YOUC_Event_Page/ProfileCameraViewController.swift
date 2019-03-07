@@ -37,6 +37,8 @@ class ProfileCameraViewController: UIViewController, UIImagePickerControllerDele
         }
     }
     
+    
+    
     @IBAction func cameraButtonClicked(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self

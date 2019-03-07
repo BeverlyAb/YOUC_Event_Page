@@ -32,10 +32,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidAppear(_ animated: Bool) {
 //        let user = PFUser.current()!
 //        profileUserNameLabel.text = user.username
+//        setImage()
         eventsCountLabel.text = String(going_events.count)
         getEvents()
         
         
+        
+    }
+    
+    func setImage() {
+        let user = PFUser.current()!
+        let profile = user["user_image"] as! PFFileObject
+        let urlString = profile.url!
+        let url = URL(string: urlString)!
+        
+        profileImageView.af_setImage(withURL: url)
     }
     
     func getEvents() {
@@ -69,7 +80,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             return going_events.count
         }
         else {
-            return 2
+            return 1
         }
     }
     
@@ -89,9 +100,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         else {
             print( "in here" )
-//            cell.dateLabel.text = ""
+            cell.dateLabel.text = "Add events to go to!"
             cell.eventAuthorLabel.text = ""
-            cell.eventSummaryLabel.text = "Add events in here!"
+            cell.eventSummaryLabel.text = ""
         }
         return cell
         
