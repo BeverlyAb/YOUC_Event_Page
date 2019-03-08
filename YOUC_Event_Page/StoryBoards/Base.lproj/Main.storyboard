@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Teal-Background" translatesAutoresizingMaskIntoConstraints="NO" id="n8y-Si-nug">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Teal-Background" translatesAutoresizingMaskIntoConstraints="NO" id="n8y-Si-nug">
                                 <rect key="frame" x="-7" y="55" width="398" height="265"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="256" width="375" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.77699893712997437" green="0.75151735544204712" blue="0.99423032999038696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient+background" id="KD6-pC-ZVq">
+                                <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient+background" id="KD6-pC-ZVq">
                                     <rect key="frame" x="0.0" y="196" width="375" height="411"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -54,12 +54,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dotted_background" translatesAutoresizingMaskIntoConstraints="NO" id="xKb-It-6DA">
-                                                    <rect key="frame" x="0.0" y="-42" width="400" height="210"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wavy_blue_frame" translatesAutoresizingMaskIntoConstraints="NO" id="xKb-It-6DA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtA-9w-2lJ">
-                                                    <rect key="frame" x="25" y="62" width="323" height="20.5"/>
+                                                    <rect key="frame" x="25" y="91" width="323" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -85,14 +84,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ySK-0E-wjv" firstAttribute="baseline" secondItem="Jhm-5x-rQZ" secondAttribute="baseline" id="1cb-Ou-X8r"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xKb-It-6DA" secondAttribute="bottom" id="1nL-Nh-B74"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="XtA-9w-2lJ" secondAttribute="trailing" constant="12" id="78D-xz-DHw"/>
                                                 <constraint firstItem="ySK-0E-wjv" firstAttribute="leading" secondItem="zfY-QE-4Kg" secondAttribute="leadingMargin" id="BsA-MA-L8R"/>
+                                                <constraint firstItem="xKb-It-6DA" firstAttribute="leading" secondItem="zfY-QE-4Kg" secondAttribute="leading" id="CbK-gW-oZl"/>
                                                 <constraint firstItem="ySK-0E-wjv" firstAttribute="top" secondItem="zfY-QE-4Kg" secondAttribute="topMargin" constant="-1" id="NDJ-fd-wkB"/>
+                                                <constraint firstAttribute="trailing" secondItem="xKb-It-6DA" secondAttribute="trailing" id="UGL-hG-Qgg"/>
+                                                <constraint firstItem="xKb-It-6DA" firstAttribute="top" secondItem="zfY-QE-4Kg" secondAttribute="top" id="Ukk-RP-zKC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Jhm-5x-rQZ" secondAttribute="trailing" constant="-7" id="V0I-la-JkQ"/>
-                                                <constraint firstItem="XtA-9w-2lJ" firstAttribute="top" secondItem="ySK-0E-wjv" secondAttribute="bottom" constant="31" id="ZSN-A3-TqU"/>
+                                                <constraint firstItem="XtA-9w-2lJ" firstAttribute="top" secondItem="ySK-0E-wjv" secondAttribute="bottom" constant="60" id="ZSN-A3-TqU"/>
                                                 <constraint firstAttribute="trailing" secondItem="ySK-0E-wjv" secondAttribute="trailing" constant="20" symbolic="YES" id="akc-j4-tRP"/>
                                                 <constraint firstItem="ySK-0E-wjv" firstAttribute="firstBaseline" secondItem="Jhm-5x-rQZ" secondAttribute="firstBaseline" id="gu0-HX-gzS"/>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="XtA-9w-2lJ" secondAttribute="bottom" constant="11" id="nZd-T2-nDl"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="XtA-9w-2lJ" secondAttribute="bottom" constant="5" id="nZd-T2-nDl"/>
                                                 <constraint firstItem="Jhm-5x-rQZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zfY-QE-4Kg" secondAttribute="leading" constant="20" symbolic="YES" id="tib-LW-Kj6"/>
                                                 <constraint firstItem="XtA-9w-2lJ" firstAttribute="leading" secondItem="zfY-QE-4Kg" secondAttribute="leadingMargin" constant="10" id="xvT-Nl-fgC"/>
                                             </constraints>
@@ -276,9 +279,9 @@
     </scenes>
     <resources>
         <image name="Teal-Background" width="375" height="211"/>
-        <image name="dotted_background" width="225" height="225"/>
         <image name="gradient+background" width="375" height="375"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="wavy_blue_frame" width="325" height="217.5"/>
     </resources>
 </document>
