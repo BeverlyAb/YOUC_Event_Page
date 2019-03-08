@@ -1,0 +1,6 @@
+framework module Pods_YOUC_Event_PageTests {
+  umbrella header "Pods-YOUC_Event_PageTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
