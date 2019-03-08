@@ -46,6 +46,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
                 self.performSegue(withIdentifier: "signInSegue", sender: nil)
+                UserDefaults.standard.set(true, forKey: "userLoggedIn")
             } else {
                 print("Error : \(error?.localizedDescription)")
                 let alertController = UIAlertController(title: "YOUC", message:
