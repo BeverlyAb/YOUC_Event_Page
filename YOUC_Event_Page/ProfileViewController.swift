@@ -72,8 +72,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        }
     }
     
-//    @IBAction func onAddEventClicked(_ sender: Any) {
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if going_events.count != 0 {
@@ -100,9 +98,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         else {
             print( "in here" )
-            cell.dateLabel.text = "Add events to go to!"
+            cell.dateLabel.text = ""
             cell.eventAuthorLabel.text = ""
-            cell.eventSummaryLabel.text = ""
+            cell.eventSummaryLabel.text = "Add events to go to!"
         }
         return cell
         
