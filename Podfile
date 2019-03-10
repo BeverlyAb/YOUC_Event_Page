@@ -6,8 +6,13 @@ target 'YOUC_Event_Page' do
   use_frameworks!
 
   # Pods for YOUC_Event_Page
+<<<<<<< HEAD
   pod 'Parse'
   pod 'AlamofireImage'
+=======
+    pod "Parse"
+    pod "AlamofireImage"
+>>>>>>> profilePage
 
   target 'YOUC_Event_PageTests' do
     inherit! :search_paths
