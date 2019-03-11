@@ -7,6 +7,9 @@
    -Ability to filter events on the events coming soon
    <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/E7lJxcl.gif" title="source: imgur.com" /></a>
 * Tejal Patel
+   - Login View
+   - ![createUser](loginPage.gif)
+   - ![login](loginPage2.gif)
 * Richard Absin
    - Making the Event Page
    - Here, users can see more information about an event
