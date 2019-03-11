@@ -8,8 +8,8 @@
    - Making the Profile Page:
    <img src='http://g.recordit.co/39HI1wSSB0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 * Beverly Abadines Quon
-   - Posting Events Page (Post Page):
-   - ![postPage](postPage.gif)
+   - Creating Events (Post Page):
+   -![postPage](postPage.gif)
 
 ### App Description
 YOUC Event Page connects UCI students to events happening all over campus!
