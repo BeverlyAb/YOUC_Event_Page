@@ -339,8 +339,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Teal-Background" translatesAutoresizingMaskIntoConstraints="NO" id="U9J-tr-ZkS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Teal-Background" translatesAutoresizingMaskIntoConstraints="NO" id="U9J-tr-ZkS">
                                 <rect key="frame" x="0.0" y="64" width="375" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-ap-Q0O">
                                 <rect key="frame" x="269" y="161" width="60" height="59"/>
@@ -368,10 +369,6 @@
                                 <rect key="frame" x="0.0" y="257" width="375" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient+background" id="EYP-oI-Epb">
-                                    <rect key="frame" x="0.0" y="211" width="375" height="413"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoingEventsTableViewCell" rowHeight="183" id="qsa-kL-alm" customClass="GoingEventsTableViewCell" customModule="YOUC_Event_Page" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="183"/>
@@ -380,10 +377,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="182.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wavy_blue_frame" translatesAutoresizingMaskIntoConstraints="NO" id="fLj-EK-IDe">
-                                                    <rect key="frame" x="0.0" y="-27" width="375" height="210"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-zf-ZsW">
                                                     <rect key="frame" x="15" y="11" width="125" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -424,12 +417,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="U9J-tr-ZkS" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" id="Dod-p7-ZGV"/>
-                            <constraint firstItem="uWX-Ow-1BJ" firstAttribute="bottom" secondItem="U9J-tr-ZkS" secondAttribute="bottom" constant="350" id="gqF-Fi-kUa"/>
-                            <constraint firstItem="U9J-tr-ZkS" firstAttribute="trailing" secondItem="uWX-Ow-1BJ" secondAttribute="trailing" id="iKg-cS-qXi"/>
-                            <constraint firstItem="U9J-tr-ZkS" firstAttribute="top" secondItem="uWX-Ow-1BJ" secondAttribute="top" id="sej-eq-eKu"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uWX-Ow-1BJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="59I-I2-u5I">
@@ -455,10 +442,10 @@
             </objects>
             <point key="canvasLocation" x="3229.5999999999999" y="1900.2998500749627"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="y0E-yg-kUW">
             <objects>
-                <viewController id="mhU-Xg-n7J" sceneMemberID="viewController">
+                <viewController id="mhU-Xg-n7J" customClass="SettingsViewController" customModule="YOUC_Event_Page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kzi-4l-FRI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -659,7 +646,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4124" y="2642"/>
+            <point key="canvasLocation" x="4103" y="2716"/>
         </scene>
         <!--Post Event-->
         <scene sceneID="hDY-Qu-1Du">
@@ -737,9 +724,7 @@
     <resources>
         <image name="Minimalist-Wallpaper-24-1620-x-2880" width="1620" height="2880"/>
         <image name="Teal-Background" width="375" height="211"/>
-        <image name="gradient+background" width="375" height="375"/>
         <image name="image_placeholder" width="375" height="375"/>
-        <image name="wavy_blue_frame" width="325" height="217.5"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="p0x-H5-qUv"/>
