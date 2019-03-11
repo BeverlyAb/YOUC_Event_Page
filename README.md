@@ -5,6 +5,8 @@
 * Tejal Patel
 * Richard Absin
 * Hermain Hanif
+   - Making the Profile Page:
+   <img src='http://g.recordit.co/39HI1wSSB0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 * Beverly Abadines Quon
 
 ### App Description
