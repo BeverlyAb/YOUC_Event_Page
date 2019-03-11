@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6v-hl-UTS">
-=======
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mbi-LT-8wf">
->>>>>>> profilePage
+
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-<<<<<<< HEAD
+
         <!--Create Account View Controller-->
         <scene sceneID="HeZ-v6-cxV">
             <objects>
@@ -320,8 +318,7 @@
             </objects>
             <point key="canvasLocation" x="1960.8" y="-347.67616191904051"/>
         </scene>
-=======
->>>>>>> profilePage
+
         <!--Map-->
         <scene sceneID="59j-d6-2PU">
             <objects>
@@ -608,20 +605,11 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
-        <image name="Minimalist-Wallpaper-24-1620-x-2880" width="1620" height="2880"/>
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ynr-zP-v1S"/>
-        <segue reference="6Ve-0m-XU5"/>
-        <segue reference="QvU-dr-BD9"/>
-    </inferredMetricsTieBreakers>
-=======
+
         <image name="Teal-Background" width="375" height="211"/>
         <image name="gradient+background" width="375" height="375"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="wavy_blue_frame" width="325" height="217.5"/>
     </resources>
->>>>>>> profilePage
 </document>
