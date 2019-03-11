@@ -285,13 +285,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-ka-l5P">
-                                <rect key="frame" x="0.0" y="137" width="375" height="530"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                             </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ifI-QB-avq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="6cf-HO-NNz"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rFX-ka-l5P" firstAttribute="top" secondItem="ifI-QB-avq" secondAttribute="bottom" id="BWp-W9-SCo"/>
+                            <constraint firstItem="ifI-QB-avq" firstAttribute="top" secondItem="Wd5-F3-Cf8" secondAttribute="top" id="NqI-6w-h3K"/>
+                            <constraint firstItem="ifI-QB-avq" firstAttribute="leading" secondItem="Wd5-F3-Cf8" secondAttribute="leading" id="Om7-fa-FSI"/>
                             <constraint firstItem="rFX-ka-l5P" firstAttribute="bottom" secondItem="Wd5-F3-Cf8" secondAttribute="bottom" id="YKG-xe-XcU"/>
-                            <constraint firstItem="rFX-ka-l5P" firstAttribute="top" secondItem="Wd5-F3-Cf8" secondAttribute="top" constant="73" id="ile-0c-5ym"/>
                             <constraint firstItem="rFX-ka-l5P" firstAttribute="centerX" secondItem="31W-lo-qeV" secondAttribute="centerX" id="l3L-f7-bpS"/>
                             <constraint firstItem="rFX-ka-l5P" firstAttribute="leading" secondItem="Wd5-F3-Cf8" secondAttribute="leading" id="p6N-Si-us7"/>
                             <constraint firstItem="rFX-ka-l5P" firstAttribute="trailing" secondItem="Wd5-F3-Cf8" secondAttribute="trailing" id="u0R-Gz-LI4"/>

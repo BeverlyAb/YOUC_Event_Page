@@ -11,13 +11,18 @@ import AlamofireImage
 import Parse
 
 
-//should split, texts, location, & cover album, into 3 viewcontrollers
-// need back button in between
-class PostPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+protocol PostPageViewControllerDelegate : class {
+    func locationsPickedLocation(controller: PostPageViewController, latitude: NSNumber, longitude: NSNumber)
+}
 
+
+class PostPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var locationField: UITextField!
+    weak var delegate : PostPageViewControllerDelegate!
+    
     @IBOutlet weak var coverView: UIImageView!
 
     @IBOutlet weak var dateValueField: UITextField!
