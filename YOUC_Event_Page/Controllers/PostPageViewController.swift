@@ -21,6 +21,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var coverView: UIImageView!
 
     @IBOutlet weak var dateValueField: UITextField!
+    var location : CLLocation!
+    
     
     @IBAction func onSubmitButton(_ sender: Any) {
 //        let post = PFObject(className: "Events")

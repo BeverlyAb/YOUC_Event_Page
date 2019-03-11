@@ -307,8 +307,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="UYC-da-3Qa">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onSaveButton:" destination="gOt-WF-zfR" id="nYs-Md-rUx"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="rFX-ka-l5P" id="Dq5-dr-jIe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upy-O1-ANg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
