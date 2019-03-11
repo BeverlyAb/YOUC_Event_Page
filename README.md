@@ -1,24 +1,24 @@
 # YOUC Event Page
 
 ## Developers
-* Derek Chang
+* **Derek Chang**
    -Map view
    -Involves creating a map that shows all the events
    -Ability to filter events on the events coming soon
    <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/E7lJxcl.gif" title="source: imgur.com" /></a>
-* Tejal Patel
+* **Tejal Patel**
    - Login View
    - ![createUser](loginPage.gif)
    - ![login](loginPage2.gif)
-* Richard Absin
+* **Richard Absin**
    - Making the Event Page
    - Here, users can see more information about an event
    - They also have the option of marking "GOING" or "INTERESTED" on the event
    <img src='https://github.com/BeverlyAb/YOUC_Event_Page/blob/master/EventsViewController.gif' width ='' alt='Video Walkthrough' />
-* Hermain Hanif
+* **Hermain Hanif**
    - Making the Profile Page:
    <img src='http://g.recordit.co/39HI1wSSB0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-* Beverly Abadines Quon
+* **Beverly Abadines Quon**
    - Creating Events (Post Page):
    - ![postPage](postPage.gif)
 
