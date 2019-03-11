@@ -2,6 +2,10 @@
 
 ## Developers
 * Derek Chang
+   -Map view
+   -Involves creating a map that shows all the events
+   -Ability to filter events on the events coming soon
+   <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/E7lJxcl.gif" title="source: imgur.com" /></a>
 * Tejal Patel
 * Richard Absin
    - Making the Event Page
