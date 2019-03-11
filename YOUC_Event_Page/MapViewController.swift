@@ -83,6 +83,9 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     @IBAction func beginSearching(_ sender: Any) {
         performSegue(withIdentifier: "beginSearch", sender: nil)
+        
+        self.searchTextField.endEditing(true)
+        
         print("beginning search")
     }
     

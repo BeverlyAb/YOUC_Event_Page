@@ -12,6 +12,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource {
     
     
 
+    @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -20,6 +21,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
         
+        self.searchBar.becomeFirstResponder()
         
 
         // Do any additional setup after loading the view.

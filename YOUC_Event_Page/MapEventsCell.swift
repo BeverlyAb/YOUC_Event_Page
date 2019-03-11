@@ -17,6 +17,9 @@ class MapEventsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //makes the image rounded
+        EventImage.setRounded()
         // Initialization code
     }
 
@@ -26,4 +29,14 @@ class MapEventsCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension UIImageView {
+    
+
+    func setRounded() {
+        let radius = self.frame.height/2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
 }
