@@ -16,6 +16,7 @@
 		ADE2058E22369A3C00C65E99 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2058D22369A3C00C65E99 /* ProfileViewController.swift */; };
 		ADE2059022369A6900C65E99 /* GoingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2058F22369A6900C65E99 /* GoingEventsTableViewCell.swift */; };
 		ADE2059322369AAF00C65E99 /* ProfileCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2059222369AAF00C65E99 /* ProfileCameraViewController.swift */; };
+		ADE205952236EEA500C65E99 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE205942236EEA500C65E99 /* SettingsViewController.swift */; };
 		B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */; };
 		B01DA2D22228C1AC00F87BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D02228C1AC00F87BF0 /* Main.storyboard */; };
 		B01DA2D42228C1AE00F87BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D32228C1AE00F87BF0 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		ADE2058D22369A3C00C65E99 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ADE2058F22369A6900C65E99 /* GoingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingEventsTableViewCell.swift; sourceTree = "<group>"; };
 		ADE2059222369AAF00C65E99 /* ProfileCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCameraViewController.swift; sourceTree = "<group>"; };
+		ADE205942236EEA500C65E99 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AF1D18700CE7D9B64D507EBC /* Pods_YOUC_Event_PageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YOUC_Event_PageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2C92228C1AC00F87BF0 /* YOUC_Event_Page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOUC_Event_Page.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				ADE2058D22369A3C00C65E99 /* ProfileViewController.swift */,
 				ADE2058F22369A6900C65E99 /* GoingEventsTableViewCell.swift */,
 				ADE2059222369AAF00C65E99 /* ProfileCameraViewController.swift */,
+				ADE205942236EEA500C65E99 /* SettingsViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				ADE2058E22369A3C00C65E99 /* ProfileViewController.swift in Sources */,
 				B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */,
 				2D076FB3222FC9570008BDB7 /* SignInViewController.swift in Sources */,
+				ADE205952236EEA500C65E99 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
