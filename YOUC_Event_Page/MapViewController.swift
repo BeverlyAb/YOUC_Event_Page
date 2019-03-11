@@ -9,16 +9,20 @@
 
 import UIKit
 import MapKit
-
+import AlamofireImage
 
 class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
 
     //MapView outlet
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var searchTextField: UITextField!
     //USE NIL to tell the search controller that you want to use the same
     //view you're srearching to display the results
     //Could specify a different view to display the results
+    
+    @IBOutlet weak var mapButton: UIImageView!
+    
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -29,12 +33,22 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchTextField.layer.cornerRadius = 4
+        searchTextField.clipsToBounds = true
 
+        //places mapview on UCI
         setInitialLocation()
         
+        
+        //Test pin
         addPin(lat: 33.640495, long: -117.844296)
         mapView.delegate = self
         
+        //set button image
+        mapButton.image = UIImage(named: "filter")
+        
+        //dummy data
         events = [
         "Event 1",
         "Event 2",
@@ -55,6 +69,24 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //makes sure the search bar disappears if the user goes to another view controller
         definesPresentationContext = true
 
+    }
+    
+    //Triggered when the filter/map button is pressed
+    @IBAction func mapButtonPressed(_ sender: Any) {
+        print("button pressed")
+        if mapButton.image == UIImage(named: "filter"){
+            print("filter pressed")
+        }
+        
+    }
+    
+
+    @IBAction func beginSearching(_ sender: Any) {
+        performSegue(withIdentifier: "beginSearch", sender: nil)
+        
+        self.searchTextField.endEditing(true)
+        
+        print("beginning search")
     }
     
     //Getting and setting the intial location
@@ -99,6 +131,38 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
+    
+    //custom pins
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let reuseID = "annotation"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
+        
+        //add content to the view
+        if (annotationView == nil){
+            //if there is nothing on the view, then create the view
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            //when you tap on it, it tells you a pop-up
+            annotationView!.canShowCallout = true
+            annotationView!.leftCalloutAccessoryView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        }
+        
+        
+        //insert the picture into the annotationview
+        let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
+        
+        //TODO - put in image of the post
+        imageView.image = UIImage.init()
+        
+        return annotationView
+        
+        
+        
+        
+    }
+
+    
     
 //    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
 //        filteredEvents = events.filter({( candy : Candy) -> Bool in
