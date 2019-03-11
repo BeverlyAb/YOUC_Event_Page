@@ -13,6 +13,9 @@
 		2D076FB9223202720008BDB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D076FB8223202720008BDB7 /* LoginViewController.swift */; };
 		6907662FBCA911A4BC022B1D /* Pods_YOUC_Event_PageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF1D697043C7F00BF62418E /* Pods_YOUC_Event_PageTests.framework */; };
 		99B8F6F392021CAE65A6B1B5 /* Pods_YOUC_Event_Page.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF142146EE1371D0659404CE /* Pods_YOUC_Event_Page.framework */; };
+		ADE2058E22369A3C00C65E99 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2058D22369A3C00C65E99 /* ProfileViewController.swift */; };
+		ADE2059022369A6900C65E99 /* GoingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2058F22369A6900C65E99 /* GoingEventsTableViewCell.swift */; };
+		ADE2059322369AAF00C65E99 /* ProfileCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE2059222369AAF00C65E99 /* ProfileCameraViewController.swift */; };
 		B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */; };
 		B01DA2D22228C1AC00F87BF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D02228C1AC00F87BF0 /* Main.storyboard */; };
 		B01DA2D42228C1AE00F87BF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D32228C1AE00F87BF0 /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		78C3CDDB9A5A7E9046524929 /* Pods-YOUC_Event_PageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8AE4BF381BD8CAB08783930 /* Pods-YOUC_Event_Page.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_Page.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_Page/Pods-YOUC_Event_Page.debug.xcconfig"; sourceTree = "<group>"; };
 		AA91EED3AB64EA4BF4B1174C /* Pods-YOUC_Event_PageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageTests/Pods-YOUC_Event_PageTests.release.xcconfig"; sourceTree = "<group>"; };
+		ADE2058D22369A3C00C65E99 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		ADE2058F22369A6900C65E99 /* GoingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingEventsTableViewCell.swift; sourceTree = "<group>"; };
+		ADE2059222369AAF00C65E99 /* ProfileCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCameraViewController.swift; sourceTree = "<group>"; };
 		AF1D18700CE7D9B64D507EBC /* Pods_YOUC_Event_PageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YOUC_Event_PageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2C92228C1AC00F87BF0 /* YOUC_Event_Page.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOUC_Event_Page.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2CC2228C1AC00F87BF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ADE2058C223699FA00C65E99 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				ADE2058D22369A3C00C65E99 /* ProfileViewController.swift */,
+				ADE2058F22369A6900C65E99 /* GoingEventsTableViewCell.swift */,
+				ADE2059222369AAF00C65E99 /* ProfileCameraViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		B01DA2C02228C1AC00F87BF0 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +206,7 @@
 		B01DA2FC2228C6F400F87BF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ADE2058C223699FA00C65E99 /* Profile */,
 				2D076FB1222FC9070008BDB7 /* Login */,
 			);
 			path = Controllers;
@@ -428,7 +445,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D076FB9223202720008BDB7 /* LoginViewController.swift in Sources */,
+				ADE2059022369A6900C65E99 /* GoingEventsTableViewCell.swift in Sources */,
+				ADE2059322369AAF00C65E99 /* ProfileCameraViewController.swift in Sources */,
 				2D076FB5222FC95F0008BDB7 /* CreateAccountViewController.swift in Sources */,
+				ADE2058E22369A3C00C65E99 /* ProfileViewController.swift in Sources */,
 				B01DA2CD2228C1AC00F87BF0 /* AppDelegate.swift in Sources */,
 				2D076FB3222FC9570008BDB7 /* SignInViewController.swift in Sources */,
 			);
