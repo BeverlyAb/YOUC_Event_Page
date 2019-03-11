@@ -543,10 +543,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dya-en-r9c">
-                                                <rect key="frame" x="10" y="246" width="357" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -746,8 +742,8 @@
         <image name="wavy_blue_frame" width="325" height="217.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ynr-zP-v1S"/>
-        <segue reference="6Ve-0m-XU5"/>
+        <segue reference="p0x-H5-qUv"/>
+        <segue reference="MR7-vH-8dz"/>
         <segue reference="KOM-zy-sPT"/>
     </inferredMetricsTieBreakers>
 </document>
