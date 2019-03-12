@@ -142,14 +142,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6DE5C02622385EEC00C136B7 /* New Group */ = {
+		6DE5C02622385EEC00C136B7 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				6DE5C02922385F2F00C136B7 /* MapEventsCell.swift */,
 				6DE5C02822385F2F00C136B7 /* MapEventsViewController.swift */,
 				6DE5C02722385F2F00C136B7 /* MapViewController.swift */,
 			);
-			path = "New Group";
+			path = Map;
 			sourceTree = "<group>";
 		};
 		ADE2058C223699FA00C65E99 /* Profile */ = {
@@ -228,7 +228,7 @@
 		B01DA2FC2228C6F400F87BF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6DE5C02622385EEC00C136B7 /* New Group */,
+				6DE5C02622385EEC00C136B7 /* Map */,
 				ADE2058C223699FA00C65E99 /* Profile */,
 				2D076FB1222FC9070008BDB7 /* Login */,
 			);
