@@ -1173,6 +1173,80 @@
             </objects>
             <point key="canvasLocation" x="4345" y="1854"/>
         </scene>
+        <!--Event Page View Controller-->
+        <scene sceneID="12G-3S-sjD">
+            <objects>
+                <viewController id="xIT-s3-uwf" customClass="EventPageViewController" customModule="YOUCEvent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fC8-6e-f2N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample_event_image" translatesAutoresizingMaskIntoConstraints="NO" id="lXK-Mk-bql" userLabel="Event Image">
+                                <rect key="frame" x="0.0" y="20" width="375" height="299"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample_org_image" translatesAutoresizingMaskIntoConstraints="NO" id="eET-mf-KdN" userLabel="Organization Image">
+                                <rect key="frame" x="16" y="261" width="146" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Eb-tVp" customClass="YOUCGoingButton" customModule="YOUCEvent" customModuleProvider="target">
+                                <rect key="frame" x="16" y="413" width="163" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="onGoingPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="m9q-mN-6Xz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-lP-x6e" customClass="YOUCInterestedButton" customModule="YOUCEvent" customModuleProvider="target">
+                                <rect key="frame" x="190" y="413" width="169" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Interested"/>
+                                <connections>
+                                    <action selector="onInterestedPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="z3b-Sa-LnD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Porto's Fundraiser" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05a-dt-1xT" userLabel="Event Name">
+                                <rect key="frame" x="174" y="340" width="220" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Iz-zU7" userLabel="Event Description">
+                                <rect key="frame" x="15" y="582" width="344" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Hey y'all! If you're down for PACN, we'll be having another Porto's Ring Road Fundraiser TOMORROW (2/26) from 10am-2pm! Come by and get your cheese rolls and guava. 1 for $2 and 2 for $3!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kababayan at UCI" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF1-uc-Pce" userLabel="Event Name">
+                                <rect key="frame" x="16" y="506" width="251" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="9fr-P8-Nxu"/>
+                    </view>
+                    <connections>
+                        <outlet property="eventDescriptionLabel" destination="pXP-Iz-zU7" id="YwD-uH-ebR"/>
+                        <outlet property="eventImageView" destination="lXK-Mk-bql" id="v5V-dW-QxM"/>
+                        <outlet property="eventNameLabel" destination="05a-dt-1xT" id="5ui-W6-2pN"/>
+                        <outlet property="goingButton" destination="skg-Eb-tVp" id="Hzx-AR-Lsf"/>
+                        <outlet property="interestedButton" destination="RNk-lP-x6e" id="bUU-Za-oai"/>
+                        <outlet property="organizationImageView" destination="eET-mf-KdN" id="vZV-OP-tEJ"/>
+                        <outlet property="organizationNameLabel" destination="wF1-uc-Pce" id="wUY-X1-oii"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q71-Tx-2Xx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="2911"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Minimalist-Wallpaper-24-1620-x-2880" width="1620" height="2880"/>
@@ -1182,6 +1256,8 @@
         <image name="ice_cream_man" width="199" height="371"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="profile_tab" width="25" height="25"/>
+        <image name="sample_event_image" width="368.6400146484375" height="245.8800048828125"/>
+        <image name="sample_org_image" width="188" height="188"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NEa-s3-brA"/>
