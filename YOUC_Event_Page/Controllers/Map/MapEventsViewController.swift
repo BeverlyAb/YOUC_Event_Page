@@ -107,6 +107,8 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             
+            
+            
             cell.EventImage.af_setImage(withURL: url)
         }
     

@@ -20,6 +20,7 @@ class EventPageViewController: UIViewController {
     @IBOutlet weak var goingButton: UIButton!
     @IBOutlet weak var interestedButton: UIButton!
 
+    @IBOutlet weak var dataLabel: UILabel!
     // For keeping track of the button status.
     // Without these variables, a new event would be added each time a button is pressed
     var goingPressed = false
@@ -34,9 +35,14 @@ class EventPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let user = event["author"] as! PFUser
+        
         self.eventDescriptionLabel.text = event["description"] as? String
-        self.organizationNameLabel.text = event["author"] as? String
+        self.organizationNameLabel.text = user["organization_name"] as? String
         self.eventNameLabel.text = event["eventName"] as? String
+        
+        self.dataLabel.text = event["date"] as! String
+        
         
         if event["coverImage"] != nil{
             let imageFile = event["coverImage"] as! PFFileObject
@@ -45,6 +51,15 @@ class EventPageViewController: UIViewController {
             let url = URL(string: urlString)!
             
             self.eventImageView.af_setImage(withURL: url)
+        }
+        
+        if user["user_image"] != nil{
+            let imageFile = user["user_image"] as! PFFileObject
+            
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            self.organizationImageView.af_setImage(withURL: url)
         }
     }
     
