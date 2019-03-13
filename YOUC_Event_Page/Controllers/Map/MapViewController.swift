@@ -24,6 +24,8 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBOutlet weak var mapButton: UIImageView!
     
+    var eventImage: UIImage!
+    var ImageArray: [UIImage] = []
     
     
     
@@ -61,6 +63,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             if events != nil{
                 self.events = events!
                 self.populateEvents()
+                
             }
         }
         
@@ -81,7 +84,16 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             
             let title = event["eventName"] as! String
 
-
+//            if let image = event.value(forKey: "coverImage")! as? PFFileObject ?? UIImage(named: "ice_cream_man"){
+//                image.getDataInBackground {
+//                    (imageData, error) in
+//                    if (error == nil){
+//                        let loadedImage = UIImage(data: imageData ?? Data.init())
+//                        self.ImageArray.append(loadedImage!)
+//                    }
+//                }
+//            }
+            
             addPin(lat: latitude , long: longitude, title: title)
 
 
@@ -136,8 +148,10 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         annotation.coordinate = locationCoordinate
         //attributes of the pin
         annotation.title = title
+        
         //add Annotation to Mapview
         mapView.addAnnotation(annotation)
+        
     }
     
     
@@ -160,8 +174,11 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //insert the picture into the annotationview
         let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
         //TODO - put in image of the post
-        imageView.image = UIImage.init()
+//        print("event image: ", eventImage)
+        
+        imageView.image = eventImage
         return annotationView
+        
     }
 
     
