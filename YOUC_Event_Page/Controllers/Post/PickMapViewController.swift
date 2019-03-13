@@ -94,7 +94,6 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         fetchLocations(searchBar.text!)
     }
-    
 }
 
 extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {

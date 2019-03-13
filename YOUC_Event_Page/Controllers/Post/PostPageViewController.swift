@@ -16,7 +16,7 @@ protocol PostPageViewControllerDelegate : class {
 }
 
 
-class PostPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PickMapViewControllerDelegate {
+class PostPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PickMapViewControllerDelegate, UITextFieldDelegate {
     
     
     @IBOutlet weak var locationFieldLabel: UILabel!
@@ -114,6 +114,10 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         locationFieldLabel.isHidden = true
+        //keyboard stuff
+        self.eventNameField.delegate = self
+        self.descriptionField.delegate = self
+        self.dateValueField.delegate = self
     }
     
     //save location points from segue
@@ -134,6 +138,21 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         }))
         self.present(alert,animated: true, completion: nil)
     }
+    //-----------------------keyboard -------------------------------
+    
+    //hides if out of text field
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //hides after return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        eventNameField.resignFirstResponder()
+        descriptionField.resignFirstResponder()
+        dateValueField.resignFirstResponder()
+        return true
+    }
+    
     
     //----------------------optionals----------------
     
