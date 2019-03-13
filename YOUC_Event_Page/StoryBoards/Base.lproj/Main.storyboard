@@ -998,7 +998,7 @@
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Mjt-A3-Xp6" kind="presentation" id="IVL-zd-v9h"/>
+                                    <segue destination="pPm-ug-AGG" kind="show" id="Zbb-IF-1eT"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_50x50" translatesAutoresizingMaskIntoConstraints="NO" id="XDM-RX-Ytf">
@@ -1016,7 +1016,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Pick tags that match your interest!"/>
                                 <connections>
-                                    <segue destination="ttw-BZ-AgW" kind="presentation" id="KRr-Eu-UnZ"/>
+                                    <segue destination="LAM-rm-4A3" kind="show" id="Tgg-qV-tsW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnl-s8-MeN">
@@ -1119,7 +1119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mm-kz-nSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3633" y="3744"/>
+            <point key="canvasLocation" x="2828" y="3743"/>
         </scene>
         <!--Post-->
         <scene sceneID="1Ua-u3-IOg">
@@ -1144,25 +1144,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBh-Qj-qP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1273" y="3744"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ksq-k9-fIV">
-            <objects>
-                <navigationController storyboardIdentifier="TagNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ttw-BZ-AgW" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Ir-74-KmH">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LAM-rm-4A3" kind="relationship" relationship="rootViewController" id="xS9-BG-a5e"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GDe-aA-QLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2828" y="3744"/>
         </scene>
         <!--Pick Map View Controller-->
         <scene sceneID="0XL-He-q2o">
@@ -1261,26 +1242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkj-AP-kRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3632.8000000000002" y="4505.397301349326"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZLe-ok-n9X">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mjt-A3-Xp6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yse-f9-Bfm">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="pPm-ug-AGG" kind="relationship" relationship="rootViewController" id="42q-sy-S3B"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O6e-7j-p6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2828" y="4517"/>
+            <point key="canvasLocation" x="2044" y="4512"/>
         </scene>
     </scenes>
     <resources>

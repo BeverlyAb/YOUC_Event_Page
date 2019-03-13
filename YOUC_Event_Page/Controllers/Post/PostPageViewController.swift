@@ -16,7 +16,8 @@ protocol PostPageViewControllerDelegate : class {
 }
 
 
-class PostPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PostPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PickMapViewControllerDelegate {
+    
     
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
@@ -27,7 +28,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
 
     @IBOutlet weak var dateValueField: UITextField!
     var location : CLLocation!
-    
+    var lat : NSNumber!
+    var long : NSNumber!
     
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Events")
@@ -35,7 +37,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         post["author"] = PFUser.current()!
         post["eventName"] = eventNameField.text!
         post["description"] = descriptionField.text!
-       // post["location"] =
+        post["lat"] = lat!
+        post["long"] = long!
         post["date"] = dateValueField.text!
         let imageData = coverView.image!.pngData()
         let file = PFFileObject(data: imageData!)
@@ -60,7 +63,10 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         dateValueField.text = dateFormatter.string(from: (sender as AnyObject).date)
     }
     //----------------------Location----------------------------------
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let pickMapViewController = segue.destination as! PickMapViewController
+        pickMapViewController.delegate = self
+    }
     
     //-----------------------Album Cover--------------------------------
 
@@ -96,6 +102,9 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
     }
     
-
+    func locationsPickedLocation(controller: PickMapViewController, latitude: NSNumber, longitude: NSNumber) {
+            lat = latitude
+            long = longitude
+    }
 
 }
