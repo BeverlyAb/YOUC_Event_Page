@@ -1,36 +1,48 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
   - Bolts/Tasks (1.9.0)
-  - MessageInputBar (0.4.1):
-    - MessageInputBar/Core (= 0.4.1)
-  - MessageInputBar/Core (0.4.1)
   - Parse (1.17.2):
     - Parse/Core (= 1.17.2)
   - Parse/Core (1.17.2):
     - Bolts/Tasks (~> 1.9)
 
 DEPENDENCIES:
+  - AFNetworking
   - AlamofireImage
-  - MessageInputBar
   - Parse
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Alamofire
     - AlamofireImage
     - Bolts
-    - MessageInputBar
     - Parse
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
 
-PODFILE CHECKSUM: 2c9fc2c7fd64d8ee0adac32da4a069240c0de6a2
+PODFILE CHECKSUM: a68a88a4807839f9865bd19c4042bcfa8efdc4d1
 
 COCOAPODS: 1.5.3
