@@ -28,7 +28,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     //holds the events
-    var currentEventImage: UIImageView!
+    var currentEventImage = UIImageView.init()
     var events = [PFObject]()
     var filteredEvents  = [PFObject]()
     
@@ -38,8 +38,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         searchTextField.layer.cornerRadius = 4
         searchTextField.clipsToBounds = true
 
-        //places mapview on UCI
-        setInitialLocation()
+        
         
         //DUMMY DATA---------------------
         //Test pin
@@ -48,26 +47,24 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //set button image
         mapButton.image = UIImage(named: "filter")
         
+        //places mapview on UCI
+        setInitialLocation()
+        
         //--------------------------------
     }
     
+    //hides navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let query = PFQuery(className: "Events")
-        query.includeKeys(["author", "description", "date", "eventName", "coverImage", "location"])
-        query.limit = 30
         
-        query.findObjectsInBackground { (events, error) in
-            if events != nil{
-                self.events = events!
-                self.populateEvents()
-                
-            }
-        }
-        
-    
-        
+        self.getEvents()
         
     }
     
@@ -93,41 +90,46 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 //                }
 //            }
             
-            if event["coverImage"] != nil{
-                let imageFile = event["coverImage"] as! PFFileObject
-                
-                let urlString = imageFile.url!
-                let url = URL(string: urlString)!
-                
-                do {
-                    let valid = try url.checkPromisedItemIsReachable()
-                    if valid{
-                        currentEventImage.af_setImage(withURL: url)
-                        print("GOOD IMAGE")
-                    }
-                }
-                catch{
-                    print("encountered invalid image")
-//                    currentEventImage.image = UIImage.init()
-                }
-                
-            }
-            
-            
-            
+//            if event["coverImage"] != nil{
+//                let imageFile = event["coverImage"] as! PFFileObject
+//
+//                let urlString = imageFile.url!
+//                let url = URL(string: urlString)!
+//
+//
+//                if currentEventImage != nil{
+//                    currentEventImage.af_setImage(withURL: url)
+//                    print("success")
+//                }
+//                else{
+//                    print("AA")
+//                }
+//
+//
+//            }
+//            print("adding pin")
             addPin(lat: latitude , long: longitude, title: title)
 
 
         }
     }
     
-    //hides navigation bar
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        self.tabBarController?.tabBar.isHidden = false
-
+    func getEvents(){
+        let query = PFQuery(className: "Events")
+        query.includeKeys(["author", "description", "date", "eventName", "coverImage", "location"])
+        query.limit = 30
+        
+        query.findObjectsInBackground { (events, error) in
+            if events != nil{
+                self.events = events!
+                self.populateEvents()
+                self.setInitialLocation()
+            }
+        }
     }
+    
+    
+    
     
     //Triggered when the filter/map button is pressed
     @IBAction func mapButtonPressed(_ sender: Any) {
@@ -180,6 +182,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //custom pins
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
+        print("???")
         let reuseID = "annotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
         //add content to the view
@@ -197,7 +200,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //TODO - put in image of the post
 //        print("event image: ", eventImage)
         
-        imageView.image = currentEventImage?.image ?? UIImage.init()
+        imageView.image = currentEventImage.image
         return annotationView
         
     }
