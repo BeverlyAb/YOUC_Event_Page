@@ -102,8 +102,13 @@ extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {
         // Lat and lng of venue selected
         let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
         let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
-        let writtenAddr = venue.value(forKeyPath: "location.address") as! String
+        //var writtenAddr = venue.value(forKeyPath: "location.address") as! String
+        let street  = venue.value(forKeyPath: "location.address") as! String
+        let city = venue.value(forKeyPath: "location.city") as! String
+        let state = venue.value(forKeyPath: "location.state") as! String
+        let postal = venue.value(forKeyPath: "location.postalCode") as! String
         
+        let writtenAddr = street + " " + city + ", " + state + " " + postal
         // Set the latitude and longitude of the venue and send it to the protocol
         delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, addr : writtenAddr)
         // Return to the PhotoMapViewController with the lat and lng of venue

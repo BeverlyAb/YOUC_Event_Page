@@ -62,8 +62,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     //-----------------------All data filled? (blank img ok)-------------------------
     func dataChecker()->Bool{
         return (    PFUser.current() != nil &&
-                    eventNameField.text != nil &&
-                    descriptionField.text != nil &&
+                    eventNameField.text! != "" &&
+                    descriptionField.text != "" &&
                     lat != nil &&
                     long != nil)
     }
@@ -133,5 +133,12 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert,animated: true, completion: nil)
+    }
+    
+    //----------------------optionals----------------
+    
+    @IBAction func onTagButton(_ sender: Any) {
+        createAlert(title: "Slow Your Roll!", message: "Tags Coming Soon!")
+       // self.performSegue(withIdentifier: "postToTag", sender: self)
     }
 }
