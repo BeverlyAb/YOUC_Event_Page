@@ -109,6 +109,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
             
             cell.EventImage.af_setImage(withURL: url)
         }
+    
         
         
         return cell

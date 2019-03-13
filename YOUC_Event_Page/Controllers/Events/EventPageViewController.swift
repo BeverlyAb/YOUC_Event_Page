@@ -33,15 +33,26 @@ class EventPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.eventDescriptionLabel.text = event["description"] as? String
+        self.organizationNameLabel.text = event["author"] as? String
+        self.eventNameLabel.text = event["eventName"] as? String
+        
+        if event["coverImage"] != nil{
+            let imageFile = event["coverImage"] as! PFFileObject
+            
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            self.eventImageView.af_setImage(withURL: url)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         
-        self.eventDescriptionLabel.text = event["description"] as? String
-        self.organizationNameLabel.text = event["author"] as? String
-        self.eventNameLabel.text = event["eventName"] as? String
+        
         
         
         
