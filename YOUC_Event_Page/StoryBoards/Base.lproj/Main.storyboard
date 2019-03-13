@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lr-wV-bDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6044" y="1703.2983508245879"/>
+            <point key="canvasLocation" x="5105" y="1704"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="HeZ-v6-cxV">
@@ -605,7 +605,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4168.8000000000002" y="1900.2998500749627"/>
+            <point key="canvasLocation" x="3229.5999999999999" y="1900.2998500749627"/>
         </scene>
         <!--Profile Camera View Controller-->
         <scene sceneID="1Iu-ti-IWn">
@@ -663,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxy-jC-lo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="2003.7481259370315"/>
+            <point key="canvasLocation" x="1273" y="2004"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LWD-nL-6ND">
@@ -675,7 +675,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dhO-he-O9z" kind="relationship" relationship="viewControllers" id="NEa-s3-brA"/>
+                        <segue destination="MQP-pn-EUs" kind="relationship" relationship="viewControllers" id="NEa-s3-brA"/>
                         <segue destination="aee-yI-2Kn" kind="relationship" relationship="viewControllers" id="tvx-Au-Dmh"/>
                         <segue destination="tPf-KT-e2f" kind="relationship" relationship="viewControllers" id="8yd-t1-t1T"/>
                     </connections>
@@ -719,7 +719,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0w-1K-I33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3208.8000000000002" y="1901.1994002998501"/>
+            <point key="canvasLocation" x="2270" y="1902"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="6JS-1N-vAr">
@@ -733,7 +733,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzA-wu-le4">
-                                <rect key="frame" x="10" y="71" width="355" height="40"/>
+                                <rect key="frame" x="10" y="27" width="355" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter" translatesAutoresizingMaskIntoConstraints="NO" id="Ajl-RN-X7K">
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="40"/>
@@ -756,7 +756,7 @@
                                         <connections>
                                             <action selector="beginSearching:" destination="MQP-pn-EUs" eventType="editingDidBegin" id="sPt-Iq-vy6"/>
                                             <action selector="searchBar:" destination="2OX-8T-oaF" eventType="editingDidEnd" id="q94-Kb-3zz"/>
-                                            <segue destination="KZy-gk-ApK" kind="show" identifier="beginSearch" id="tLA-i8-4rp"/>
+                                            <segue destination="KZy-gk-ApK" kind="presentation" identifier="beginSearch" id="8r0-Xr-Yuo"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -774,7 +774,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="59T-Dd-4TV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="da8-8c-qpc"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="sw9-qO-eGG"/>
                     <connections>
                         <outlet property="mapButton" destination="Ajl-RN-X7K" id="w1M-VY-INu"/>
                         <outlet property="mapView" destination="XYO-xs-73m" id="kbq-fH-I7j"/>
@@ -789,7 +789,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-186" y="2306"/>
+            <point key="canvasLocation" x="-186" y="1901"/>
         </scene>
         <!--Map Events View Controller-->
         <scene sceneID="hLm-W5-j0D">
@@ -800,7 +800,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xM0-uE-3ed">
-                                <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="70" id="YWo-KP-9dt" customClass="MapEventsCell" customModule="YOUC_Event_Page" customModuleProvider="target">
@@ -845,7 +845,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdj-wT-C3n">
-                                <rect key="frame" x="10" y="71" width="355" height="40"/>
+                                <rect key="frame" x="10" y="27" width="355" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backarrow" translatesAutoresizingMaskIntoConstraints="NO" id="YNQ-pl-IHv">
                                         <rect key="frame" x="0.0" y="0.0" width="49" height="40"/>
@@ -893,10 +893,11 @@
                 <tapGestureRecognizer id="7c1-yO-gUQ" userLabel="back">
                     <connections>
                         <action selector="goBack:" destination="KZy-gk-ApK" id="VXP-0f-6ED"/>
+                        <segue destination="MQP-pn-EUs" kind="presentation" identifier="goBack" modalTransitionStyle="coverVertical" id="oRX-yu-QFb"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-186" y="3005"/>
+            <point key="canvasLocation" x="-1063" y="2741"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="9pl-N0-rgy">
@@ -1170,12 +1171,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1Q-pC-EUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5284" y="1853.9730134932536"/>
+            <point key="canvasLocation" x="4345" y="1854"/>
         </scene>
         <!--Event Page View Controller-->
         <scene sceneID="12G-3S-sjD">
             <objects>
-                <viewController id="xIT-s3-uwf" customClass="EventPageViewController" customModule="YOUC_Event_Page" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xIT-s3-uwf" customClass="EventPageViewController" customModule="YOUCEvent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fC8-6e-f2N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1188,7 +1189,7 @@
                                 <rect key="frame" x="16" y="261" width="146" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Eb-tVp" customClass="YOUCGoingButton" customModule="YOUC_Event_Page" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Eb-tVp" customClass="YOUCGoingButton" customModule="YOUCEvent" customModuleProvider="target">
                                 <rect key="frame" x="16" y="413" width="163" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -1197,7 +1198,7 @@
                                     <action selector="onGoingPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="m9q-mN-6Xz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-lP-x6e" customClass="YOUCInterestedButton" customModule="YOUC_Event_Page" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-lP-x6e" customClass="YOUCInterestedButton" customModule="YOUCEvent" customModuleProvider="target">
                                 <rect key="frame" x="190" y="413" width="169" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -1246,25 +1247,6 @@
             </objects>
             <point key="canvasLocation" x="1324" y="2911"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ngE-k1-N21">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dhO-he-O9z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="sw9-qO-eGG"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dh3-fi-P0f">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MQP-pn-EUs" kind="relationship" relationship="rootViewController" id="eC1-Bb-G1S"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OTz-V0-EHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-186" y="1619"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Minimalist-Wallpaper-24-1620-x-2880" width="1620" height="2880"/>
@@ -1278,6 +1260,7 @@
         <image name="sample_org_image" width="188" height="188"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="NEa-s3-brA"/>
         <segue reference="p0x-H5-qUv"/>
         <segue reference="MR7-vH-8dz"/>
         <segue reference="KOM-zy-sPT"/>
