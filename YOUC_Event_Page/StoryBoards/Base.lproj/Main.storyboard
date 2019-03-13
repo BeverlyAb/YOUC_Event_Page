@@ -820,7 +820,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ice_cream_man" translatesAutoresizingMaskIntoConstraints="NO" id="D9W-Nn-gpx">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D9W-Nn-gpx">
                                                     <rect key="frame" x="7" y="10" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="pmv-ZJ-3ey"/>
@@ -1328,7 +1328,6 @@
         <image name="Teal-Background" width="375" height="211"/>
         <image name="backarrow" width="960" height="720"/>
         <image name="filter" width="960" height="720"/>
-        <image name="ice_cream_man" width="199" height="371"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="profile_tab" width="25" height="25"/>
         <image name="sample_event_image" width="368.6400146484375" height="245.8800048828125"/>

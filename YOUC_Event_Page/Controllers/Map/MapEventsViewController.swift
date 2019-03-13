@@ -26,7 +26,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     
 //    var filteredData: [String]!
     
-    var events: [PFObject]!
+    var events = [PFObject]()
     var filteredEvents: [PFObject]!
     
     
@@ -44,12 +44,15 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         
         query.findObjectsInBackground { (events, error) in
             if events != nil{
-                self.events = events
+                self.events = events!
                 self.filteredEvents = events
                 print(self.filteredEvents)
                 self.tableView.reloadData()
             }
         }
+        
+        
+        
         
         //makes the user ready to edit the text field
         self.searchBar.becomeFirstResponder()
@@ -74,6 +77,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         
     }
     
+    //USER IS TYPING
     @IBAction func activeSearching(_ sender: Any) {
         
         filteredEvents = searchBar.text?.isEmpty ?? true ? events : events.filter { (item: PFObject) -> Bool in
@@ -84,20 +88,34 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         tableView.reloadData()
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredEvents?.count ?? 0
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! MapEventsCell
         
-        cell.EventName.text = filteredEvents[indexPath.row]["eventName"] as! String
+        let event = filteredEvents[indexPath.row]
+        
+        cell.EventName.text = event["eventName"] as? String
+        
+        
+        if event["coverImage"] != nil{
+            let imageFile = event["coverImage"] as! PFFileObject
+            
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+            
+            cell.EventImage.af_setImage(withURL: url)
+        }
+        
+        
         return cell
     }
 
     
+    //PREPARES FOR SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let cell = sender as! UITableViewCell
