@@ -493,7 +493,7 @@
                                 <rect key="frame" x="-15" y="259" width="390" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Trd-Eu-v4Q"/>
+                                    <constraint firstAttribute="width" constant="390" id="gxv-hZ-HNq"/>
                                 </constraints>
                                 <color key="separatorColor" red="0.10445113089999999" green="0.9607392132" blue="0.86268929429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
