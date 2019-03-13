@@ -34,27 +34,40 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Events")
 
-        post["author"] = PFUser.current()!
-        post["eventName"] = eventNameField.text!
-        post["description"] = descriptionField.text!
-        post["lat"] = lat!
-        post["long"] = long!
-        post["date"] = dateValueField.text!
-        let imageData = coverView.image!.pngData()
-        let file = PFFileObject(data: imageData!)
-        post["coverImage"] = file
-        //post["tags"] = array of strings
+        if (dataChecker()){
+            post["author"] = PFUser.current()!
+            post["eventName"] = eventNameField.text!
+            post["description"] = descriptionField.text!
+            post["lat"] = lat!
+            post["long"] = long!
+            post["date"] = dateValueField.text!
+            let imageData = coverView.image!.pngData()
+            let file = PFFileObject(data: imageData!)
+            post["coverImage"] = file
+            //post["tags"] = array of strings
 
-        post.saveInBackground{(success, error) in
-            if (success){
-                self.dismiss(animated: true, completion: nil)
-                print("saved")
-            }else {
-                print("fail")
-            }
+            post.saveInBackground{(success, error) in
+                if (success){
+                    self.dismiss(animated: true, completion: nil)
+                    print("saved")
+                }else {
+                    self.createAlert(title: "Uh Oh,", message: "Post could not be saved")
+                }
 
+                }
+        } else {
+            self.createAlert(title: "Uh Oh,", message: "Event, Date, Description, & Location must be filled")
         }
     }
+    //-----------------------All data filled? (blank img ok)-------------------------
+    func dataChecker()->Bool{
+        return (    PFUser.current() != nil &&
+                    eventNameField.text != nil &&
+                    descriptionField.text != nil &&
+                    lat != nil &&
+                    long != nil)
+    }
+    
     //-----------------------Date--------------------------------------
     
     @IBAction func datePickerChanged(_ sender: Any) {
@@ -102,9 +115,18 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
     }
     
+    //save location points from segue
     func locationsPickedLocation(controller: PickMapViewController, latitude: NSNumber, longitude: NSNumber) {
             lat = latitude
             long = longitude
     }
 
+    //-------------------------error screen-------------------------
+    func createAlert(title:String, message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert,animated: true, completion: nil)
+    }
 }
