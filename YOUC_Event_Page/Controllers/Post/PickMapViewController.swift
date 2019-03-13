@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PickMapViewControllerDelegate : class {
-    func locationsPickedLocation(controller: PickMapViewController, latitude: NSNumber, longitude: NSNumber)
+    func locationsPickedLocation(controller: PickMapViewController, latitude: NSNumber, longitude: NSNumber, addr : String)
 }
 
 class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UISearchBarDelegate {
@@ -36,10 +36,6 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
          self.dismiss(animated: true, completion: nil)
     }
     
-    //send location values back
-    @IBAction func onSaveButton(_ sender: Any) {
-       // performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-    }
     
     //-------------------search bar stuff------------
     func fetchLocations(_ query: String, near: String = "Irvine") {
@@ -106,12 +102,10 @@ extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {
         // Lat and lng of venue selected
         let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
         let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
+        let writtenAddr = venue.value(forKeyPath: "location.address") as! String
         
-        
-        
-        /* ----- TODO ----- */
         // Set the latitude and longitude of the venue and send it to the protocol
-        delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng)
+        delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, addr : writtenAddr)
         // Return to the PhotoMapViewController with the lat and lng of venue
         navigationController?.popViewController(animated: true)
         

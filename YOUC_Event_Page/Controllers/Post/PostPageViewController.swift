@@ -19,9 +19,10 @@ protocol PostPageViewControllerDelegate : class {
 class PostPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PickMapViewControllerDelegate {
     
     
+    @IBOutlet weak var locationFieldLabel: UILabel!
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
-    @IBOutlet weak var locationField: UITextField!
+    @IBOutlet weak var locationFieldButton: UIButton!
     weak var delegate : PostPageViewControllerDelegate!
     
     @IBOutlet weak var coverView: UIImageView!
@@ -112,12 +113,17 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationFieldLabel.isHidden = true
     }
     
     //save location points from segue
-    func locationsPickedLocation(controller: PickMapViewController, latitude: NSNumber, longitude: NSNumber) {
+    func locationsPickedLocation(controller: PickMapViewController, latitude: NSNumber, longitude: NSNumber,
+                                 addr : String) {
             lat = Double(truncating: latitude)
             long = Double(truncating: longitude)
+            locationFieldButton.isHidden = true
+            locationFieldLabel.text = addr
+            locationFieldLabel.isHidden = false
     }
 
     //-------------------------error screen-------------------------
