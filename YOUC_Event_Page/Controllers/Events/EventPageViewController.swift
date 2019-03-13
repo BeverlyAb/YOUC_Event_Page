@@ -38,7 +38,7 @@ class EventPageViewController: UIViewController {
         let user = event["author"] as! PFUser
         
         self.eventDescriptionLabel.text = event["description"] as? String
-        self.organizationNameLabel.text = user["organization_name"] as? String
+        self.organizationNameLabel.text = event["organization_name"] as? String
         self.eventNameLabel.text = event["eventName"] as? String
         
         self.dataLabel.text = event["date"] as! String

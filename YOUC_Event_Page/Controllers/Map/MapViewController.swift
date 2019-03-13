@@ -24,12 +24,11 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBOutlet weak var mapButton: UIImageView!
     
-    var eventImage: UIImage!
-    var ImageArray: [UIImage] = []
     
     
     
     //holds the events
+    var currentEventImage: UIImageView!
     var events = [PFObject]()
     var filteredEvents  = [PFObject]()
     
@@ -93,6 +92,28 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 //                    }
 //                }
 //            }
+            
+            if event["coverImage"] != nil{
+                let imageFile = event["coverImage"] as! PFFileObject
+                
+                let urlString = imageFile.url!
+                let url = URL(string: urlString)!
+                
+                do {
+                    let valid = try url.checkPromisedItemIsReachable()
+                    if valid{
+                        currentEventImage.af_setImage(withURL: url)
+                        print("GOOD IMAGE")
+                    }
+                }
+                catch{
+                    print("encountered invalid image")
+//                    currentEventImage.image = UIImage.init()
+                }
+                
+            }
+            
+            
             
             addPin(lat: latitude , long: longitude, title: title)
 
@@ -176,7 +197,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //TODO - put in image of the post
 //        print("event image: ", eventImage)
         
-        imageView.image = eventImage
+        imageView.image = currentEventImage?.image ?? UIImage.init()
         return annotationView
         
     }
