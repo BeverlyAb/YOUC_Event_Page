@@ -54,30 +54,38 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "Events")
-        query.includeKeys(["author", "description", "date", "eventName", "coverImage"])
+        query.includeKeys(["author", "description", "date", "eventName", "coverImage", "location"])
         query.limit = 30
         
         query.findObjectsInBackground { (events, error) in
             if events != nil{
                 self.events = events!
-                print(self.events)
+                self.populateEvents()
             }
         }
         
+    
         
+        
+    }
+    
+    func populateEvents(){
+        
+        var location: PFGeoPoint = PFGeoPoint()
         for event in self.events{
             
-            let location = event["location"] as? [PFGeoPoint] ?? [PFGeoPoint.init(latitude: 33.648196, longitude: -117.848940)]
+            location = event["location"] as? PFGeoPoint ?? PFGeoPoint.init(latitude: 33.648196, longitude: -117.848940)
             
-            print(location)
+            let latitude: CLLocationDegrees = location.latitude
+            let longitude: CLLocationDegrees  = location.longitude
             
-            
-//            addPin(lat: , long: <#T##CLLocationDegrees#>, title: <#T##String#>)
-            
-            
+            let title = event["eventName"] as! String
+
+
+            addPin(lat: latitude , long: longitude, title: title)
+
+
         }
-        
-        
     }
     
     //hides navigation bar
