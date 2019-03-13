@@ -489,22 +489,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2yr-Xh-cYo">
-                                <rect key="frame" x="0.0" y="259" width="375" height="408"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2yr-Xh-cYo">
+                                <rect key="frame" x="-15" y="259" width="390" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="Trd-Eu-v4Q"/>
                                 </constraints>
+                                <color key="separatorColor" red="0.10445113089999999" green="0.9607392132" blue="0.86268929429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoingEventsTableViewCell" rowHeight="183" id="qsa-kL-alm" customClass="GoingEventsTableViewCell" customModule="YOUC_Event_Page" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="183"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="183"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qsa-kL-alm" id="Fdh-ns-CeR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="182.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="182.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-zf-ZsW">
-                                                    <rect key="frame" x="17" y="13" width="130" height="23"/>
+                                                    <rect key="frame" x="30" y="13" width="130" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="yhi-7U-Szb"/>
                                                     </constraints>
@@ -513,7 +514,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi5-yt-xLY">
-                                                    <rect key="frame" x="170" y="13" width="190" height="21"/>
+                                                    <rect key="frame" x="183" y="13" width="190" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="190" id="7Yv-YK-FeB"/>
                                                         <constraint firstAttribute="height" constant="21" id="mbO-zC-EOb"/>
@@ -523,7 +524,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nB-Vz-TYW">
-                                                    <rect key="frame" x="20" y="46" width="345" height="20.5"/>
+                                                    <rect key="frame" x="30" y="46" width="73" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -533,13 +534,13 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="vi5-yt-xLY" secondAttribute="trailing" id="3Lx-ma-ZXu"/>
                                                 <constraint firstItem="9nB-Vz-TYW" firstAttribute="trailing" secondItem="Fdh-ns-CeR" secondAttribute="trailingMargin" constant="5" id="4Cz-bN-6OG"/>
                                                 <constraint firstItem="9nB-Vz-TYW" firstAttribute="top" secondItem="2Aq-zf-ZsW" secondAttribute="bottom" constant="10" id="DPf-ue-FTL"/>
-                                                <constraint firstItem="9nB-Vz-TYW" firstAttribute="leading" secondItem="Fdh-ns-CeR" secondAttribute="leadingMargin" constant="5" id="EQU-QX-20v"/>
+                                                <constraint firstItem="9nB-Vz-TYW" firstAttribute="leading" secondItem="Fdh-ns-CeR" secondAttribute="leadingMargin" constant="15" id="EQU-QX-20v"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="9nB-Vz-TYW" secondAttribute="bottom" constant="21" id="LcH-sr-Xbd"/>
                                                 <constraint firstItem="vi5-yt-xLY" firstAttribute="leading" secondItem="2Aq-zf-ZsW" secondAttribute="trailing" constant="23" id="Ma1-ce-GsC"/>
                                                 <constraint firstItem="vi5-yt-xLY" firstAttribute="top" secondItem="Fdh-ns-CeR" secondAttribute="topMargin" constant="2" id="PE1-FM-UHt"/>
                                                 <constraint firstItem="2Aq-zf-ZsW" firstAttribute="top" secondItem="Fdh-ns-CeR" secondAttribute="topMargin" constant="2" id="Q5l-ug-XvT"/>
                                                 <constraint firstItem="9nB-Vz-TYW" firstAttribute="top" secondItem="vi5-yt-xLY" secondAttribute="bottom" constant="12" id="SNV-W2-BuE"/>
-                                                <constraint firstItem="2Aq-zf-ZsW" firstAttribute="leading" secondItem="Fdh-ns-CeR" secondAttribute="leadingMargin" constant="2" id="TOm-Gp-mci"/>
+                                                <constraint firstItem="2Aq-zf-ZsW" firstAttribute="leading" secondItem="Fdh-ns-CeR" secondAttribute="leadingMargin" constant="15" id="TOm-Gp-mci"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -578,7 +579,7 @@
                             <constraint firstAttribute="bottom" secondItem="2yr-Xh-cYo" secondAttribute="bottom" id="jSe-nZ-7j8"/>
                             <constraint firstItem="dYa-ap-Q0O" firstAttribute="leading" secondItem="bmb-H2-91K" secondAttribute="trailing" constant="139" id="jaO-xX-e6E"/>
                             <constraint firstItem="U9J-tr-ZkS" firstAttribute="top" secondItem="uWX-Ow-1BJ" secondAttribute="top" id="ozl-QG-qLy"/>
-                            <constraint firstItem="2yr-Xh-cYo" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" id="qrF-lP-1NL"/>
+                            <constraint firstItem="2yr-Xh-cYo" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="-15" id="qrF-lP-1NL"/>
                             <constraint firstItem="uWX-Ow-1BJ" firstAttribute="trailing" secondItem="dYa-ap-Q0O" secondAttribute="trailing" constant="36.5" id="yl9-Lt-9Sb"/>
                             <constraint firstItem="U9J-tr-ZkS" firstAttribute="trailing" secondItem="uWX-Ow-1BJ" secondAttribute="trailing" id="zCW-hR-d4I"/>
                         </constraints>
