@@ -31,12 +31,24 @@ class ProfileCameraViewController: UIViewController, UIImagePickerControllerDele
         
         user.saveInBackground { (success, error) in
             if success {
-                self.dismiss(animated: true, completion: nil)
+                self.createAlert(title: "SAVED!", message: "Your image has been saved!")
+//                self.dismiss(animated: true, completion: nil)
                 print("saved image!")
             } else {
                 print("error!")
             }
         }
+    }
+    
+    func createAlert( title: String, message: String )
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     

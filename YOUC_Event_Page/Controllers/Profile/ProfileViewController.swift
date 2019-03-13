@@ -44,9 +44,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         eventsCountLabel.text = String(going_events.count)
         getEvents()
         
-        
-        
     }
+    
+    @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){}
+
     
     func setImage() {
         let user = PFUser.current()!
