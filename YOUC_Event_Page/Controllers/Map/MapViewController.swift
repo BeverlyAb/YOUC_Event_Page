@@ -56,18 +56,18 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         ]
         
         
-        // Setup the Search Controller
-        
-        //allows the class to be informed as text changes within the UISearchbar
-        searchController.searchResultsUpdater = self
-        //Set to false because you dont want the view to be obscured
-        searchController.obscuresBackgroundDuringPresentation = false
-        //Add title to the search bar
-        searchController.searchBar.placeholder = "Search Events"
-        //Make interface builder compatable with UIsearchController
-        navigationItem.searchController = searchController
-        //makes sure the search bar disappears if the user goes to another view controller
-        definesPresentationContext = true
+//        // Setup the Search Controller
+//        
+//        //allows the class to be informed as text changes within the UISearchbar
+//        searchController.searchResultsUpdater = self
+//        //Set to false because you dont want the view to be obscured
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        //Add title to the search bar
+//        searchController.searchBar.placeholder = "Search Events"
+//        //Make interface builder compatable with UIsearchController
+//        navigationItem.searchController = searchController
+//        //makes sure the search bar disappears if the user goes to another view controller
+//        definesPresentationContext = true
 
     }
     
@@ -82,7 +82,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
 
     @IBAction func beginSearching(_ sender: Any) {
-        performSegue(withIdentifier: "beginSearch", sender: nil)
         
         self.searchTextField.endEditing(true)
         

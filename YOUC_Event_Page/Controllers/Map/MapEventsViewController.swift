@@ -35,6 +35,8 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         
         filteredData = data
         self.searchBar.becomeFirstResponder()
+        navigationItem.hidesBackButton = true
+
         
 
         // Do any additional setup after loading the view.
