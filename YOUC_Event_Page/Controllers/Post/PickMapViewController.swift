@@ -39,7 +39,11 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
     @objc func onRefresh(_ refreshControl: UIRefreshControl){
         results = []
         self.tableView.reloadData()
-        fetchLocations("Irvine")
+        if (searchBar.text! != ""){
+            fetchLocations(searchBar.text!)
+        } else{
+            fetchLocations("Irvine")
+        }
         refreshController.endRefreshing()
     }
     
@@ -51,7 +55,7 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     //-------------------search bar stuff------------
-   func fetchLocations(_ query: String, near: String = "Irvine") {
+    @objc func fetchLocations(_ query: String, near: String = "Irvine") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
         let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&near=\(near),CA&query=\(query)"
         
