@@ -23,13 +23,26 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
     let CLIENT_SECRET = "W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU"
 
     
+    //refresh
+    let refreshController = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        
+        refreshController.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshController
     }
+    //refresh
+    @objc func onRefresh(_ refreshControl: UIRefreshControl){
+        results = []
+        self.tableView.reloadData()
+        fetchLocations("Irvine")
+        refreshController.endRefreshing()
+    }
+    
     
     //dismiss
     @IBAction func onBackButton(_ sender: Any) {
@@ -38,7 +51,7 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     //-------------------search bar stuff------------
-    func fetchLocations(_ query: String, near: String = "Irvine") {
+   func fetchLocations(_ query: String, near: String = "Irvine") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"
         let queryString = "client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20141020&near=\(near),CA&query=\(query)"
         
@@ -58,8 +71,8 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
                                                                     with: data, options:[]) as? NSDictionary {
                                                                     NSLog("response: \(responseDictionary)")
                                                                     self.results = responseDictionary.value(forKeyPath: "response.venues") as! NSArray
+                                                                
                                                                     self.tableView.reloadData()
-                                                                    
                                                                 }
                                                             }
         });
