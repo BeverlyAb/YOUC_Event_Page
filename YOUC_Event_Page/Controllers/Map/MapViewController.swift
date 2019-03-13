@@ -24,7 +24,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var mapButton: UIImageView!
     
     
-    let searchController = UISearchController(searchResultsController: nil)
     
     
     //holds the events
@@ -55,19 +54,15 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         "Event 3"
         ]
         
-        
-        // Setup the Search Controller
-        
-        //allows the class to be informed as text changes within the UISearchbar
-        searchController.searchResultsUpdater = self
-        //Set to false because you dont want the view to be obscured
-        searchController.obscuresBackgroundDuringPresentation = false
-        //Add title to the search bar
-        searchController.searchBar.placeholder = "Search Events"
-        //Make interface builder compatable with UIsearchController
-        navigationItem.searchController = searchController
-        //makes sure the search bar disappears if the user goes to another view controller
-        definesPresentationContext = true
+
+
+    }
+    
+    //hides navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
 
     }
     
@@ -125,12 +120,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     
-    //Search bar stuff below
-    
-    func searchBarIsEmpty() -> Bool {
-        // Returns true if the text is empty or nil
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
     
     //custom pins
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -175,12 +164,4 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
 
     
-}
-
-//Allows MapViewcontroller to respond to the search bar
-extension MapViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO
-    }
 }

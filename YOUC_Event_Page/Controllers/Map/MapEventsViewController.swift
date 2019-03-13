@@ -36,13 +36,22 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         filteredData = data
         self.searchBar.becomeFirstResponder()
         
-
+        
         // Do any additional setup after loading the view.
     }
     
+    //hides navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    
     //pressed back button
     @IBAction func goBack(_ sender: Any) {
-        performSegue(withIdentifier: "goBack", sender: nil)
+//        performSegue(withIdentifier: "goBack", sender: nil)
+        dismiss(animated: true, completion: nil) 
         
     }
     
