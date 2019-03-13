@@ -28,8 +28,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
 
     @IBOutlet weak var dateValueField: UITextField!
     var location : CLLocation!
-    var lat : NSNumber!
-    var long : NSNumber!
+    var lat : Double!
+    var long : Double!
     
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Events")
@@ -38,8 +38,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
             post["author"] = PFUser.current()!
             post["eventName"] = eventNameField.text!
             post["description"] = descriptionField.text!
-            post["lat"] = lat!
-            post["long"] = long!
+            post["location"] =  PFGeoPoint(latitude: lat, longitude: long)
             post["date"] = dateValueField.text!
             let imageData = coverView.image!.pngData()
             let file = PFFileObject(data: imageData!)
@@ -117,8 +116,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     
     //save location points from segue
     func locationsPickedLocation(controller: PickMapViewController, latitude: NSNumber, longitude: NSNumber) {
-            lat = latitude
-            long = longitude
+            lat = Double(truncating: latitude)
+            long = Double(truncating: longitude)
     }
 
     //-------------------------error screen-------------------------
