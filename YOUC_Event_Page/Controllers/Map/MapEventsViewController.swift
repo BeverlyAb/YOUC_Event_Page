@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import AlamofireImage
 
 class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
     
@@ -16,14 +18,16 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     @IBOutlet weak var tableView: UITableView!
     
     //Dummy data
-    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
-                "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
-                "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
-                "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
-                "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
+//    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
+//                "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
+//                "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
+//                "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
+//                "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
     
-    var filteredData: [String]!
+//    var filteredData: [String]!
     
+    var events: [PFObject]!
+    var filteredEvents: [PFObject]!
     
     
     override func viewDidLoad() {
@@ -33,7 +37,21 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         tableView.dataSource = self
         searchBar.delegate = self
         
-        filteredData = data
+        //Populate filered Events
+        let query = PFQuery(className: "Events")
+        query.includeKeys(["author", "description", "date", "eventName", "coverImage", "location"])
+        query.limit = 30
+        
+        query.findObjectsInBackground { (events, error) in
+            if events != nil{
+                self.events = events
+                self.filteredEvents = events
+                print(self.filteredEvents)
+                self.tableView.reloadData()
+            }
+        }
+        
+        //makes the user ready to edit the text field
         self.searchBar.becomeFirstResponder()
         
         
@@ -48,6 +66,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     }
     
     
+    
     //pressed back button
     @IBAction func goBack(_ sender: Any) {
 //        performSegue(withIdentifier: "goBack", sender: nil)
@@ -57,26 +76,41 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     
     @IBAction func activeSearching(_ sender: Any) {
         
-        filteredData = searchBar.text?.isEmpty ?? true ? data : data.filter { (item: String) -> Bool in
+        filteredEvents = searchBar.text?.isEmpty ?? true ? events : events.filter { (item: PFObject) -> Bool in
             // If dataItem matches the searchText, return true to include it
-            return item.range(of: searchBar.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil
+            return (item["eventName"] as! String).range(of: searchBar.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil
         }
         
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        return filteredEvents?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! MapEventsCell
         
-        cell.EventName.text = filteredData[indexPath.row]
-        
-        
+        cell.EventName.text = filteredEvents[indexPath.row]["eventName"] as! String
         return cell
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let event = events[indexPath.row]
+        
+        //Pass the selected movie to the details movies controller
+        let eventsPage = segue.destination as! EventPageViewController
+        
+        //There is a variable in the class that we want to send stuff to that we define here
+        eventsPage.event = event
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

@@ -789,7 +789,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-164" y="2970"/>
+            <point key="canvasLocation" x="-687" y="2986"/>
         </scene>
         <!--Map Events View Controller-->
         <scene sceneID="hLm-W5-j0D">
@@ -840,6 +840,7 @@
                                         <connections>
                                             <outlet property="EventImage" destination="D9W-Nn-gpx" id="Z1K-iV-Zoo"/>
                                             <outlet property="EventName" destination="VOw-Ig-tkT" id="94E-Yy-7O7"/>
+                                            <segue destination="xIT-s3-uwf" kind="presentation" id="D5f-cu-8vt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -896,7 +897,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1417" y="3263"/>
+            <point key="canvasLocation" x="-580" y="3777"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="9pl-N0-rgy">
@@ -1180,57 +1181,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample_event_image" translatesAutoresizingMaskIntoConstraints="NO" id="lXK-Mk-bql" userLabel="Event Image">
-                                <rect key="frame" x="0.0" y="20" width="375" height="299"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_event_image" translatesAutoresizingMaskIntoConstraints="NO" id="lXK-Mk-bql" userLabel="Event Image">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="245" id="AXz-5b-GJK"/>
+                                    <constraint firstAttribute="width" secondItem="lXK-Mk-bql" secondAttribute="height" multiplier="75:49" id="VcY-Fd-Cg1"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sample_org_image" translatesAutoresizingMaskIntoConstraints="NO" id="eET-mf-KdN" userLabel="Organization Image">
-                                <rect key="frame" x="16" y="261" width="146" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_org_image" translatesAutoresizingMaskIntoConstraints="NO" id="eET-mf-KdN" userLabel="Organization Image">
+                                <rect key="frame" x="15" y="173" width="146" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="PAE-85-lfm"/>
+                                    <constraint firstAttribute="width" constant="146" id="fb5-f1-mIt"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Eb-tVp" customClass="YOUCGoingButton" customModule="YOUC_Event_Page" customModuleProvider="target">
-                                <rect key="frame" x="16" y="413" width="163" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Go"/>
-                                <connections>
-                                    <action selector="onGoingPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="m9q-mN-6Xz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-lP-x6e" customClass="YOUCInterestedButton" customModule="YOUC_Event_Page" customModuleProvider="target">
-                                <rect key="frame" x="190" y="413" width="169" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Interested"/>
-                                <connections>
-                                    <action selector="onInterestedPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="z3b-Sa-LnD"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Porto's Fundraiser" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05a-dt-1xT" userLabel="Event Name">
-                                <rect key="frame" x="174" y="340" width="220" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Porto's Fundraiser" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05a-dt-1xT" userLabel="Event Name">
+                                <rect key="frame" x="179" y="262" width="190" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="dhL-zt-T9M"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Iz-zU7" userLabel="Event Description">
-                                <rect key="frame" x="15" y="582" width="344" height="138"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kababayan at UCI" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF1-uc-Pce" userLabel="Event Name">
+                                <rect key="frame" x="16" y="414" width="345" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="5QQ-Z8-oOW">
+                                <rect key="frame" x="33.5" y="342" width="308" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Eb-tVp" customClass="YOUCGoingButton" customModule="YOUC_Event_Page" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="Fnh-fi-Xwq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Go"/>
+                                        <connections>
+                                            <action selector="onGoingPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="m9q-mN-6Xz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-lP-x6e" customClass="YOUCInterestedButton" customModule="YOUC_Event_Page" customModuleProvider="target">
+                                        <rect key="frame" x="188" y="0.0" width="120" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="W8M-pJ-OxN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Interested"/>
+                                        <connections>
+                                            <action selector="onInterestedPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="z3b-Sa-LnD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="CL2-MP-cWy"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Iz-zU7" userLabel="Event Description">
+                                <rect key="frame" x="12" y="452" width="351" height="207"/>
                                 <string key="text">Hey y'all! If you're down for PACN, we'll be having another Porto's Ring Road Fundraiser TOMORROW (2/26) from 10am-2pm! Come by and get your cheese rolls and guava. 1 for $2 and 2 for $3!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kababayan at UCI" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF1-uc-Pce" userLabel="Event Name">
-                                <rect key="frame" x="16" y="506" width="251" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="eET-mf-KdN" firstAttribute="top" secondItem="9fr-P8-Nxu" secondAttribute="top" constant="153" id="9Jp-MO-wz2"/>
+                            <constraint firstItem="05a-dt-1xT" firstAttribute="leading" secondItem="eET-mf-KdN" secondAttribute="trailing" constant="18" id="Da2-mw-Q5D"/>
+                            <constraint firstItem="5QQ-Z8-oOW" firstAttribute="top" secondItem="eET-mf-KdN" secondAttribute="bottom" constant="25" id="LTY-s0-C2h"/>
+                            <constraint firstItem="5QQ-Z8-oOW" firstAttribute="centerX" secondItem="9fr-P8-Nxu" secondAttribute="centerX" id="Oot-NC-fmv"/>
+                            <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="05a-dt-1xT" secondAttribute="trailing" constant="6" id="SIA-FT-LVW"/>
+                            <constraint firstItem="lXK-Mk-bql" firstAttribute="trailing" secondItem="9fr-P8-Nxu" secondAttribute="trailing" id="UZY-qR-OzN"/>
+                            <constraint firstItem="9fr-P8-Nxu" firstAttribute="bottom" secondItem="pXP-Iz-zU7" secondAttribute="bottom" constant="8" id="WS6-f8-g6i"/>
+                            <constraint firstItem="lXK-Mk-bql" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" id="Zaa-ml-BeX"/>
+                            <constraint firstItem="05a-dt-1xT" firstAttribute="top" secondItem="lXK-Mk-bql" secondAttribute="bottom" constant="17" id="fSi-i4-VqO"/>
+                            <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="wF1-uc-Pce" secondAttribute="trailing" constant="14" id="j53-sc-n76"/>
+                            <constraint firstItem="pXP-Iz-zU7" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="12" id="kow-h3-pc0"/>
+                            <constraint firstItem="eET-mf-KdN" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="15" id="lGo-ln-6ql"/>
+                            <constraint firstItem="wF1-uc-Pce" firstAttribute="top" secondItem="5QQ-Z8-oOW" secondAttribute="bottom" constant="34" id="lVO-AM-M4D"/>
+                            <constraint firstItem="wF1-uc-Pce" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="16" id="lZh-my-sb6"/>
+                            <constraint firstItem="lXK-Mk-bql" firstAttribute="top" secondItem="fC8-6e-f2N" secondAttribute="top" id="qf8-1q-pLK"/>
+                            <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="pXP-Iz-zU7" secondAttribute="trailing" constant="12" id="uZd-Tf-jqg"/>
+                            <constraint firstItem="pXP-Iz-zU7" firstAttribute="top" secondItem="wF1-uc-Pce" secondAttribute="bottom" constant="8" id="vVX-5a-e0B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9fr-P8-Nxu"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="q5c-O2-H1N" appends="YES" id="WQz-xp-p8Z"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="eventDescriptionLabel" destination="pXP-Iz-zU7" id="YwD-uH-ebR"/>
@@ -1243,8 +1285,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q71-Tx-2Xx" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="q5c-O2-H1N" userLabel="SwipeRight">
+                    <connections>
+                        <action selector="swipeRight:" destination="xIT-s3-uwf" id="JQ0-43-tqL"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1324" y="2911"/>
+            <point key="canvasLocation" x="1324" y="2910.4947526236883"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9z2-gV-Eij">

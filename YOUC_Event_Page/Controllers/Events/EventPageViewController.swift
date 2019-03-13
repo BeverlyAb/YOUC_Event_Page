@@ -26,7 +26,8 @@ class EventPageViewController: UIViewController {
     var interestedPressed = false
     
     // Arrays to hold the events and the goingEvents
-    var events = [PFObject]()
+//    var events = [PFObject]()
+    var event: PFObject!
     var goingEvents = [PFObject]()
     var latestEvent: PFObject!
     
@@ -37,28 +38,40 @@ class EventPageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // Query to get the events
-        let query = PFQuery(className: "Events")
-        query.includeKey("author")
-        query.limit = 20
         
-        query.findObjectsInBackground { (events, error) in
-            if events != nil {
-                self.events = events!
-                
-                // ***** CURRENTLY SELF.EVENTS[0] since I don't have the event selected.
-                // Need to pass in the data from Derek's section
-                let event = self.events[0]
-                
-                self.eventDescriptionLabel.text = event["description"] as? String
-                self.organizationNameLabel.text = event["author"] as? String
-                self.eventNameLabel.text = event["eventName"] as? String
-                
-            }
-        }
+        self.eventDescriptionLabel.text = event["description"] as? String
+        self.organizationNameLabel.text = event["author"] as? String
+        self.eventNameLabel.text = event["eventName"] as? String
         
         
         
+//        // Query to get the events
+//        let query = PFQuery(className: "Events")
+//        query.includeKey("author")
+//        query.limit = 20
+//
+//        query.findObjectsInBackground { (events, error) in
+//            if events != nil {
+//                self.events = events!
+//
+//                // ***** CURRENTLY SELF.EVENTS[0] since I don't have the event selected.
+//                // Need to pass in the data from Derek's section
+//                let event = self.events[0]
+//
+//                self.eventDescriptionLabel.text = event["description"] as? String
+//                self.organizationNameLabel.text = event["author"] as? String
+//                self.eventNameLabel.text = event["eventName"] as? String
+//
+//            }
+//        }
+        
+        
+        
+    }
+    
+    
+    @IBAction func swipeRight(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -68,7 +81,7 @@ class EventPageViewController: UIViewController {
         
         if goingPressed {
             // Push the event onto Parse
-            let event = events[0]
+//            let event = events[0]
             
             let goingEvents = PFObject(className: "goingEvents")
             goingEvents["event"] = event
