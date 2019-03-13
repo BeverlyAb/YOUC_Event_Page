@@ -155,6 +155,7 @@
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="Minimalist-Wallpaper-24-1620-x-2880" translatesAutoresizingMaskIntoConstraints="NO" id="Czt-lb-MQT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.25094899535179138" green="0.25099846720695496" blue="0.25094583630561829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHH-FZ-gu8">
                                 <rect key="frame" x="15" y="233.5" width="345" height="200"/>
@@ -1213,6 +1214,7 @@
                                                 <constraint firstItem="FRt-Xc-10D" firstAttribute="top" secondItem="4MU-fh-rkx" secondAttribute="top" id="ZBW-30-PR0"/>
                                                 <constraint firstItem="Z5R-Mb-Lt0" firstAttribute="top" secondItem="4MU-fh-rkx" secondAttribute="top" id="aEc-bW-hDz"/>
                                                 <constraint firstItem="iWQ-kM-eE9" firstAttribute="top" secondItem="Z5R-Mb-Lt0" secondAttribute="bottom" constant="34" id="akz-mv-DaO"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FRt-Xc-10D" secondAttribute="bottom" constant="20" id="bld-40-gIU"/>
                                                 <constraint firstItem="iWQ-kM-eE9" firstAttribute="leading" secondItem="FRt-Xc-10D" secondAttribute="trailing" constant="30" id="gZh-AC-CZN"/>
                                                 <constraint firstItem="Z5R-Mb-Lt0" firstAttribute="leading" secondItem="FRt-Xc-10D" secondAttribute="trailing" constant="30" id="hfg-Fy-tml"/>
                                                 <constraint firstItem="FRt-Xc-10D" firstAttribute="leading" secondItem="4MU-fh-rkx" secondAttribute="leading" id="zmk-Ij-nE3"/>
