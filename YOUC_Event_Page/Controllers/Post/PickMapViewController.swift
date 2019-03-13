@@ -14,7 +14,7 @@ protocol PickMapViewControllerDelegate : class {
 
 class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UISearchBarDelegate {
     weak var delegate : PickMapViewControllerDelegate!
-   
+    let local = "Irvine"
     var results: NSArray = []
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -42,7 +42,7 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
         if (searchBar.text! != ""){
             fetchLocations(searchBar.text!)
         } else{
-            fetchLocations("Irvine")
+            fetchLocations(local)
         }
         refreshController.endRefreshing()
     }
@@ -113,6 +113,12 @@ extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {
     
     // What to do when a cell is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var street = ""
+        var city = ""
+        var state = ""
+        var postal = ""
+        
+        
         // This is the selected venue
         let venue = results[(indexPath as NSIndexPath).row] as! NSDictionary
         
@@ -120,11 +126,18 @@ extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {
         let lat = venue.value(forKeyPath: "location.lat") as! NSNumber
         let lng = venue.value(forKeyPath: "location.lng") as! NSNumber
         //var writtenAddr = venue.value(forKeyPath: "location.address") as! String
-        let street  = venue.value(forKeyPath: "location.address") as! String
-        let city = venue.value(forKeyPath: "location.city") as! String
-        let state = venue.value(forKeyPath: "location.state") as! String
-        let postal = venue.value(forKeyPath: "location.postalCode") as! String
-        
+        if addrChecker(venue: venue, keyString: "location.address"){
+            street  = venue.value(forKeyPath: "location.address") as! String
+        }
+        if addrChecker(venue: venue, keyString: "location.city"){
+            city = venue.value(forKeyPath: "location.city") as! String
+        }
+        if addrChecker(venue: venue, keyString: "location.state"){
+            state = venue.value(forKeyPath: "location.state") as! String
+        }
+        if addrChecker(venue: venue, keyString: "location.postalCode"){
+            postal = venue.value(forKeyPath: "location.postalCode") as! String
+        }
         let writtenAddr = street + " " + city + ", " + state + " " + postal
         // Set the latitude and longitude of the venue and send it to the protocol
         delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, addr : writtenAddr)
@@ -136,5 +149,13 @@ extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {
         
         print(latString + " " + lngString)
     }
-
+    //-------------------checks if venue val are not nil--------------------
+    func addrChecker(venue: NSDictionary, keyString : String)-> Bool{
+        if (venue.value(forKeyPath: keyString) as? String != nil &&
+            venue.value(forKeyPath: keyString) as! String != "" ){
+            return true
+        } else{
+            return false
+        }
+    }
 }
