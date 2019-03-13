@@ -9,6 +9,7 @@
 
 import UIKit
 import MapKit
+import Parse
 import AlamofireImage
 
 class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
@@ -27,8 +28,8 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     //holds the events
-    var events = [String]()
-    var filteredEvents  = [String]()
+    var events = [PFObject]()
+    var filteredEvents  = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,23 +40,44 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //places mapview on UCI
         setInitialLocation()
         
-        
+        //DUMMY DATA---------------------
         //Test pin
-        addPin(lat: 33.640495, long: -117.844296)
         mapView.delegate = self
         
         //set button image
         mapButton.image = UIImage(named: "filter")
         
-        //dummy data
-        events = [
-        "Event 1",
-        "Event 2",
-        "Event 3"
-        ]
+        //--------------------------------
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-
-
+        let query = PFQuery(className: "Events")
+        query.includeKeys(["author", "description", "date", "eventName", "coverImage"])
+        query.limit = 30
+        
+        query.findObjectsInBackground { (events, error) in
+            if events != nil{
+                self.events = events!
+                print(self.events)
+            }
+        }
+        
+        
+        for event in self.events{
+            
+            let location = event["location"] as? [PFGeoPoint] ?? [PFGeoPoint.init(latitude: 33.648196, longitude: -117.848940)]
+            
+            print(location)
+            
+            
+//            addPin(lat: , long: <#T##CLLocationDegrees#>, title: <#T##String#>)
+            
+            
+        }
+        
+        
     }
     
     //hides navigation bar
@@ -69,18 +91,16 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //Triggered when the filter/map button is pressed
     @IBAction func mapButtonPressed(_ sender: Any) {
         print("button pressed")
-        if mapButton.image == UIImage(named: "filter"){
-            print("filter pressed")
-        }
+//        if mapButton.image == UIImage(named: "filter"){
+//            print("filter pressed")
+//        }
         
     }
     
 
     @IBAction func beginSearching(_ sender: Any) {
         performSegue(withIdentifier: "beginSearch", sender: nil)
-        
         self.searchTextField.endEditing(true)
-        
         print("beginning search")
     }
     
@@ -90,31 +110,24 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         //Coordinates of UCI
         let mapCenter = CLLocationCoordinate2D(latitude: 33.640495, longitude: -117.844296)
-        
         //Set the scale of the mapView
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        
         //Creating the map object
         let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
-        
         mapView.setRegion(region, animated: false)
         
     }
     
     
     
-    func addPin(lat: CLLocationDegrees, long: CLLocationDegrees){
+    func addPin(lat: CLLocationDegrees, long: CLLocationDegrees, title: String){
         
         let annotation = MKPointAnnotation()
-        
         let locationCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        
         //describe the coordinates of the annotation
         annotation.coordinate = locationCoordinate
-        
         //attributes of the pin
-        annotation.title = "Test"
-        
+        annotation.title = title
         //add Annotation to Mapview
         mapView.addAnnotation(annotation)
     }
@@ -125,9 +138,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let reuseID = "annotation"
-        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
-        
         //add content to the view
         if (annotationView == nil){
             //if there is nothing on the view, then create the view
@@ -140,15 +151,9 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         //insert the picture into the annotationview
         let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
-        
         //TODO - put in image of the post
         imageView.image = UIImage.init()
-        
         return annotationView
-        
-        
-        
-        
     }
 
     
