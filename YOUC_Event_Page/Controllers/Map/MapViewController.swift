@@ -9,6 +9,7 @@
 
 import UIKit
 import MapKit
+import Parse
 import AlamofireImage
 
 class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
@@ -24,12 +25,12 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var mapButton: UIImageView!
     
     
-    let searchController = UISearchController(searchResultsController: nil)
     
     
     //holds the events
-    var events = [String]()
-    var filteredEvents  = [String]()
+    var currentEventImage = UIImageView.init()
+    var events = [PFObject]()
+    var filteredEvents  = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,55 +38,112 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         searchTextField.layer.cornerRadius = 4
         searchTextField.clipsToBounds = true
 
-        //places mapview on UCI
-        setInitialLocation()
         
         
+        //DUMMY DATA---------------------
         //Test pin
-        addPin(lat: 33.640495, long: -117.844296)
         mapView.delegate = self
         
         //set button image
         mapButton.image = UIImage(named: "filter")
         
-        //dummy data
-        events = [
-        "Event 1",
-        "Event 2",
-        "Event 3"
-        ]
+        //places mapview on UCI
+        setInitialLocation()
         
-        
-        // Setup the Search Controller
-        
-        //allows the class to be informed as text changes within the UISearchbar
-        searchController.searchResultsUpdater = self
-        //Set to false because you dont want the view to be obscured
-        searchController.obscuresBackgroundDuringPresentation = false
-        //Add title to the search bar
-        searchController.searchBar.placeholder = "Search Events"
-        //Make interface builder compatable with UIsearchController
-        navigationItem.searchController = searchController
-        //makes sure the search bar disappears if the user goes to another view controller
-        definesPresentationContext = true
-
+        //--------------------------------
     }
+    
+    //hides navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        self.getEvents()
+        
+    }
+    
+    func populateEvents(){
+        
+        var location: PFGeoPoint = PFGeoPoint()
+        for event in self.events{
+            
+            location = event["location"] as? PFGeoPoint ?? PFGeoPoint.init(latitude: 33.648196, longitude: -117.848940)
+            
+            let latitude: CLLocationDegrees = location.latitude
+            let longitude: CLLocationDegrees  = location.longitude
+            
+            let title = event["eventName"] as! String
+
+//            if let image = event.value(forKey: "coverImage")! as? PFFileObject ?? UIImage(named: "ice_cream_man"){
+//                image.getDataInBackground {
+//                    (imageData, error) in
+//                    if (error == nil){
+//                        let loadedImage = UIImage(data: imageData ?? Data.init())
+//                        self.ImageArray.append(loadedImage!)
+//                    }
+//                }
+//            }
+            
+//            if event["coverImage"] != nil{
+//                let imageFile = event["coverImage"] as! PFFileObject
+//
+//                let urlString = imageFile.url!
+//                let url = URL(string: urlString)!
+//
+//
+//                if currentEventImage != nil{
+//                    currentEventImage.af_setImage(withURL: url)
+//                    print("success")
+//                }
+//                else{
+//                    print("AA")
+//                }
+//
+//
+//            }
+//            print("adding pin")
+            addPin(lat: latitude , long: longitude, title: title)
+
+
+        }
+    }
+    
+    func getEvents(){
+        let query = PFQuery(className: "Events")
+        query.includeKeys(["author", "description", "date", "eventName", "coverImage", "location"])
+        query.limit = 30
+        
+        query.findObjectsInBackground { (events, error) in
+            if events != nil{
+                self.events = events!
+                self.populateEvents()
+                self.setInitialLocation()
+            }
+        }
+    }
+    
+    
+    
     
     //Triggered when the filter/map button is pressed
     @IBAction func mapButtonPressed(_ sender: Any) {
         print("button pressed")
-        if mapButton.image == UIImage(named: "filter"){
-            print("filter pressed")
-        }
+//        if mapButton.image == UIImage(named: "filter"){
+//            print("filter pressed")
+//        }
         
     }
     
 
     @IBAction func beginSearching(_ sender: Any) {
         performSegue(withIdentifier: "beginSearch", sender: nil)
-        
         self.searchTextField.endEditing(true)
-        
         print("beginning search")
     }
     
@@ -95,50 +153,38 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         //Coordinates of UCI
         let mapCenter = CLLocationCoordinate2D(latitude: 33.640495, longitude: -117.844296)
-        
         //Set the scale of the mapView
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        
         //Creating the map object
         let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
-        
         mapView.setRegion(region, animated: false)
         
     }
     
     
     
-    func addPin(lat: CLLocationDegrees, long: CLLocationDegrees){
+    func addPin(lat: CLLocationDegrees, long: CLLocationDegrees, title: String){
         
         let annotation = MKPointAnnotation()
-        
         let locationCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        
         //describe the coordinates of the annotation
         annotation.coordinate = locationCoordinate
-        
         //attributes of the pin
-        annotation.title = "Test"
+        annotation.title = title
         
         //add Annotation to Mapview
         mapView.addAnnotation(annotation)
+        
     }
     
     
-    //Search bar stuff below
-    
-    func searchBarIsEmpty() -> Bool {
-        // Returns true if the text is empty or nil
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
     
     //custom pins
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
+        print("???")
         let reuseID = "annotation"
-        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
-        
         //add content to the view
         if (annotationView == nil){
             //if there is nothing on the view, then create the view
@@ -151,14 +197,11 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         //insert the picture into the annotationview
         let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
-        
         //TODO - put in image of the post
-        imageView.image = UIImage.init()
+//        print("event image: ", eventImage)
         
+        imageView.image = currentEventImage.image
         return annotationView
-        
-        
-        
         
     }
 
@@ -175,12 +218,4 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
 
     
-}
-
-//Allows MapViewcontroller to respond to the search bar
-extension MapViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO
-    }
 }

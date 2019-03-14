@@ -10,21 +10,25 @@ import UIKit
 import Parse
 import AlamofireImage
 
-
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var eventsCountLabel: UILabel!
     @IBOutlet weak var profileUserNameLabel: UILabel!
     
-    var going_events = [PFObject]()
     
-//    @IBOutlet weak var tableView: UITableView!
-//    @IBOutlet weak var profileImageView: UIImageView!
-//    @IBOutlet weak var eventsCountLabel: UILabel!
-//    @IBOutlet weak var profileUserNameLabel: UILabel!
+    
+    
+    let user = PFUser.current()!
+    var going_events: [PFObject] = []
+    var going_events_info: [PFObject] = []
+    
+    //    @IBOutlet weak var tableView: UITableView!
+    //    @IBOutlet weak var profileImageView: UIImageView!
+    //    @IBOutlet weak var eventsCountLabel: UILabel!
+    //    @IBOutlet weak var profileUserNameLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -40,12 +44,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let user = PFUser.current()!
         profileUserNameLabel.text = user.username
         setImage()
+        if user["going_events"] != nil {
+            going_events = user["going_events"] as! [PFObject]
+            print(going_events.count)
+            getUserEvents()
+        }
         eventsCountLabel.text = String(going_events.count)
-        getEvents()
-        
-        
-        
     }
+    
+    @IBAction func unwindToProfile(_ sender: UIStoryboardSegue){}
+    
     
     func setImage() {
         let user = PFUser.current()!
@@ -58,33 +66,42 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func getEvents() {
-        let query = PFQuery(className: "User")
-        query.includeKey("events")
-        query.includeKey("events.author")
-        query.includeKey("createdAt")
-        query.whereKey("Event_user", equalTo: PFUser.current()!)
-        query.addDescendingOrder("createdAt")
-//        if PFUser.current().events() != nil {
-//            self.going_events = PFUser.current().events()
-//            self.tableView.reloadData()
-//        }
+    
+    func getUserEvents() {
         
+        print("EVENTS")
+        if going_events != [] {
+            going_events_info.removeAll()
+            for event in going_events {
+                print("eventID", event.objectId!)
+                let query = PFQuery(className: "Events")
+                query.whereKey("objectId", equalTo: event.objectId!)
+                
+                query.findObjectsInBackground { (event, error) in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                    } else {
+                        let event = event![0]
+                        self.going_events_info.append(event)
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+            }
+        }
         
-        
-        
-        //        query.findObjectsInBackground { (going_events, error) in
-        //            if going_events != nil {
-        //                self.going_events = going_events!
-        //                self.tableView.reloadData()
-        //            }
-        //        }
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if going_events.count != 0 {
-            return going_events.count
+        if going_events_info.count != 0 {
+            return going_events_info.count 
+//            if section != going_events_info.count{
+//                return going_events_info.count
+//            }
+//            else{
+//                return 0;
+//            }
         }
         else {
             return 1
@@ -94,15 +111,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoingEventsTableViewCell") as! GoingEventsTableViewCell
         
-        if going_events.count != 0 {
-            let event = going_events[indexPath.row]
+        if self.going_events_info.count != 0 {
+            let event = self.going_events_info[indexPath.row]
+            print(event)
             
-            let user = event["author"] as! PFUser
-            cell.eventAuthorLabel.text = user.username
+            cell.eventAuthorLabel.text = event["eventName"] as? String
             
-            //        cell.eventSummaryLabel.text = event["description"]
+            cell.eventSummaryLabel.text = event["description"] as? String
             
-            //        cell.dateLabel.text = event["date"]
+            cell.dateLabel.text = event["date"] as? String
             
         }
         else {
