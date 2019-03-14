@@ -33,6 +33,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     var lat : Double!
     var long : Double!
     var submit = false
+    var imageHolder : UIImage!
     
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Events")
@@ -129,6 +130,8 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         self.descriptionField.delegate = self
         self.dateValueField.delegate = self
         self.orgNameField.delegate = self
+        
+        imageHolder = coverView.image
     }
     
     //save location points from segue
@@ -176,6 +179,10 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         eventNameField.text = ""
         descriptionField.text = ""
         dateValueField.text = ""
+        coverView.image = imageHolder
+    }
+    @IBAction func onReset(_ sender: Any) {
+        resetSettingsOnSubmit()
     }
     
     //----------------------optionals----------------

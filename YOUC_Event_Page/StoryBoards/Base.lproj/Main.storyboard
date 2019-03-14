@@ -1531,7 +1531,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FwZ-ZM-1i6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Event" id="ayH-ma-LZd"/>
+                    <navigationItem key="navigationItem" title="Create Event" id="ayH-ma-LZd">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="oh0-68-eq3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onReset:" destination="158-oZ-zWX" id="6ds-jY-EnL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="coverView" destination="Lsl-mE-EME" id="re5-kw-67g"/>
                         <outlet property="dateValueField" destination="aPG-vy-3xt" id="fgr-J1-cxZ"/>
@@ -1584,9 +1591,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="079-Nv-kfX">
-                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="3wR-Gw-1od"/>
+                                    <constraint firstAttribute="width" constant="414" id="3wR-Gw-1od"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -1672,7 +1679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1P-AU-8wo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="2620"/>
+            <point key="canvasLocation" x="2118.840579710145" y="2619.6428571428569"/>
         </scene>
     </scenes>
     <resources>
