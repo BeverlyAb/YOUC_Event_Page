@@ -44,9 +44,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let user = PFUser.current()!
         profileUserNameLabel.text = user.username
         setImage()
-        going_events = user["going_events"] as! [PFObject]
-        print(going_events.count)
-        getUserEvents()
+        if user["going_events"] != nil {
+            going_events = user["going_events"] as! [PFObject]
+            print(going_events.count)
+            getUserEvents()
+        }
         eventsCountLabel.text = String(going_events.count)
     }
     
