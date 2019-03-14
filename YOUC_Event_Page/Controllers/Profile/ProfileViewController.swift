@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import AlamofireImage
 
+
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
@@ -17,8 +18,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var eventsCountLabel: UILabel!
     @IBOutlet weak var profileUserNameLabel: UILabel!
-    
-    
     
     var going_events = [PFObject]()
     

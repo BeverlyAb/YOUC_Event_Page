@@ -50,9 +50,8 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //dismiss
     @IBAction func onBackButton(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
-    
     
     //-------------------search bar stuff------------
     @objc func fetchLocations(_ query: String, near: String = "Irvine") {

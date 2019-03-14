@@ -31,6 +31,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     var location : CLLocation!
     var lat : Double!
     var long : Double!
+    var submit = false
     
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Events")
@@ -48,8 +49,11 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
 
             post.saveInBackground{(success, error) in
                 if (success){
-                    self.dismiss(animated: true, completion: nil)
-                    print("saved")
+                    self.submit = true
+                    self.createAlert(title: "Yes!", message: "Post saved")
+                    //submits and clears events
+                    self.resetSettingsOnSubmit()
+                    self.submit = false
                 }else {
                     self.createAlert(title: "Uh Oh,", message: "Post could not be saved")
                 }
@@ -75,10 +79,13 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
         dateValueField.text = dateFormatter.string(from: (sender as AnyObject).date)
     }
-    //----------------------Location----------------------------------
+    //----------------------Segues----------------------------------
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let pickMapViewController = segue.destination as! PickMapViewController
-        pickMapViewController.delegate = self
+        //go select location
+        if(!submit) {
+            let pickMapViewController = segue.destination as! PickMapViewController
+            pickMapViewController.delegate = self
+        }
     }
     
     //-----------------------Album Cover--------------------------------
@@ -153,6 +160,17 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         return true
     }
     
+    //---------------------reset settings -----
+    func resetSettingsOnSubmit(){
+ 
+        locationFieldButton.isHidden = false
+        locationFieldLabel.text = ""
+        locationFieldLabel.isHidden = true
+        
+        eventNameField.text = ""
+        descriptionField.text = ""
+        dateValueField.text = ""
+    }
     
     //----------------------optionals----------------
     
