@@ -92,7 +92,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if going_events_info.count != 0 {
-            return going_events_info.count
+            if section != going_events_info.count{
+                return going_events_info.count
+            }
+            else{
+                return 0;
+            }
         }
         else {
             return 1
