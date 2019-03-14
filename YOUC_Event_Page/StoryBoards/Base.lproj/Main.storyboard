@@ -493,12 +493,6 @@
                                     <outletCollection property="gestureRecognizers" destination="GHj-VX-Eyd" appends="YES" id="VWO-Fg-pi0"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTa-DC-v82">
-                                <rect key="frame" x="40" y="237" width="124" height="26"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2yr-Xh-cYo">
                                 <rect key="frame" x="-15" y="283" width="429" height="613"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -569,7 +563,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-ap-Q0O">
-                                <rect key="frame" x="314" y="181" width="51.5" height="57"/>
+                                <rect key="frame" x="295" y="194" width="51.5" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="F9d-7a-flI"/>
                                 </constraints>
@@ -577,26 +571,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTa-DC-v82">
+                                <rect key="frame" x="47" y="237" width="124" height="26"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bTa-DC-v82" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="40" id="05e-8X-G1m"/>
+                            <constraint firstItem="bTa-DC-v82" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="47" id="05e-8X-G1m"/>
                             <constraint firstItem="2yr-Xh-cYo" firstAttribute="top" secondItem="bTa-DC-v82" secondAttribute="bottom" constant="20" id="2A0-X1-2hZ"/>
-                            <constraint firstItem="dYa-ap-Q0O" firstAttribute="top" secondItem="uWX-Ow-1BJ" secondAttribute="top" constant="93" id="84G-Bp-Pve"/>
+                            <constraint firstItem="dYa-ap-Q0O" firstAttribute="top" secondItem="uWX-Ow-1BJ" secondAttribute="top" constant="106" id="84G-Bp-Pve"/>
                             <constraint firstItem="bTa-DC-v82" firstAttribute="top" secondItem="bmb-H2-91K" secondAttribute="bottom" constant="8" id="A74-5V-kuK"/>
-                            <constraint firstItem="bBj-P6-VIZ" firstAttribute="leading" secondItem="bTa-DC-v82" secondAttribute="trailing" constant="150" id="DBD-CV-BQc"/>
+                            <constraint firstItem="bBj-P6-VIZ" firstAttribute="leading" secondItem="bTa-DC-v82" secondAttribute="trailing" constant="143" id="DBD-CV-BQc"/>
                             <constraint firstItem="2yr-Xh-cYo" firstAttribute="trailing" secondItem="uWX-Ow-1BJ" secondAttribute="trailing" id="G4F-Q1-hbA"/>
-                            <constraint firstItem="bBj-P6-VIZ" firstAttribute="top" secondItem="dYa-ap-Q0O" secondAttribute="bottom" constant="-2" id="HD7-Mc-cRN"/>
+                            <constraint firstItem="bBj-P6-VIZ" firstAttribute="top" secondItem="dYa-ap-Q0O" secondAttribute="bottom" constant="-15" id="HD7-Mc-cRN"/>
                             <constraint firstItem="bmb-H2-91K" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="34" id="HRG-2O-5kh"/>
                             <constraint firstItem="bmb-H2-91K" firstAttribute="top" secondItem="uWX-Ow-1BJ" secondAttribute="top" constant="45" id="Tyl-IX-KqJ"/>
                             <constraint firstItem="uWX-Ow-1BJ" firstAttribute="trailing" secondItem="bBj-P6-VIZ" secondAttribute="trailing" constant="38" id="Vfs-uI-V46"/>
                             <constraint firstItem="U9J-tr-ZkS" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" id="bfP-9o-bRc"/>
                             <constraint firstItem="uWX-Ow-1BJ" firstAttribute="bottom" secondItem="U9J-tr-ZkS" secondAttribute="bottom" constant="355" id="eZf-Kt-HHD"/>
                             <constraint firstAttribute="bottom" secondItem="2yr-Xh-cYo" secondAttribute="bottom" id="jSe-nZ-7j8"/>
-                            <constraint firstItem="dYa-ap-Q0O" firstAttribute="leading" secondItem="bmb-H2-91K" secondAttribute="trailing" constant="165" id="jaO-xX-e6E"/>
+                            <constraint firstItem="dYa-ap-Q0O" firstAttribute="leading" secondItem="bmb-H2-91K" secondAttribute="trailing" constant="146" id="jaO-xX-e6E"/>
                             <constraint firstItem="U9J-tr-ZkS" firstAttribute="top" secondItem="uWX-Ow-1BJ" secondAttribute="top" id="ozl-QG-qLy"/>
                             <constraint firstItem="2yr-Xh-cYo" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="-15" id="qrF-lP-1NL"/>
-                            <constraint firstItem="uWX-Ow-1BJ" firstAttribute="trailing" secondItem="dYa-ap-Q0O" secondAttribute="trailing" constant="48.5" id="yl9-Lt-9Sb"/>
+                            <constraint firstItem="uWX-Ow-1BJ" firstAttribute="trailing" secondItem="dYa-ap-Q0O" secondAttribute="trailing" constant="67.5" id="yl9-Lt-9Sb"/>
                             <constraint firstItem="U9J-tr-ZkS" firstAttribute="trailing" secondItem="uWX-Ow-1BJ" secondAttribute="trailing" id="zCW-hR-d4I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uWX-Ow-1BJ"/>
