@@ -129,6 +129,7 @@ extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if addrChecker(venue: venue, keyString: "location.city"){
             city = venue.value(forKeyPath: "location.city") as! String
+            city += ","
         }
         if addrChecker(venue: venue, keyString: "location.state"){
             state = venue.value(forKeyPath: "location.state") as! String
@@ -136,7 +137,7 @@ extension PickMapViewController: UITableViewDataSource, UITableViewDelegate {
         if addrChecker(venue: venue, keyString: "location.postalCode"){
             postal = venue.value(forKeyPath: "location.postalCode") as! String
         }
-        let writtenAddr = street + " " + city + ", " + state + " " + postal
+        let writtenAddr = street + " " + city + " " + state + " " + postal
         // Set the latitude and longitude of the venue and send it to the protocol
         delegate.locationsPickedLocation(controller: self, latitude: lat, longitude: lng, addr : writtenAddr)
         // Return to the PhotoMapViewController with the lat and lng of venue

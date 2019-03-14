@@ -24,6 +24,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var locationFieldButton: UIButton!
     weak var delegate : PostPageViewControllerDelegate!
+    @IBOutlet weak var orgNameField: UITextField!
     
     @IBOutlet weak var coverView: UIImageView!
 
@@ -38,6 +39,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
 
         if (dataChecker()){
             post["author"] = PFUser.current()!
+            post["organization_name"] = orgNameField.text!
             post["eventName"] = eventNameField.text!
             post["description"] = descriptionField.text!
             post["location"] =  PFGeoPoint(latitude: lat, longitude: long)
@@ -66,6 +68,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     //-----------------------All data filled? (blank img ok)-------------------------
     func dataChecker()->Bool{
         return (    PFUser.current() != nil &&
+                    orgNameField.text! != "" &&
                     eventNameField.text! != "" &&
                     descriptionField.text != "" &&
                     lat != nil &&
@@ -125,6 +128,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         self.eventNameField.delegate = self
         self.descriptionField.delegate = self
         self.dateValueField.delegate = self
+        self.orgNameField.delegate = self
     }
     
     //save location points from segue
@@ -157,6 +161,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         eventNameField.resignFirstResponder()
         descriptionField.resignFirstResponder()
         dateValueField.resignFirstResponder()
+        orgNameField.resignFirstResponder()
         return true
     }
     
@@ -167,6 +172,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         locationFieldLabel.text = ""
         locationFieldLabel.isHidden = true
         
+        orgNameField.text = ""
         eventNameField.text = ""
         descriptionField.text = ""
         dateValueField.text = ""
