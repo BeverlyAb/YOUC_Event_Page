@@ -8,6 +8,7 @@ target 'YOUC_Event_Page' do
   # Pods for YOUC_Event_Page
   pod 'Parse'
   pod 'AlamofireImage'
+  pod 'AFNetworking'
 
   target 'YOUC_Event_PageTests' do
     inherit! :search_paths
