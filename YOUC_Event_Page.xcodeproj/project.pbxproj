@@ -32,6 +32,10 @@
 		B01DA2D72228C1AE00F87BF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01DA2D52228C1AE00F87BF0 /* LaunchScreen.storyboard */; };
 		B01DA2E22228C1AE00F87BF0 /* YOUC_Event_PageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2E12228C1AE00F87BF0 /* YOUC_Event_PageTests.swift */; };
 		B01DA2ED2228C1AE00F87BF0 /* YOUC_Event_PageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DA2EC2228C1AE00F87BF0 /* YOUC_Event_PageUITests.swift */; };
+		B05872E02239E07700EF5BBB /* PickMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05872DC2239E07700EF5BBB /* PickMapViewController.swift */; };
+		B05872E12239E07700EF5BBB /* PostPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05872DD2239E07700EF5BBB /* PostPageViewController.swift */; };
+		B05872E22239E07700EF5BBB /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05872DE2239E07700EF5BBB /* LocationCell.swift */; };
+		B05872E32239E07700EF5BBB /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05872DF2239E07700EF5BBB /* TagViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,10 @@
 		B01DA2E82228C1AE00F87BF0 /* YOUC_Event_PageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YOUC_Event_PageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01DA2EC2228C1AE00F87BF0 /* YOUC_Event_PageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YOUC_Event_PageUITests.swift; sourceTree = "<group>"; };
 		B01DA2EE2228C1AE00F87BF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B05872DC2239E07700EF5BBB /* PickMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickMapViewController.swift; sourceTree = "<group>"; };
+		B05872DD2239E07700EF5BBB /* PostPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPageViewController.swift; sourceTree = "<group>"; };
+		B05872DE2239E07700EF5BBB /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		B05872DF2239E07700EF5BBB /* TagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		EADBCFA8859AFFB60287C0B7 /* Pods-YOUC_Event_Page.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_Page.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_Page/Pods-YOUC_Event_Page.release.xcconfig"; sourceTree = "<group>"; };
 		EDB402B743D06C7201D994BF /* Pods-YOUC_Event_PageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YOUC_Event_PageUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YOUC_Event_PageUITests/Pods-YOUC_Event_PageUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF142146EE1371D0659404CE /* Pods_YOUC_Event_Page.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YOUC_Event_Page.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,12 +258,24 @@
 		B01DA2FC2228C6F400F87BF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B05872DB2239E05300EF5BBB /* Post */,
 				6DE5C02D22386D6A00C136B7 /* Events */,
 				6DE5C02622385EEC00C136B7 /* Map */,
 				ADE2058C223699FA00C65E99 /* Profile */,
 				2D076FB1222FC9070008BDB7 /* Login */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B05872DB2239E05300EF5BBB /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				B05872DE2239E07700EF5BBB /* LocationCell.swift */,
+				B05872DC2239E07700EF5BBB /* PickMapViewController.swift */,
+				B05872DD2239E07700EF5BBB /* PostPageViewController.swift */,
+				B05872DF2239E07700EF5BBB /* TagViewController.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,9 +518,13 @@
 				ADE2059322369AAF00C65E99 /* ProfileCameraViewController.swift in Sources */,
 				6DE5C03022386D8700C136B7 /* YOUCGoingButton.swift in Sources */,
 				6DE5C03322386D9900C136B7 /* Constants.swift in Sources */,
+				B05872E32239E07700EF5BBB /* TagViewController.swift in Sources */,
+				B05872E22239E07700EF5BBB /* LocationCell.swift in Sources */,
 				6DE5C03522386DC000C136B7 /* EventPageViewController.swift in Sources */,
 				2D076FB5222FC95F0008BDB7 /* CreateAccountViewController.swift in Sources */,
+				B05872E02239E07700EF5BBB /* PickMapViewController.swift in Sources */,
 				6D909D632239C6AB00B69E03 /* Event.swift in Sources */,
+				B05872E12239E07700EF5BBB /* PostPageViewController.swift in Sources */,
 				6DE5C02B22385F2F00C136B7 /* MapEventsViewController.swift in Sources */,
 				6DE5C02A22385F2F00C136B7 /* MapViewController.swift in Sources */,
 				ADE2058E22369A3C00C65E99 /* ProfileViewController.swift in Sources */,
