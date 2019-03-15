@@ -123,6 +123,10 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
         dismiss(animated: true, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationFieldLabel.isHidden = true
