@@ -28,6 +28,13 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    //hides the navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        
+    }
     
     @IBAction func onSave(_ sender: Any) {
         let user = PFUser.current()!
@@ -49,6 +56,17 @@ class SettingsViewController: UIViewController {
         PFUser.logOut()
         self.performSegue(withIdentifier: "unwindToViewController1", sender: self)
     }
+    
+    @IBAction func swipeRight(_ sender: Any) {
+        let transition = CATransition()
+        transition.duration = 0.2
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     /*
     // MARK: - Navigation

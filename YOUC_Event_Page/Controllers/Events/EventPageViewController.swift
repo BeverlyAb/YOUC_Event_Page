@@ -110,7 +110,7 @@ class EventPageViewController: UIViewController {
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
         self.view.window!.layer.add(transition, forKey: nil)
-        self.dismiss(animated: false, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     

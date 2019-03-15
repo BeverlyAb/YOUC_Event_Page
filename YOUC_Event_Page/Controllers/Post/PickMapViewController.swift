@@ -35,6 +35,8 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         refreshController.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         tableView.refreshControl = refreshController
+        
+        
     }
     //refresh
     @objc func onRefresh(_ refreshControl: UIRefreshControl){

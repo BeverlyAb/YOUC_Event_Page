@@ -108,6 +108,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="eik-TW-8gG" firstAttribute="leading" secondItem="WhY-uG-vlv" secondAttribute="leading" constant="163" id="0SP-nG-j33"/>
                             <constraint firstItem="9Qg-pw-O8Y" firstAttribute="top" secondItem="I8S-BC-8zI" secondAttribute="bottom" constant="8" id="0gt-pJ-4Kn"/>
@@ -140,9 +141,17 @@
                             <constraint firstItem="Tjv-vk-Hb3" firstAttribute="leading" secondItem="WhY-uG-vlv" secondAttribute="leading" constant="16" id="zjG-b6-vUc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WhY-uG-vlv"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="UFX-R2-HPy" appends="YES" id="qMo-qw-DFP"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lr-wV-bDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="UFX-R2-HPy" userLabel="swipeRight">
+                    <connections>
+                        <action selector="swipeRight:" destination="GM4-71-U5X" id="0Bz-1B-wLG"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="7319" y="2085"/>
         </scene>
@@ -1130,6 +1139,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Vgm-2I-2Ze" firstAttribute="top" secondItem="VmQ-XD-7aj" secondAttribute="top" id="Jcm-EJ-zq3"/>
                             <constraint firstItem="RKZ-U2-fZJ" firstAttribute="width" secondItem="oFu-ua-cHJ" secondAttribute="width" id="Kqp-ee-8Pv"/>
@@ -1138,6 +1148,9 @@
                             <constraint firstItem="Vgm-2I-2Ze" firstAttribute="leading" secondItem="VmQ-XD-7aj" secondAttribute="leading" id="hT2-cc-uNq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VmQ-XD-7aj"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0U2-Zs-2gf" appends="YES" id="HS1-Zj-Bo5"/>
+                        </connections>
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
@@ -1150,6 +1163,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1Q-pC-EUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7Jb-W5-sii" userLabel="Exit" sceneMemberID="exit"/>
+                <swipeGestureRecognizer direction="right" id="0U2-Zs-2gf" userLabel="swipeRight">
+                    <connections>
+                        <action selector="swipeRight:" destination="Ijy-f1-2KX" id="sUN-1F-6hO"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="7294" y="1135"/>
         </scene>

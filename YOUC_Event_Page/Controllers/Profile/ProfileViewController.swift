@@ -43,7 +43,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
     override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
+        
+        
         let user = PFUser.current()!
         profileUserNameLabel.text = user.username
         setImage()
@@ -73,7 +81,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             let urlString = profile.url!
             let url = URL(string: urlString)!
             
-            profileImageView.af_setImage(withURL: url)
+            self.profileImageView.makeRounded()
+            self.profileImageView.af_setImage(withURL: url)
+            
         }
     }
     
@@ -159,3 +169,4 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
      */
     
 }
+
