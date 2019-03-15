@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         let user = PFUser.current()!
-        profileUserNameLabel.text = user.username
+        profileUserNameLabel.text = user["name"] as! String 
         setImage()
         self.going_events.removeAll()
         going_events_info.removeAll()

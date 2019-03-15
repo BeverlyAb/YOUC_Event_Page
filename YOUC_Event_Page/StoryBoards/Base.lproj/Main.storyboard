@@ -569,7 +569,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTa-DC-v82">
-                                <rect key="frame" x="25" y="226" width="373" height="26"/>
+                                <rect key="frame" x="16" y="226" width="382" height="26"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -593,7 +593,7 @@
                             <constraint firstItem="2yr-Xh-cYo" firstAttribute="top" secondItem="U9J-tr-ZkS" secondAttribute="bottom" id="Aw5-r4-PFe"/>
                             <constraint firstItem="2yr-Xh-cYo" firstAttribute="trailing" secondItem="uWX-Ow-1BJ" secondAttribute="trailing" id="BV5-eK-3ti"/>
                             <constraint firstItem="bmb-H2-91K" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="16" id="GN6-PD-67B"/>
-                            <constraint firstItem="bTa-DC-v82" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="25" id="KkB-Lf-L9t"/>
+                            <constraint firstItem="bTa-DC-v82" firstAttribute="leading" secondItem="uWX-Ow-1BJ" secondAttribute="leading" constant="16" id="KkB-Lf-L9t"/>
                             <constraint firstItem="bmb-H2-91K" firstAttribute="top" secondItem="uWX-Ow-1BJ" secondAttribute="top" constant="35" id="SIk-GO-qgi"/>
                             <constraint firstItem="bTa-DC-v82" firstAttribute="top" secondItem="bBj-P6-VIZ" secondAttribute="bottom" constant="16" id="W2T-pg-7R2"/>
                             <constraint firstItem="uWX-Ow-1BJ" firstAttribute="trailing" secondItem="dYa-ap-Q0O" secondAttribute="trailing" constant="16" id="YsT-sW-6yo"/>
