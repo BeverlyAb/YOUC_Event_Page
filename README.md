@@ -108,20 +108,27 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
       * Resets values after submit
 
 **Flow Navigation** (Screen to Screen)
-   * Login Screen
-   * Sign in or Create (respectively) 
-   * otherwise sign up authorizes login/sign up
-   * puts you to map events(MAP VIEW)
-       * if no events, click add:
-           * search button ( look for events )
-           * update button ( add events )
-               * if part of organization 
- * Main Screen(table view)
-       * Holds events users are attending 
-       * Indicator for events that are recommended
-       * Recommended events based on interests
-       * Gray out/ delete? events that have passed or user attended
-       * Option to comment
+* Screens:
+  * Launch Screen
+  * Login Screen
+    * Sign in or Create (respectively) 
+    * If already signed in, then there is persistent login
+    * Leads to 3 tabs mentioned above  
+  * Map Tab
+    * map with events as pins
+      * pins lead to Event Page (can add events)
+    * search bar leads to tableview of events near Area
+  * Profile Tab
+    * Displays Events user is going to 
+    * Includes Settings
+  * Settings 
+    * Updates user info
+    * Leads to "Contact Us" 
+  * Post Tab
+    * Create Event
+      * Leads to Tableview of Location
+      * Image Picker for updating cover album
+      * Resets itself on submit, stays on page
        
 ### Wireframes
 ![App Draft](ScreenTransitions.jpeg)
