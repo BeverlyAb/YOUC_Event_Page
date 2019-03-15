@@ -36,6 +36,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         
+        self.going_events.removeAll()
+        going_events_info.removeAll()
+        
         
         // Do any additional setup after loading the view.
     }
@@ -44,11 +47,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let user = PFUser.current()!
         profileUserNameLabel.text = user.username
         setImage()
-        if user["going_events"] != nil {
-            going_events = user["going_events"] as! [PFObject]
+        self.going_events.removeAll()
+        going_events_info.removeAll()
+        
+        let user_go_events = user["going_events"] as! [PFObject]
+        
+        if user_go_events != [] {
+            self.going_events.removeAll()
+            going_events_info.removeAll()
+            self.going_events = user["going_events"] as! [PFObject]
             print(going_events.count)
             getUserEvents()
         }
+        tableView.reloadData()
         eventsCountLabel.text = String(going_events.count)
     }
     
@@ -70,9 +81,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getUserEvents() {
         
         print("EVENTS")
-        if going_events != [] {
+        going_events_info.removeAll()
+        if self.going_events != [] {
             going_events_info.removeAll()
-            for event in going_events {
+            for event in self.going_events {
                 print("eventID", event.objectId!)
                 let query = PFQuery(className: "Events")
                 query.whereKey("objectId", equalTo: event.objectId!)
@@ -94,7 +106,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if going_events_info.count != 0 {
+        if self.going_events.count != 0 {
             return going_events_info.count 
 //            if section != going_events_info.count{
 //                return going_events_info.count
@@ -104,6 +116,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 //            }
         }
         else {
+            going_events_info.removeAll()
+            self.going_events.removeAll()
+            print(going_events.count)
+            print(going_events_info.count)
             return 1
         }
     }
@@ -111,7 +127,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoingEventsTableViewCell") as! GoingEventsTableViewCell
         
-        if self.going_events_info.count != 0 {
+        if going_events_info.count != 0 {
             let event = self.going_events_info[indexPath.row]
             print(event)
             

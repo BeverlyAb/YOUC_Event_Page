@@ -33,7 +33,7 @@ class EventPageViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        going_events.removeAll()
         let user = event["author"] as! PFUser
         
         self.eventDescriptionLabel.text = event["description"] as? String
@@ -86,6 +86,8 @@ class EventPageViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+//        going_events.removeAll()
+
         let user = PFUser.current()!
 
         // Get the events
