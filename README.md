@@ -88,10 +88,10 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 ## 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
-
-* Map Tab
-     * includes searching for events
-      * making events 
+* Tabs:
+  * Map
+    * includes searching for events
+    * making events 
       * pins events, click to event details 
          * modally segues title, and summary of event
          * "see more" to modally segue to organization event page
