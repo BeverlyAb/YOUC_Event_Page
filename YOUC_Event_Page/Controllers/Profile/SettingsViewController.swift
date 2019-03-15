@@ -11,12 +11,20 @@ import Parse
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onSave(_ sender: Any) {
+    }
     
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
