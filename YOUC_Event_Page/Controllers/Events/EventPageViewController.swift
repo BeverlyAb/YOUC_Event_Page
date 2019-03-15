@@ -38,7 +38,7 @@ class EventPageViewController: UIViewController {
         self.eventDescriptionLabel.text = event["description"] as? String
         self.organizationNameLabel.text = event["organization_name"] as? String
         self.eventNameLabel.text = event["eventName"] as? String
-        self.eventNameLabel.baselineAdjustment = .none
+        
         self.dataLabel.text = event["date"] as! String
         
         
