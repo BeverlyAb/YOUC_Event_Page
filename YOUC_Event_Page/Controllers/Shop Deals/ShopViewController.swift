@@ -12,9 +12,11 @@ import UIKit
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
-
+    @IBOutlet weak var shopTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        shopTableView.reloadData()
 
         // Do any additional setup after loading the view.
     }

@@ -1840,6 +1840,7 @@
                     <navigationItem key="navigationItem" id="ADe-64-dSc"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="GaC-hQ-g2J" id="Fja-hL-0tt"/>
+                        <outlet property="shopTableView" destination="jdg-Vz-vs8" id="rxf-Kz-dtT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZ2-Ng-xcs" sceneMemberID="firstResponder"/>
