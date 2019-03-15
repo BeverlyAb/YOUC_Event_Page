@@ -1297,6 +1297,7 @@
                         <outlet property="eventNameLabel" destination="wF1-uc-Pce" id="cti-zD-Xoe"/>
                         <outlet property="goingButton" destination="skg-Eb-tVp" id="Hzx-AR-Lsf"/>
                         <outlet property="interestedButton" destination="RNk-lP-x6e" id="bUU-Za-oai"/>
+                        <outlet property="locationLabel" destination="E88-wc-m10" id="iL8-Wr-wsa"/>
                         <outlet property="organizationImageView" destination="eET-mf-KdN" id="vZV-OP-tEJ"/>
                         <outlet property="organizationNameLabel" destination="05a-dt-1xT" id="ypk-tq-OYO"/>
                     </connections>
