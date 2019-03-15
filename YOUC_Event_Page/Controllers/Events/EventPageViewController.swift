@@ -30,6 +30,7 @@ class EventPageViewController: UIViewController {
     var event: PFObject!
     var going_events: [PFObject] = []
     
+    @IBOutlet weak var locationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +40,8 @@ class EventPageViewController: UIViewController {
         self.organizationNameLabel.text = event["organization_name"] as? String
         self.eventNameLabel.text = event["eventName"] as? String
         
-        self.dataLabel.text = event["date"] as! String
-        
+        self.dataLabel.text = event["date"] as? String
+        self.locationLabel.text = event["readable_addr"] as? String
         
         if event["coverImage"] != nil{
             let imageFile = event["coverImage"] as! PFFileObject
