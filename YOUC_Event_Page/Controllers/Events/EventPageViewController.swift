@@ -11,7 +11,7 @@ import AlamofireImage
 import Parse
 
 class EventPageViewController: UIViewController {
-
+    
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var organizationImageView: UIImageView!
     @IBOutlet weak var organizationNameLabel: UILabel!
@@ -19,78 +19,51 @@ class EventPageViewController: UIViewController {
     @IBOutlet weak var eventDescriptionLabel: UILabel!
     @IBOutlet weak var goingButton: UIButton!
     @IBOutlet weak var interestedButton: UIButton!
-
-    @IBOutlet weak var dataLabel: UILabel!
+    
     // For keeping track of the button status.
     // Without these variables, a new event would be added each time a button is pressed
     var goingPressed = false
     var interestedPressed = false
     
     // Arrays to hold the events and the goingEvents
-//    var events = [PFObject]()
+    var events = [PFObject]()
     var event: PFObject!
     var goingEvents = [PFObject]()
     var latestEvent: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let user = event["author"] as! PFUser
-        
-        self.eventDescriptionLabel.text = event["description"] as? String
-        self.organizationNameLabel.text = event["organization_name"] as? String
-        self.eventNameLabel.text = event["eventName"] as? String
-        
-        self.dataLabel.text = event["date"] as! String
-        
-        
-        if event["coverImage"] != nil{
-            let imageFile = event["coverImage"] as! PFFileObject
-            
-            let urlString = imageFile.url!
-            let url = URL(string: urlString)!
-            
-            self.eventImageView.af_setImage(withURL: url)
-        }
-        
-        if user["user_image"] != nil{
-            let imageFile = user["user_image"] as! PFFileObject
-            
-            let urlString = imageFile.url!
-            let url = URL(string: urlString)!
-            
-            self.organizationImageView.makeRounded()
-            self.organizationImageView.af_setImage(withURL: url)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         
+        //        self.eventDescriptionLabel.text = event["description"] as? String
+        //        self.organizationNameLabel.text = event["author"] as? String
+        //        self.eventNameLabel.text = event["eventName"] as? String
         
         
         
+        // Query to get the events
+        let query = PFQuery(className: "Events")
+        query.includeKey("author")
+        query.limit = 20
         
-//        // Query to get the events
-//        let query = PFQuery(className: "Events")
-//        query.includeKey("author")
-//        query.limit = 20
-//
-//        query.findObjectsInBackground { (events, error) in
-//            if events != nil {
-//                self.events = events!
-//
-//                // ***** CURRENTLY SELF.EVENTS[0] since I don't have the event selected.
-//                // Need to pass in the data from Derek's section
-//                let event = self.events[0]
-//
-//                self.eventDescriptionLabel.text = event["description"] as? String
-//                self.organizationNameLabel.text = event["author"] as? String
-//                self.eventNameLabel.text = event["eventName"] as? String
-//
-//            }
-//        }
+        query.findObjectsInBackground { (events, error) in
+            if events != nil {
+                self.events = events!
+                
+                // ***** CURRENTLY SELF.EVENTS[0] since I don't have the event selected.
+                // Need to pass in the data from Derek's section
+                let event = self.events[1]
+                
+                self.eventDescriptionLabel.text = event["description"] as? String
+                self.organizationNameLabel.text = event["author"] as? String
+                self.eventNameLabel.text = event["eventName"] as? String
+                
+            }
+        }
         
         
         
@@ -104,39 +77,54 @@ class EventPageViewController: UIViewController {
     
     @IBAction func onGoingPressed(_ sender: Any) {
         goingPressed = !goingPressed
+        let user = PFUser.current()!
+        let event = events[2]
         
         
         if goingPressed {
-            // Push the event onto Parse
-//            let event = events[0]
+            //            let user = PFUser.current()!
             
-            let goingEvents = PFObject(className: "goingEvents")
-            goingEvents["event"] = event
-            
-            event.add(goingEvents, forKey: "goingEvents")
-            event.saveInBackground { (success, error) in
+            //            user[
+            //            // Push the event onto Parse
+            //            let event = events[1]
+            user.add(event, forKey: "going_events");
+            //
+            //            let goingEvents = PFObject(className: "goingEvents")
+            //            goingEvents["event"] = event
+            //
+            //            event.add(goingEvents, forKey: "goingEvents")
+            user.saveInBackground { (success, error) in
                 if success {
                     print("goingEvent saved")
                 } else {
-                    print("Error saving comment")
+                    print("Error saving event")
                 }
             }
         }
-        
+            //
         else {
-            // Remove the event to avoid duplicates
-            let query = PFQuery(className: "goingEvents")
-            query.limit = 20
+            user.remove(event, forKey: "going_events")
+            //            // Remove the event to avoid duplicates
+            //            let query = PFQuery(className: "goingEvents")
+            //            query.limit = 20
             
-            query.findObjectsInBackground { (goingEvents, error) in
-                if goingEvents != nil {
-                    self.goingEvents = goingEvents!
-                    
-                    let goingEvent = self.goingEvents[0]
-                    
-                    goingEvent.deleteInBackground()
+            user.saveInBackground { (success, error) in
+                if success {
+                    print("goingEvent removed")
+                } else {
+                    print("Error removing event")
                 }
             }
+            //
+            //            query.findObjectsInBackground { (goingEvents, error) in
+            //                if goingEvents != nil {
+            //                    self.goingEvents = goingEvents!
+            //
+            //                    let goingEvent = self.goingEvents[0]
+            //
+            //                    goingEvent.deleteInBackground()
+            //                }
+            //            }
         }
     }
     
@@ -146,13 +134,4 @@ class EventPageViewController: UIViewController {
         
     }
     
-}
-
-extension UIImageView {
- 
-    func makeRounded() {
-        let radius = self.frame.height/2
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-    }
 }
