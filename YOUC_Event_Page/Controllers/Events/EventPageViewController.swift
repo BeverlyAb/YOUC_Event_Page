@@ -97,7 +97,13 @@ class EventPageViewController: UIViewController {
     
     
     @IBAction func swipeRight(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.2
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     

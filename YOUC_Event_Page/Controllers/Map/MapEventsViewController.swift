@@ -75,6 +75,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     @IBAction func goBack(_ sender: Any) {
 //        performSegue(withIdentifier: "goBack", sender: nil)
         searchBar.resignFirstResponder()
+        
         dismiss(animated: true, completion: nil) 
         
     }
