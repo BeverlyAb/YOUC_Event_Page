@@ -126,9 +126,9 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     func setInitialLocation(){
         
         //Coordinates of UCI
-        let mapCenter = CLLocationCoordinate2D(latitude: 33.640495, longitude: -117.844296)
+        let mapCenter = CLLocationCoordinate2D(latitude: 33.646235, longitude: -117.842725)
         //Set the scale of the mapView
-        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let mapSpan = MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)
         //Creating the map object
         let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
         mapView.setRegion(region, animated: false)
