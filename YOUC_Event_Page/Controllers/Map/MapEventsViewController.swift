@@ -79,6 +79,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         
     }
     
+    //dismiss keyboard when the user presses enter
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("dismiss")
         searchBar.resignFirstResponder()

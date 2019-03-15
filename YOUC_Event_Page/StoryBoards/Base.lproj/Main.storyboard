@@ -768,7 +768,7 @@
                                         <connections>
                                             <action selector="beginSearching:" destination="MQP-pn-EUs" eventType="editingDidBegin" id="sPt-Iq-vy6"/>
                                             <action selector="searchBar:" destination="2OX-8T-oaF" eventType="editingDidEnd" id="q94-Kb-3zz"/>
-                                            <segue destination="KZy-gk-ApK" kind="presentation" identifier="beginSearch" id="8r0-Xr-Yuo"/>
+                                            <segue destination="KZy-gk-ApK" kind="showDetail" identifier="beginSearch" id="8r0-Xr-Yuo"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -791,7 +791,7 @@
                         <outlet property="mapButton" destination="Ajl-RN-X7K" id="w1M-VY-INu"/>
                         <outlet property="mapView" destination="XYO-xs-73m" id="kbq-fH-I7j"/>
                         <outlet property="searchTextField" destination="eON-kp-PtS" id="ydp-nE-txv"/>
-                        <segue destination="xIT-s3-uwf" kind="presentation" identifier="events" id="RUL-Yw-Pz7"/>
+                        <segue destination="xIT-s3-uwf" kind="showDetail" identifier="events" id="RUL-Yw-Pz7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elg-Cq-WLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -854,7 +854,7 @@
                                         <connections>
                                             <outlet property="EventImage" destination="D9W-Nn-gpx" id="Z1K-iV-Zoo"/>
                                             <outlet property="EventName" destination="VOw-Ig-tkT" id="94E-Yy-7O7"/>
-                                            <segue destination="xIT-s3-uwf" kind="presentation" id="D5f-cu-8vt"/>
+                                            <segue destination="xIT-s3-uwf" kind="show" id="D5f-cu-8vt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1751,7 +1751,7 @@
         <image name="sample_org_image" width="188" height="188"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RUL-Yw-Pz7"/>
+        <segue reference="D5f-cu-8vt"/>
         <segue reference="p0x-H5-qUv"/>
         <segue reference="MR7-vH-8dz"/>
         <segue reference="KOM-zy-sPT"/>

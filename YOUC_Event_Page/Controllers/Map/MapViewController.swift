@@ -35,6 +35,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         searchTextField.layer.cornerRadius = 4
         searchTextField.clipsToBounds = true
 
@@ -57,12 +58,12 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        self.tabBarController?.tabBar.isHidden = false
+        
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        self.tabBarController?.tabBar.isHidden = false
         
         self.getEvents()
         
@@ -115,7 +116,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
 
     @IBAction func beginSearching(_ sender: Any) {
-        performSegue(withIdentifier: "beginSearch", sender: nil)
+//        performSegue(withIdentifier: "beginSearch", sender: nil)
         self.searchTextField.endEditing(true)
         print("beginning search")
     }
