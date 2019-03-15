@@ -28,6 +28,7 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
