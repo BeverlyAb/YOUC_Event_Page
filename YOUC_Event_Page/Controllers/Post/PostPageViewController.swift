@@ -28,7 +28,6 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var coverView: UIImageView!
 
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dateValueField: UITextField!
     var location : CLLocation!
     var lat : Double!
