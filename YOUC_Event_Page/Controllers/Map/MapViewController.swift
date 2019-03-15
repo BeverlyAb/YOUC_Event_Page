@@ -28,9 +28,9 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     //holds the events
-    var currentEventImage = UIImageView.init()
     var events = [PFObject]()
     var filteredEvents  = [PFObject]()
+    var selectedEvent: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,7 +155,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //custom pins
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        print("???")
+//        print("???")
         let reuseID = "annotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
         //add content to the view
@@ -181,7 +181,8 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                         imageView.makeRounded()
                         
                         //If the object passed all the conditions, add the picture
-                        if imageView.image != UIImage(named: "image_placeholder"){
+                        if imageView.image == UIImage(named: "image_placeholder"){
+                            print(imageView.image?.description)
                             annotationView!.leftCalloutAccessoryView = imageView
                         }else{
                             print("AAAA")
@@ -200,18 +201,36 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
 
     
-//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        
-//    }
     
-//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//        filteredEvents = events.filter({( candy : Candy) -> Bool in
-//            return candy.name.lowercased().contains(searchText.lowercased())
-//        })
-//
-//        tableView.reloadData()
-//    }
-
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let selectedAnnotation = view.annotation
+        
+        for event in self.filteredEvents{
+            
+            if event["eventName"] as? String == selectedAnnotation?.title{
+                
+                //update the selected event to use in the prepare function
+                selectedEvent = event
+                print("suzz")
+//                performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+            }
+        }
+    }
+    
+    
+    //PREPARES FOR SEGUE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let event = selectedEvent
+        
+        //Pass the selected movie to the details movies controller
+        let eventsPage = segue.destination as! EventPageViewController
+        
+        //There is a variable in the class that we want to send stuff to that we define here
+        eventsPage.event = event
+        
+    }
     
 
     
