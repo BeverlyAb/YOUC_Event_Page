@@ -181,29 +181,24 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                         imageView.makeRounded()
                         
                         //If the object passed all the conditions, add the picture
-                        if imageView.image == UIImage(named: "image_placeholder"){
-                            print(imageView.image?.description)
+                        if imageView.image != UIImage(named: "image_placeholder"){
                             annotationView!.leftCalloutAccessoryView = imageView
-                        }else{
-                            print("AAAA")
                         }
                         
                     }
                 }
             }
-            
-            
-            
-
         }
+        //ADD button to the annotation view
+        let btn = UIButton(type: .detailDisclosure)
+        annotationView!.rightCalloutAccessoryView = btn
         return annotationView
         
     }
 
-    
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
+    //Function called when the user taps the info button on annotation view
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+       
         let selectedAnnotation = view.annotation
         
         for event in self.filteredEvents{
@@ -213,20 +208,22 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                 //update the selected event to use in the prepare function
                 selectedEvent = event
                 print("suzz")
-//                performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+                performSegue(withIdentifier: "events", sender: nil)
             }
         }
     }
+    
+
     
     
     //PREPARES FOR SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let event = selectedEvent
-        
+
         //Pass the selected movie to the details movies controller
         let eventsPage = segue.destination as! EventPageViewController
-        
+
         //There is a variable in the class that we want to send stuff to that we define here
         eventsPage.event = event
         
