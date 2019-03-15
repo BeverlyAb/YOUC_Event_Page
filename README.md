@@ -20,7 +20,7 @@
    <img src='http://g.recordit.co/39HI1wSSB0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 * **Beverly Abadines Quon**
    - Creating Events (Post Page):
-   - ![postPage](postPage.gif)
+   -  <img src='https://i.imgur.com/b8Vpxqq.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Description
 YOUC Event Page connects UCI students to events happening all over campus!
@@ -40,18 +40,18 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 **Required Must-have Stories**
 
 * Relies on user's (clubs/vendors/anyone) to post events
-* Kinda like facebook where a user can say (going, interested)
-* Sort based on event popularity/recent
+* User can say (going, interested)
+* Sort based on location
 * Mapkit!!
 * Login
     * Guest mode
     * Persistent login
 * Suggestions(based on user preferences - major, interests, location)
 * Target Market: Clubs/events that aren't specifically heard on facebook
-* For mall events that are cool, but not known by the majority
 * Displays Events Nearby
 * Displays Events that the user is going to
 * User can Create Events
+* Includes profile and login/logout functionalities
 
 **Optional Nice-to-have Stories*
  * Other universities/colleges can use
@@ -68,6 +68,9 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
  * Separate user profiles and organization profiles
  * Extended Login features
  * Users can share videos of their club
+ * Swipe gestures! (acts like a back button)
+ * For mall events that are cool, but not known by the majority
+ * Sort based on event popularity/recent
  
  
  
@@ -91,13 +94,10 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 * Tabs:
   * Map
     * includes searching for events
-    * making events 
-      * pins events, click to event details 
-         * modally segues title, and summary of event
+    * pins events, click to event details 
+      * modally segues title, and summary of event
          * "see more" to modally segue to organization event page
-      * Swipe gestures! (Optional)
-         * Makes it more modern
-         * acts like a back button
+     
    * Profile Tab
       * has profile image, name and events user is going to
       * Includes button for "Settings"
@@ -123,12 +123,13 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
     * Includes Settings
   * Settings 
     * Updates user info
+    * Includes Logout
     * Leads to "Contact Us" 
   * Post Tab
     * Create Event
       * Leads to Tableview of Location
       * Image Picker for updating cover album
-      * Resets itself on submit, stays on page
+      * Stays on page after submit
        
 ### Wireframes
 ![App Draft](ScreenTransitions.jpeg)
