@@ -17,7 +17,7 @@
    <img src='https://github.com/BeverlyAb/YOUC_Event_Page/blob/master/EventsViewController.gif' width ='' alt='Video Walkthrough' />
 * **Hermain Hanif**
    - Making the Profile Page:
-   <img src='http://g.recordit.co/39HI1wSSB0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+   <img src='http://g.recordit.co/aCpGnOYwFr.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 * **Beverly Abadines Quon**
    - Creating Events (Post Page):
    -  <img src='https://i.imgur.com/b8Vpxqq.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
