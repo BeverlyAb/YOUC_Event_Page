@@ -627,25 +627,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="CsM-CH-Muo">
-                                <rect key="frame" x="83" y="128" width="209" height="209"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="CsM-CH-Muo">
+                                <rect key="frame" x="62.5" y="120" width="250" height="250"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="44w-mQ-rvz"/>
+                                    <constraint firstAttribute="height" constant="250" id="6aO-Ua-x7I"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="S1H-bx-ryu" appends="YES" id="3JR-cp-YMt"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-1W-8PI">
-                                <rect key="frame" x="16" y="362" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-1W-8PI">
+                                <rect key="frame" x="16" y="405" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Txu-kw-0rv"/>
+                                </constraints>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="onUserSubmitButton:" destination="2kO-yO-6nA" eventType="touchUpInside" id="hTq-rj-5wj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-KE-rKn">
-                                <rect key="frame" x="172" y="400" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-KE-rKn">
+                                <rect key="frame" x="16" y="602" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="drX-zG-OdD"/>
+                                </constraints>
                                 <state key="normal" title="Exit"/>
                                 <connections>
                                     <segue destination="0bE-JC-efp" kind="unwind" unwindAction="unwindToProfile:" id="VBq-xW-dun"/>
@@ -653,6 +660,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CsM-CH-Muo" firstAttribute="leading" secondItem="I5W-xF-2al" secondAttribute="leading" constant="62.5" id="A30-i6-7sN"/>
+                            <constraint firstItem="I5W-xF-2al" firstAttribute="trailing" secondItem="CsM-CH-Muo" secondAttribute="trailing" constant="62.5" id="DP3-U1-vA3"/>
+                            <constraint firstItem="I5W-xF-2al" firstAttribute="bottom" secondItem="LHo-KE-rKn" secondAttribute="bottom" constant="35" id="ESc-Lg-8LL"/>
+                            <constraint firstItem="I5W-xF-2al" firstAttribute="trailing" secondItem="xcw-1W-8PI" secondAttribute="trailing" constant="16" id="GeT-bO-p37"/>
+                            <constraint firstItem="xcw-1W-8PI" firstAttribute="leading" secondItem="I5W-xF-2al" secondAttribute="leading" constant="16" id="cb9-14-Bt6"/>
+                            <constraint firstItem="I5W-xF-2al" firstAttribute="trailing" secondItem="LHo-KE-rKn" secondAttribute="trailing" constant="16" id="luo-Oj-Q0f"/>
+                            <constraint firstItem="LHo-KE-rKn" firstAttribute="leading" secondItem="I5W-xF-2al" secondAttribute="leading" constant="16" id="q8A-te-T40"/>
+                            <constraint firstItem="CsM-CH-Muo" firstAttribute="top" secondItem="I5W-xF-2al" secondAttribute="top" constant="100" id="sN1-gv-V26"/>
+                            <constraint firstItem="xcw-1W-8PI" firstAttribute="top" secondItem="CsM-CH-Muo" secondAttribute="bottom" constant="35" id="vMc-aW-ACg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="I5W-xF-2al"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nud-n5-Cql"/>
