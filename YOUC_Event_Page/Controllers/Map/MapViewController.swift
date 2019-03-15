@@ -12,7 +12,7 @@ import MapKit
 import Parse
 import AlamofireImage
 
-class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
     //MapView outlet
     @IBOutlet weak var mapView: MKMapView!
@@ -32,6 +32,10 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var filteredEvents  = [PFObject]()
     var selectedEvent: PFObject!
     
+    var locationManager: CLLocationManager!
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,9 +44,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         searchTextField.clipsToBounds = true
 
         
-        
-        //DUMMY DATA---------------------
-        //Test pin
         mapView.delegate = self
         
         //set button image
@@ -51,8 +52,28 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //places mapview on UCI
         setInitialLocation()
         
-        //--------------------------------
+//        //current location stuff
+//        locationManager = CLLocationManager()
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//        locationManager.delegate = self as CLLocationManagerDelegate;
+//
+//        // user activated automatic authorization info mode
+//        let status = CLLocationManager.authorizationStatus()
+//        if status == .notDetermined || status == .denied || status == .authorizedWhenInUse {
+//            // present an alert indicating location authorization required
+//            // and offer to take the user to Settings for the app via
+//            // UIApplication -openUrl: and UIApplicationOpenSettingsURLString
+//            locationManager.requestAlwaysAuthorization()
+//            locationManager.requestWhenInUseAuthorization()
+//        }
+//        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingHeading()
+        
+        self.mapView.showsUserLocation = true
+        
     }
+    
+    
     
     //hides navigation bar
     override func viewWillAppear(_ animated: Bool) {
