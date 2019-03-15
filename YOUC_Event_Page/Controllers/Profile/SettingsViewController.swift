@@ -19,11 +19,30 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = PFUser.current()!
+        firstNameField.text = user["name"] as! String
+        emailField.text = user["email"] as! String
+        usernameField.text = user.username
+        passwordField.text = user.password
+        
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onSave(_ sender: Any) {
+        let user = PFUser.current()!
+        user["name"] = firstNameField.text
+        user["email"] = emailField.text
+        user.username = usernameField.text
+        user.password = passwordField.text
+        user.saveInBackground { (success, error) in
+            if success {
+                print("changes saved")
+            } else {
+                print("changes not saved")
+            }
+        }
+        reloadInputViews()
     }
     
     @IBAction func onLogout(_ sender: Any) {
