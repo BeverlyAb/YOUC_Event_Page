@@ -73,6 +73,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     //pressed back button
     @IBAction func goBack(_ sender: Any) {
 //        performSegue(withIdentifier: "goBack", sender: nil)
+        searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil) 
         
     }
@@ -87,6 +88,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         
         tableView.reloadData()
     }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
