@@ -124,5 +124,5 @@ OPTIONAL
 ![App Draft](ScreenTransitions.jpeg)
 
 ### App Pitch Presentation
-// TODO: Add link to Pitch Presentation Deck
+https://docs.google.com/presentation/d/1yzsn-Yyz0DSc1R-ORoaFYQVD9UbwtR0EuMSXdHHQ-SA/edit?usp=sharing
 
