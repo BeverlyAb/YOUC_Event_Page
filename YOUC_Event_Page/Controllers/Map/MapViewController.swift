@@ -28,9 +28,9 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     //holds the events
-    var currentEventImage = UIImageView.init()
     var events = [PFObject]()
     var filteredEvents  = [PFObject]()
+    var selectedEvent: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,34 +80,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             
             let title = event["eventName"] as! String
 
-//            if let image = event.value(forKey: "coverImage")! as? PFFileObject ?? UIImage(named: "ice_cream_man"){
-//                image.getDataInBackground {
-//                    (imageData, error) in
-//                    if (error == nil){
-//                        let loadedImage = UIImage(data: imageData ?? Data.init())
-//                        self.ImageArray.append(loadedImage!)
-//                    }
-//                }
-//            }
-            
-//            if event["coverImage"] != nil{
-//                let imageFile = event["coverImage"] as! PFFileObject
-//
-//                let urlString = imageFile.url!
-//                let url = URL(string: urlString)!
-//
-//
-//                if currentEventImage != nil{
-//                    currentEventImage.af_setImage(withURL: url)
-//                    print("success")
-//                }
-//                else{
-//                    print("AA")
-//                }
-//
-//
-//            }
-//            print("adding pin")
             addPin(lat: latitude , long: longitude, title: title)
 
 
@@ -122,6 +94,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         query.findObjectsInBackground { (events, error) in
             if events != nil{
                 self.events = events!
+                self.filteredEvents = self.events
                 self.populateEvents()
                 self.setInitialLocation()
             }
@@ -182,7 +155,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //custom pins
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        print("???")
+//        print("???")
         let reuseID = "annotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
         //add content to the view
@@ -191,30 +164,70 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
             //when you tap on it, it tells you a pop-up
             annotationView!.canShowCallout = true
-            annotationView!.leftCalloutAccessoryView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            for event in self.filteredEvents{
+                //find the event the given annotation is referring to
+                if (annotation.title == event["eventName"] as? String){
+                    //avoid error if there is no image attatched to the event
+                    if event["coverImage"] != nil{
+                        
+                        //get image file + convert to workable image
+                        let imageFile = event["coverImage"] as! PFFileObject
+                        
+                        let urlString = imageFile.url!
+                        let url = URL(string: urlString)!
+                        
+                        imageView.af_setImage(withURL: url)
+                        imageView.makeRounded()
+                        
+                        //If the object passed all the conditions, add the picture
+                        if imageView.image != UIImage(named: "image_placeholder"){
+                            annotationView!.leftCalloutAccessoryView = imageView
+                        }
+                        
+                    }
+                }
+            }
         }
-        
-        
-        //insert the picture into the annotationview
-        let imageView = annotationView?.leftCalloutAccessoryView as! UIImageView
-        //TODO - put in image of the post
-//        print("event image: ", eventImage)
-        
-        imageView.image = currentEventImage.image
+        //ADD button to the annotation view
+        let btn = UIButton(type: .detailDisclosure)
+        annotationView!.rightCalloutAccessoryView = btn
         return annotationView
         
     }
 
+    //Function called when the user taps the info button on annotation view
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+       
+        let selectedAnnotation = view.annotation
+        
+        for event in self.filteredEvents{
+            
+            if event["eventName"] as? String == selectedAnnotation?.title{
+                
+                //update the selected event to use in the prepare function
+                selectedEvent = event
+                print("suzz")
+                performSegue(withIdentifier: "events", sender: nil)
+            }
+        }
+    }
     
-    
-//    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-//        filteredEvents = events.filter({( candy : Candy) -> Bool in
-//            return candy.name.lowercased().contains(searchText.lowercased())
-//        })
-//
-//        tableView.reloadData()
-//    }
 
+    
+    
+    //PREPARES FOR SEGUE
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let event = selectedEvent
+
+        //Pass the selected movie to the details movies controller
+        let eventsPage = segue.destination as! EventPageViewController
+
+        //There is a variable in the class that we want to send stuff to that we define here
+        eventsPage.event = event
+        
+    }
     
 
     

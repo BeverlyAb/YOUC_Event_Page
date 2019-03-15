@@ -791,6 +791,7 @@
                         <outlet property="mapButton" destination="Ajl-RN-X7K" id="w1M-VY-INu"/>
                         <outlet property="mapView" destination="XYO-xs-73m" id="kbq-fH-I7j"/>
                         <outlet property="searchTextField" destination="eON-kp-PtS" id="ydp-nE-txv"/>
+                        <segue destination="xIT-s3-uwf" kind="presentation" identifier="events" id="RUL-Yw-Pz7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elg-Cq-WLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -801,7 +802,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1601" y="2670"/>
+            <point key="canvasLocation" x="-1737" y="2688"/>
         </scene>
         <!--Map Events View Controller-->
         <scene sceneID="hLm-W5-j0D">
@@ -1215,9 +1216,9 @@
                                 <rect key="frame" x="30" y="366" width="315" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Eb-tVp" customClass="YOUCGoingButton" customModule="YOUC_Event_Page" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="38"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="110" id="79y-JC-90G"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="79y-JC-90G"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Going"/>
@@ -1226,9 +1227,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-lP-x6e" customClass="YOUCInterestedButton" customModule="YOUC_Event_Page" customModuleProvider="target">
-                                        <rect key="frame" x="178" y="0.0" width="137" height="38"/>
+                                        <rect key="frame" x="185" y="0.0" width="130" height="38"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="125" id="QVG-ao-uL1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="QVG-ao-uL1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Interested"/>
@@ -1299,19 +1300,19 @@
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="pXP-Iz-zU7" secondAttribute="trailing" constant="15" id="2eT-Zu-akZ"/>
                             <constraint firstItem="eET-mf-KdN" firstAttribute="centerY" secondItem="lXK-Mk-bql" secondAttribute="baseline" id="4IH-He-xBI"/>
                             <constraint firstAttribute="trailing" secondItem="lXK-Mk-bql" secondAttribute="trailing" id="85m-aG-TrI"/>
-                            <constraint firstItem="5QQ-Z8-oOW" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="30" id="89U-BO-T50"/>
                             <constraint firstItem="5QQ-Z8-oOW" firstAttribute="top" secondItem="05a-dt-1xT" secondAttribute="bottom" constant="19.5" id="8k0-NT-0Lm"/>
                             <constraint firstItem="pXP-Iz-zU7" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="15" id="B6I-yf-P57"/>
                             <constraint firstItem="o2x-b6-SgY" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="20" id="CGc-8C-hVS"/>
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="o2x-b6-SgY" secondAttribute="trailing" constant="20" id="CLw-RL-yTq"/>
-                            <constraint firstAttribute="trailing" secondItem="IRi-nN-PZV" secondAttribute="trailing" constant="20" id="Dqe-zE-mFf"/>
+                            <constraint firstItem="5QQ-Z8-oOW" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="30" id="D5Q-bV-MC7"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IRi-nN-PZV" secondAttribute="trailing" constant="20" id="Dqe-zE-mFf"/>
                             <constraint firstItem="wF1-uc-Pce" firstAttribute="top" secondItem="lXK-Mk-bql" secondAttribute="bottom" constant="38" id="EDX-iK-EPj"/>
+                            <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5QQ-Z8-oOW" secondAttribute="trailing" constant="30" id="F0m-wR-mV9"/>
                             <constraint firstItem="pXP-Iz-zU7" firstAttribute="top" secondItem="o2x-b6-SgY" secondAttribute="bottom" constant="34" id="FZC-1g-Agb"/>
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="eET-mf-KdN" secondAttribute="trailing" constant="20" id="LNq-tr-dPc"/>
-                            <constraint firstItem="IRi-nN-PZV" firstAttribute="leading" secondItem="fC8-6e-f2N" secondAttribute="leading" constant="20" id="PFp-VG-Gcn"/>
+                            <constraint firstItem="IRi-nN-PZV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fC8-6e-f2N" secondAttribute="leading" constant="20" id="PFp-VG-Gcn"/>
                             <constraint firstItem="Nx0-Ns-9V1" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="20" id="QVS-ee-lb6"/>
                             <constraint firstItem="05a-dt-1xT" firstAttribute="top" secondItem="wF1-uc-Pce" secondAttribute="bottom" constant="7" id="R3s-rF-xKq"/>
-                            <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="5QQ-Z8-oOW" secondAttribute="trailing" constant="30" id="TZf-xf-0wI"/>
                             <constraint firstItem="IRi-nN-PZV" firstAttribute="top" secondItem="5QQ-Z8-oOW" secondAttribute="bottom" constant="20" id="Ukg-RL-9Ny"/>
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="wF1-uc-Pce" secondAttribute="trailing" constant="20" id="csN-XA-3ub"/>
                             <constraint firstItem="05a-dt-1xT" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="25" id="kTi-wF-KWh"/>
@@ -1371,7 +1372,6 @@
         <!--Post-->
         <scene sceneID="4TY-Nj-37U">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zpF-vh-DHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="PostNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="k1b-DN-j2Q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Post" image="Plus2" selectedImage="Plus2" id="MyL-6f-5Fb"/>
                     <toolbarItems/>
@@ -1389,6 +1389,7 @@
                         <segue destination="2Yj-hP-P6G" kind="relationship" relationship="rootViewController" id="3cg-yT-qyR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zpF-vh-DHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1230" y="1910"/>
         </scene>
@@ -1494,12 +1495,6 @@
         <!--PostPageViewController-->
         <scene sceneID="NJ4-KJ-umJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n04-MZ-6Tq" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="nMj-Zb-DPc">
-                    <connections>
-                        <action selector="onShootButton:" destination="2Yj-hP-P6G" id="5Sf-aL-Nsr"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController storyboardIdentifier="PostPageViewController" title="PostPageViewController" id="2Yj-hP-P6G" customClass="PostPageViewController" customModule="YOUC_Event_Page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yGX-we-PMl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1728,6 +1723,12 @@
                         <outlet property="orgNameField" destination="OUn-T1-Jh4" id="0im-pW-S3D"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n04-MZ-6Tq" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nMj-Zb-DPc">
+                    <connections>
+                        <action selector="onShootButton:" destination="2Yj-hP-P6G" id="5Sf-aL-Nsr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2148" y="1909"/>
         </scene>
@@ -1748,6 +1749,7 @@
         <image name="sample_org_image" width="188" height="188"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="RUL-Yw-Pz7"/>
         <segue reference="p0x-H5-qUv"/>
         <segue reference="MR7-vH-8dz"/>
         <segue reference="KOM-zy-sPT"/>
