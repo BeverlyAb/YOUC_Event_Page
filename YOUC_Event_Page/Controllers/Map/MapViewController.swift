@@ -12,7 +12,7 @@ import MapKit
 import Parse
 import AlamofireImage
 
-class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UIApplicationDelegate {
 
     //MapView outlet
     @IBOutlet weak var mapView: MKMapView!
@@ -32,7 +32,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var filteredEvents  = [PFObject]()
     var selectedEvent: PFObject!
     
-    var locationManager: CLLocationManager!
+    var locationManager = CLLocationManager()
 
     
     
@@ -52,6 +52,15 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         //places mapview on UCI
         setInitialLocation()
         
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
+        mapView.showsUserLocation = true
+        
+        
+        
+        
+        
 //        //current location stuff
 //        locationManager = CLLocationManager()
 //        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -69,7 +78,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 //        locationManager.startUpdatingLocation()
 //        locationManager.startUpdatingHeading()
         
-        self.mapView.showsUserLocation = true
+//        self.mapView.showsUserLocation = true
         
     }
     
@@ -86,9 +95,24 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
         
+//        //current user location
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+//            mapView.showsUserLocation = true
+//        } else {
+//            locationManager.requestWhenInUseAuthorization()
+//        }
+        
         self.getEvents()
         
     }
+    
+//    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+//        guard status == .authorizedWhenInUse else { print("not enabled"); return }
+//        mapView.showsUserLocation = true
+//    }
+    
+    
+    
     
     func populateEvents(){
         

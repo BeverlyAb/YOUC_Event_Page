@@ -755,7 +755,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XYO-xs-73m">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYO-xs-73m">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzA-wu-le4">
@@ -1920,7 +1920,7 @@
         <image name="shop" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="D5f-cu-8vt"/>
+        <segue reference="RUL-Yw-Pz7"/>
         <segue reference="ynr-zP-v1S"/>
         <segue reference="6Ve-0m-XU5"/>
         <segue reference="QvU-dr-BD9"/>

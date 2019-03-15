@@ -13,7 +13,7 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var locationManager: CLLocationManager?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Parse.initialize(
@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+
         return true
     }
 
