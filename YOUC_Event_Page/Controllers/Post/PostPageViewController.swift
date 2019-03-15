@@ -48,6 +48,7 @@ class PostPageViewController: UIViewController, UIImagePickerControllerDelegate,
             let imageData = coverView.image!.pngData()
             let file = PFFileObject(data: imageData!)
             post["coverImage"] = file
+            post["readable_addre"] = locationFieldLabel.text!
             //post["tags"] = array of strings
 
             post.saveInBackground{(success, error) in
