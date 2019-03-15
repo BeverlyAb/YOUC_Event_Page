@@ -40,18 +40,18 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 **Required Must-have Stories**
 
 * Relies on user's (clubs/vendors/anyone) to post events
-* Each post(sorted by school) will have tags that allow for organization
 * Kinda like facebook where a user can say (going, interested)
 * Sort based on event popularity/recent
-* Maybe add mapkit!!
+* Mapkit!!
 * Login
     * Guest mode
     * Persistent login
 * Suggestions(based on user preferences - major, interests, location)
 * Target Market: Clubs/events that aren't specifically heard on facebook
 * For mall events that are cool, but not known by the majority
-* Favorite events
-* Separate user profiles and organization profiles
+* Displays Events Nearby
+* Displays Events that the user is going to
+* User can Create Events
 
 **Optional Nice-to-have Stories*
  * Other universities/colleges can use
@@ -61,8 +61,13 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
  * Share events with other organizations/collabs 
  * MeetUp app functionalities(meet up with group events)
  * Direct Messaging??
- After signing up for an event, you get an email that allows you to save the event to your calendar
+ * After signing up for an event, you get an email that allows you to save the event to your calendar
  add google sign in
+ * Each post(sorted by school) will have tags that allow for organization
+ * Favorite events
+ * Separate user profiles and organization profiles
+ * Extended Login features
+ * Users can share videos of their club
  
  
  
@@ -83,25 +88,26 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 ## 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
-
- * Profile Tab
  * Organization Tab
- * Map Tab (with events)
- * CHANGE THIS IF YOU WANT(BELOW)
- * Swipe gestures!
-     * Makes it more modern
-     * acts like a back button
- * Map
-     * includes searching for events
-     * making events 
-     * pins events, click to event details 
-         * modally segues title, and summary of event
-         * "see more" to modally segue to organization event page
 
-TODO
-* MAIN  | MAP | PROFILE 
-OPTIONAL
-* MAIN  | MAP | CHAT | PROFILE
+ 
+ * Map Tab
+   * includes searching for events
+   * making events 
+    * pins events, click to event details 
+      * modally segues title, and summary of event
+      * "see more" to modally segue to organization event page
+    * Swipe gestures! (Optional)
+      * Makes it more modern
+      * acts like a back button
+  * Profile Tab
+   * has profile image, name and events user is going to
+   * Includes button for "Settings"
+ * Post Tab
+   * Ask for event information
+      * Uses AFNetworking and foursquare api for locations
+      * Includes table view for searching locations
+      * Resets values after submit
 
 **Flow Navigation** (Screen to Screen)
 
