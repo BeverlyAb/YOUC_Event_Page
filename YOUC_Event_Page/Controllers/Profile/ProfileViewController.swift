@@ -50,9 +50,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.going_events.removeAll()
         going_events_info.removeAll()
         
-        let user_go_events = user["going_events"] as! [PFObject]
+//        let user_go_events = user["going_events"] as! [PFObject]
         
-        if user_go_events != [] {
+        if user["going_events"] != nil {
             self.going_events.removeAll()
             going_events_info.removeAll()
             self.going_events = user["going_events"] as! [PFObject]
