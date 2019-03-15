@@ -602,7 +602,7 @@
                         <viewLayoutGuide key="safeArea" id="uWX-Ow-1BJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="59I-I2-u5I">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="uXn-NF-xF2">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" image="iconTab0" id="uXn-NF-xF2">
                             <connections>
                                 <segue destination="Ijy-f1-2KX" kind="show" id="v0b-Ze-cfD"/>
                             </connections>
@@ -1814,8 +1814,10 @@
                                                 <constraint firstItem="xGc-FB-GgC" firstAttribute="leading" secondItem="q0b-yN-fYS" secondAttribute="leadingMargin" id="Y9s-JS-gGx"/>
                                                 <constraint firstItem="3tA-gc-pLB" firstAttribute="top" secondItem="GHi-ip-KQK" secondAttribute="bottom" constant="6" id="b5n-5Q-zgS"/>
                                                 <constraint firstItem="GHi-ip-KQK" firstAttribute="top" secondItem="cjg-l3-NKX" secondAttribute="bottom" constant="6" id="ht3-0D-mV4"/>
+                                                <constraint firstItem="goT-Rc-7P3" firstAttribute="bottom" secondItem="q0b-yN-fYS" secondAttribute="bottomMargin" id="m22-BC-ZxY"/>
                                                 <constraint firstItem="cjg-l3-NKX" firstAttribute="leading" secondItem="xGc-FB-GgC" secondAttribute="trailing" constant="8" id="nTO-s9-igL"/>
                                                 <constraint firstItem="goT-Rc-7P3" firstAttribute="top" secondItem="GHi-ip-KQK" secondAttribute="bottom" constant="6" id="oQh-Zp-zMR"/>
+                                                <constraint firstItem="3tA-gc-pLB" firstAttribute="bottom" secondItem="q0b-yN-fYS" secondAttribute="bottomMargin" id="qci-Ts-Woy"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="xGc-FB-GgC" secondAttribute="bottom" constant="10" id="rZK-xL-674"/>
                                                 <constraint firstItem="goT-Rc-7P3" firstAttribute="leading" secondItem="q0b-yN-fYS" secondAttribute="leadingMargin" constant="88" id="waP-be-JIF"/>
                                                 <constraint firstItem="cjg-l3-NKX" firstAttribute="top" secondItem="q0b-yN-fYS" secondAttribute="topMargin" constant="6" id="wcJ-a9-y93"/>
@@ -1854,13 +1856,13 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="166" y="2606"/>
+            <point key="canvasLocation" x="165.59999999999999" y="2605.5472263868069"/>
         </scene>
         <!--Store Deals-->
         <scene sceneID="TXq-GA-xEF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1pY-uC-5Dm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store Deals" id="191-rN-bRY"/>
+                    <tabBarItem key="tabBarItem" title="Store Deals" image="shop1600" selectedImage="shop1600" id="191-rN-bRY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0DK-Vs-hPl">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1887,11 +1889,13 @@
         <image name="filter" width="960" height="720"/>
         <image name="greyLine2" width="361" height="13"/>
         <image name="greyMapPin" width="137.75999450683594" height="137.75999450683594"/>
+        <image name="iconTab0" width="25" height="25"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="location" width="512" height="512"/>
         <image name="profile_tab" width="25" height="25"/>
         <image name="sample_event_image" width="368.6400146484375" height="245.8800048828125"/>
         <image name="sample_org_image" width="188" height="188"/>
+        <image name="shop1600" width="0.80000001192092896" height="0.80000001192092896"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="D5f-cu-8vt"/>
