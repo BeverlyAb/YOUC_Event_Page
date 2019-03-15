@@ -83,7 +83,7 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
  * Event Page(Story #3)
  * User Profile Page (Story #4)
  * Post Page (Story #5)
- * Settings Page (Story #3)
+ * Settings Page (Story #4)
 
 ## 3. Navigation
 
