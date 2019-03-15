@@ -88,22 +88,19 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 ## 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
- * Organization Tab
-
- 
- * Map Tab
-   * includes searching for events
-   * making events 
-    * pins events, click to event details 
-      * modally segues title, and summary of event
-      * "see more" to modally segue to organization event page
-    * Swipe gestures! (Optional)
-      * Makes it more modern
-      * acts like a back button
-  * Profile Tab
-   * has profile image, name and events user is going to
-   * Includes button for "Settings"
- * Post Tab
+* Map Tab
+      * includes searching for events
+      * making events 
+      * pins events, click to event details 
+         * modally segues title, and summary of event
+         * "see more" to modally segue to organization event page
+      * Swipe gestures! (Optional)
+         * Makes it more modern
+         * acts like a back button
+   * Profile Tab
+      * has profile image, name and events user is going to
+      * Includes button for "Settings"
+   * Post Tab
    * Ask for event information
       * Uses AFNetworking and foursquare api for locations
       * Includes table view for searching locations
@@ -111,8 +108,9 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 
 **Flow Navigation** (Screen to Screen)
 
- * Login Screen 
-   * guest mode 
+   * Login Screen
+             * Sign in or Create (respectively)
+      * guest mode 
    * otherwise sign up authorizes login/sign up
    * puts you to map events(MAP VIEW)
        * if no events, click add:
