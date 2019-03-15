@@ -8,8 +8,7 @@
    <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/I56qT2S.gif" /></a>
 * **Tejal Patel**
    - Login View
-   - ![createUser](loginPage.gif)
-   - ![login](loginPage2.gif)
+   <img src='https://github.com/BeverlyAb/YOUC_Event_Page/blob/profilePage/Login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 * **Richard Absin**
    - Making the Event Page
    - Here, users can see more information about an event
