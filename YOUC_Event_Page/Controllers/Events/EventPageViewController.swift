@@ -103,39 +103,34 @@ class EventPageViewController: UIViewController {
     
     @IBAction func onGoingPressed(_ sender: Any) {
         goingPressed = !goingPressed
-        
+        let user = PFUser.current()!
         
         if goingPressed {
-            // Push the event onto Parse
-            //            let event = events[0]
-            
-            let goingEvents = PFObject(className: "goingEvents")
-            goingEvents["event"] = event
-            
-            event.add(goingEvents, forKey: "goingEvents")
-            event.saveInBackground { (success, error) in
+            let user = PFUser.current()!
+            user.add(event, forKey: "going_events");
+            user.saveInBackground { (success, error) in
                 if success {
                     print("goingEvent saved")
                 } else {
-                    print("Error saving comment")
+                    print("Error saving event")
                 }
             }
         }
-            
+            //
         else {
-            // Remove the event to avoid duplicates
-            let query = PFQuery(className: "goingEvents")
-            query.limit = 20
+            user.remove(event, forKey: "going_events")
+            //            // Remove the event to avoid duplicates
+            //            let query = PFQuery(className: "goingEvents")
+            //            query.limit = 20
             
-            query.findObjectsInBackground { (goingEvents, error) in
-                if goingEvents != nil {
-                    self.goingEvents = goingEvents!
-                    
-                    let goingEvent = self.goingEvents[0]
-                    
-                    goingEvent.deleteInBackground()
+            user.saveInBackground { (success, error) in
+                if success {
+                    print("goingEvent removed")
+                } else {
+                    print("Error removing event")
                 }
             }
+            
         }
     }
     
@@ -146,7 +141,6 @@ class EventPageViewController: UIViewController {
     }
     
 }
-
 extension UIImageView {
     
     func makeRounded() {
