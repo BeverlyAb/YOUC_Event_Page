@@ -53,6 +53,17 @@ class PickMapViewController: UIViewController, UIImagePickerControllerDelegate, 
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func swipeRight(_ sender: Any) {
+        let transition = CATransition()
+        transition.duration = 0.2
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+    navigationController?.popViewController(animated: true)
+    }
+    
+    
     //-------------------search bar stuff------------
     @objc func fetchLocations(_ query: String, near: String = "Irvine") {
         let baseUrlString = "https://api.foursquare.com/v2/venues/search?"

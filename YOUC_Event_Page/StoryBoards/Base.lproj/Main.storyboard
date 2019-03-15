@@ -1445,6 +1445,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="d65-8X-B5H" secondAttribute="bottom" id="6Ck-4m-Z9x"/>
                             <constraint firstItem="079-Nv-kfX" firstAttribute="top" secondItem="JMS-FG-vMR" secondAttribute="top" id="A1U-ks-ibg"/>
@@ -1454,6 +1455,9 @@
                             <constraint firstItem="079-Nv-kfX" firstAttribute="leading" secondItem="JMS-FG-vMR" secondAttribute="leading" id="wLw-0i-QZ7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JMS-FG-vMR"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ovl-xL-WMa" appends="YES" id="0LR-Ny-ByH"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="yaI-1k-cfT">
                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="EI9-RJ-SND">
@@ -1469,6 +1473,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1P-AU-8wo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="ovl-xL-WMa" userLabel="swipeRight">
+                    <connections>
+                        <action selector="swipeRight:" destination="APZ-pR-KBg" id="hav-H6-3iE"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3081" y="2942"/>
         </scene>
