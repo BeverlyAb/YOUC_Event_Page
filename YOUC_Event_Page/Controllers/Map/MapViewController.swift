@@ -207,7 +207,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                 
                 //update the selected event to use in the prepare function
                 selectedEvent = event
-                print("suzz")
                 performSegue(withIdentifier: "events", sender: nil)
             }
         }
@@ -219,13 +218,17 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //PREPARES FOR SEGUE
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let event = selectedEvent
-
-        //Pass the selected movie to the details movies controller
-        let eventsPage = segue.destination as! EventPageViewController
-
-        //There is a variable in the class that we want to send stuff to that we define here
-        eventsPage.event = event
+        if selectedEvent != nil{
+            let event = selectedEvent
+            
+            //Pass the selected movie to the details movies controller
+            let eventsPage = segue.destination as! EventPageViewController
+            
+            //There is a variable in the class that we want to send stuff to that we define here
+            eventsPage.event = event
+            selectedEvent = nil
+        }
+        
         
     }
     
