@@ -982,6 +982,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuY-pb-b2h">
                                                 <rect key="frame" x="170.5" y="324" width="34" height="30"/>
                                                 <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="onSave:" destination="Ijy-f1-2KX" eventType="touchUpInside" id="frb-qR-k6o"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkF-mz-chC">
                                                 <rect key="frame" x="40" y="190" width="315" height="21"/>
@@ -1154,6 +1157,11 @@
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="emailField" destination="HXQ-LA-zTb" id="lAF-R3-Twv"/>
+                        <outlet property="firstNameField" destination="iVI-0V-sRg" id="TFB-FV-euL"/>
+                        <outlet property="lastNameField" destination="Loj-1n-h7F" id="shD-A6-SL9"/>
+                        <outlet property="passwordField" destination="ynr-Bu-lQw" id="QE7-Uz-Tbb"/>
+                        <outlet property="usernameField" destination="9fL-Qx-RXg" id="35b-Ep-lnF"/>
                         <segue destination="7Jb-W5-sii" kind="unwind" identifier="unwindToViewController1" unwindAction="prepareForUnwindWithSegue:" id="zhc-oa-8RB"/>
                     </connections>
                 </viewController>
