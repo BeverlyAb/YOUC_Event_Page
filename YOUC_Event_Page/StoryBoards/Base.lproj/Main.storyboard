@@ -1182,8 +1182,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nx0-Ns-9V1" userLabel="DateStackView">
-                                <rect key="frame" x="20" y="459.33333333333331" width="374" height="22"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nx0-Ns-9V1" userLabel="DateStackView">
+                                <rect key="frame" x="20" y="459.66666666666669" width="374" height="22"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockGrey" translatesAutoresizingMaskIntoConstraints="NO" id="eKr-56-m4C">
                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -1200,8 +1200,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2x-b6-SgY" userLabel="LocationStackView">
-                                <rect key="frame" x="20" y="501.33333333333326" width="374" height="22"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2x-b6-SgY" userLabel="LocationStackView">
+                                <rect key="frame" x="20" y="501.66666666666674" width="374" height="22"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greyMapPin" translatesAutoresizingMaskIntoConstraints="NO" id="KDH-To-vF5">
                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -1222,15 +1222,15 @@
                                     <constraint firstItem="KDH-To-vF5" firstAttribute="leading" secondItem="o2x-b6-SgY" secondAttribute="leading" id="YPP-CS-qPI"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="greyLine2" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-nN-PZV">
-                                <rect key="frame" x="20" y="430.33333333333331" width="374" height="13"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greyLine2" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-nN-PZV">
+                                <rect key="frame" x="20" y="430.66666666666669" width="374" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="7R5-AL-1Dw"/>
                                     <constraint firstAttribute="height" constant="13" id="j5V-gZ-nlg"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Iz-zU7" userLabel="Event Description">
-                                <rect key="frame" x="15" y="557.33333333333348" width="384" height="101.66666666666663"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Iz-zU7" userLabel="Event Description">
+                                <rect key="frame" x="15" y="557.66666666666663" width="384" height="101.66666666666663"/>
                                 <string key="text">Hey y'all! If you're down for PACN, we'll be having another Porto's Ring Road Fundraiser TOMORROW (2/26) from 10am-2pm! Come by and get your cheese rolls and guava. 1 for $2 and 2 for $3!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1273,6 +1273,7 @@
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="pXP-Iz-zU7" secondAttribute="trailing" constant="15" id="2eT-Zu-akZ"/>
                             <constraint firstItem="eET-mf-KdN" firstAttribute="centerY" secondItem="lXK-Mk-bql" secondAttribute="baseline" id="4IH-He-xBI"/>
                             <constraint firstAttribute="trailing" secondItem="lXK-Mk-bql" secondAttribute="trailing" id="85m-aG-TrI"/>
+                            <constraint firstItem="IRi-nN-PZV" firstAttribute="top" secondItem="skg-Eb-tVp" secondAttribute="bottom" constant="20" id="8vj-xE-OyT"/>
                             <constraint firstItem="pXP-Iz-zU7" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="15" id="B6I-yf-P57"/>
                             <constraint firstItem="o2x-b6-SgY" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="20" id="CGc-8C-hVS"/>
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="o2x-b6-SgY" secondAttribute="trailing" constant="20" id="CLw-RL-yTq"/>
