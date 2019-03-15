@@ -1223,7 +1223,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="79y-JC-90G"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Going"/>
+                                        <state key="normal" title="Go"/>
                                         <connections>
                                             <action selector="onGoingPressed:" destination="xIT-s3-uwf" eventType="touchUpInside" id="m9q-mN-6Xz"/>
                                         </connections>

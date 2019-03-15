@@ -16,7 +16,7 @@ class EventPageViewController: UIViewController {
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDescriptionLabel: UILabel!
-    @IBOutlet weak var goingButton: UIButton!
+    @IBOutlet weak var goingButton: YOUCGoingButton!
     @IBOutlet weak var interestedButton: UIButton!
     
     @IBOutlet weak var dataLabel: UILabel!
@@ -28,8 +28,7 @@ class EventPageViewController: UIViewController {
     // Arrays to hold the events and the goingEvents
     //    var events = [PFObject]()
     var event: PFObject!
-    var goingEvents = [PFObject]()
-    var latestEvent: PFObject!
+    var going_events: [PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,34 +64,18 @@ class EventPageViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let user = PFUser.current()!
+
+        // Get the events
+        if user["going_events"] != nil {
+            going_events = user["going_events"] as! [PFObject]
+        }
         
+        // Check if our event is in going_events
+        goingPressed = checkUserGoing()
         
-        
-        
-        
-        
-        //        // Query to get the events
-        //        let query = PFQuery(className: "Events")
-        //        query.includeKey("author")
-        //        query.limit = 20
-        //
-        //        query.findObjectsInBackground { (events, error) in
-        //            if events != nil {
-        //                self.events = events!
-        //
-        //                // ***** CURRENTLY SELF.EVENTS[0] since I don't have the event selected.
-        //                // Need to pass in the data from Derek's section
-        //                let event = self.events[0]
-        //
-        //                self.eventDescriptionLabel.text = event["description"] as? String
-        //                self.organizationNameLabel.text = event["author"] as? String
-        //                self.eventNameLabel.text = event["eventName"] as? String
-        //
-        //            }
-        //        }
-        
-        
-        
+        // Update the button accordingly
+        goingButton.activateButton(bool: goingPressed)
     }
     
     
@@ -106,40 +89,54 @@ class EventPageViewController: UIViewController {
         let user = PFUser.current()!
         
         if goingPressed {
-            let user = PFUser.current()!
-            user.add(event, forKey: "going_events");
-            user.saveInBackground { (success, error) in
-                if success {
-                    print("goingEvent saved")
-                } else {
-                    print("Error saving event")
-                }
-            }
+            userIsGoing(user: user)
         }
-            //
         else {
-            user.remove(event, forKey: "going_events")
-            //            // Remove the event to avoid duplicates
-            //            let query = PFQuery(className: "goingEvents")
-            //            query.limit = 20
-            
-            user.saveInBackground { (success, error) in
-                if success {
-                    print("goingEvent removed")
-                } else {
-                    print("Error removing event")
-                }
-            }
-            
+            userIsNotGoing(user: user)
         }
     }
     
     @IBAction func onInterestedPressed(_ sender: Any) {
-        //print("INTERESTED BUTTON PRESSED")
         interestedPressed = !interestedPressed
         
     }
     
+    
+    func userIsGoing(user: PFUser) {
+        let user = PFUser.current()!
+        user.add(event, forKey: "going_events");
+        user.saveInBackground { (success, error) in
+            if success {
+                print("goingEvent saved")
+            } else {
+                print("Error saving event")
+            }
+        }
+    }
+    
+    func userIsNotGoing(user: PFUser) {
+        user.remove(event, forKey: "going_events");
+        user.saveInBackground { (success, error) in
+            if success {
+                print("goingEvent removed")
+            } else {
+                print("Error removing event")
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    func checkUserGoing() -> Bool {
+        for going_event in going_events {
+            if event.objectId! == going_event.objectId {
+                return true
+            }
+        }
+        return false
+    }
 }
 extension UIImageView {
     
