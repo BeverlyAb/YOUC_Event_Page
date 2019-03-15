@@ -40,10 +40,10 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 **Required Must-have Stories**
 
 1) Login and Logout
-  * Persistent login
+   + Persistent login
 2) Users can view events nearby 
-  * Displays events via pins on Map
-  * Can Search events using search bar and tableview
+   + Displays events via pins on Map
+   + Can Search events using search bar and tableview
 3) Users can access their profile
    * Users can modify their personal information using settings or seek help via contacts
    * Users see their basic 
