@@ -1258,8 +1258,12 @@
                                     <constraint firstItem="KDH-To-vF5" firstAttribute="leading" secondItem="o2x-b6-SgY" secondAttribute="leading" id="YPP-CS-qPI"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="greyLine2" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-nN-PZV">
-                                <rect key="frame" x="20" y="430.33333333333331" width="280" height="13"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greyLine2" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-nN-PZV">
+                                <rect key="frame" x="20" y="430.33333333333331" width="374" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="7R5-AL-1Dw"/>
+                                    <constraint firstAttribute="height" constant="13" id="j5V-gZ-nlg"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Iz-zU7" userLabel="Event Description">
                                 <rect key="frame" x="15" y="557.33333333333337" width="384" height="101.66666666666663"/>
@@ -1288,12 +1292,12 @@
                             <constraint firstItem="o2x-b6-SgY" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="20" id="CGc-8C-hVS"/>
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="o2x-b6-SgY" secondAttribute="trailing" constant="20" id="CLw-RL-yTq"/>
                             <constraint firstItem="5QQ-Z8-oOW" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="30" id="D5Q-bV-MC7"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IRi-nN-PZV" secondAttribute="trailing" constant="20" id="Dqe-zE-mFf"/>
+                            <constraint firstAttribute="trailing" secondItem="IRi-nN-PZV" secondAttribute="trailing" constant="20" id="Dqe-zE-mFf"/>
                             <constraint firstItem="wF1-uc-Pce" firstAttribute="top" secondItem="lXK-Mk-bql" secondAttribute="bottom" constant="38" id="EDX-iK-EPj"/>
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="5QQ-Z8-oOW" secondAttribute="trailing" constant="30" id="F0m-wR-mV9"/>
                             <constraint firstItem="pXP-Iz-zU7" firstAttribute="top" secondItem="o2x-b6-SgY" secondAttribute="bottom" constant="34" id="FZC-1g-Agb"/>
                             <constraint firstItem="9fr-P8-Nxu" firstAttribute="trailing" secondItem="eET-mf-KdN" secondAttribute="trailing" constant="20" id="LNq-tr-dPc"/>
-                            <constraint firstItem="IRi-nN-PZV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fC8-6e-f2N" secondAttribute="leading" constant="20" id="PFp-VG-Gcn"/>
+                            <constraint firstItem="IRi-nN-PZV" firstAttribute="leading" secondItem="fC8-6e-f2N" secondAttribute="leading" constant="20" id="PFp-VG-Gcn"/>
                             <constraint firstItem="Nx0-Ns-9V1" firstAttribute="leading" secondItem="9fr-P8-Nxu" secondAttribute="leading" constant="20" id="QVS-ee-lb6"/>
                             <constraint firstItem="05a-dt-1xT" firstAttribute="top" secondItem="wF1-uc-Pce" secondAttribute="bottom" constant="7" id="R3s-rF-xKq"/>
                             <constraint firstItem="IRi-nN-PZV" firstAttribute="top" secondItem="5QQ-Z8-oOW" secondAttribute="bottom" constant="20" id="Ukg-RL-9Ny"/>
