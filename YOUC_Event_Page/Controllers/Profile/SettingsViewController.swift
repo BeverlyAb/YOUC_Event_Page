@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsViewController: UIViewController {
 
@@ -16,7 +17,20 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    func dismissViewControllers() {
+        
+        guard let vc = self.presentingViewController else { return }
+        
+        while (vc.presentingViewController != nil) {
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        self.dismissViewControllers()
+    }
+    
     /*
     // MARK: - Navigation
 
