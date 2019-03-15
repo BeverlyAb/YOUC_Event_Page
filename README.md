@@ -5,7 +5,7 @@
    - Map view
    - Involves creating a map that shows all the events
    - Ability to filter events on the events coming soon
-   <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/I56qT2S.gif" /></a>
+   - <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/I56qT2S.gif" /></a>
 * **Tejal Patel**
    - Login View
    <img src='https://github.com/BeverlyAb/YOUC_Event_Page/blob/profilePage/Login.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
@@ -89,16 +89,15 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 ## 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
-* Tabs:
   * Map
-    * includes searching for events
-    * pins events, click to event details 
-      * modally segues title, and summary of event
-      * "see more" to modally segue to organization event page    
-   * Profile Tab
-      * has profile image, name and events user is going to
-      * Includes button for "Settings"
-   * Post Tab
+   + includes searching for events
+   + pins events, click to event details 
+      + modally segues title, and summary of event
+      + "see more" to modally segue to organization event page    
+  * Profile Tab
+   + has profile image, name and events user is going to
+   + Includes button for "Settings"
+  * Post Tab
       + Ask for event information
          + Includes table view for searching locations
          + Resets values after submit
