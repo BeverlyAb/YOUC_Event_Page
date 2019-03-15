@@ -95,8 +95,8 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
          + modally segues title, and summary of event
          + "see more" to modally segue to organization event page    
   * Profile Tab
-   + has profile image, name and events user is going to
-   + Includes button for "Settings"
+      + has profile image, name and events user is going to
+      + Includes button for "Settings"
   * Post Tab
       + Ask for event information
          + Includes table view for searching locations
