@@ -1177,19 +1177,22 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Kababayan at UCI" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05a-dt-1xT" userLabel="Event Name">
-                                <rect key="frame" x="25" y="325" width="330" height="21.5"/>
+                                <rect key="frame" x="25" y="331" width="330" height="21.5"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Porto's Fundraiser" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF1-uc-Pce" userLabel="Event Name">
-                                <rect key="frame" x="20" y="288" width="335" height="30"/>
+                                <rect key="frame" x="20" y="288" width="335" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="DOl-4b-0RR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="5QQ-Z8-oOW">
-                                <rect key="frame" x="30" y="366" width="315" height="38"/>
+                                <rect key="frame" x="30" y="372" width="315" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skg-Eb-tVp" customClass="YOUCGoingButton" customModule="YOUC_Event_Page" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="117" height="38"/>
@@ -1216,7 +1219,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nx0-Ns-9V1" userLabel="DateStackView">
-                                <rect key="frame" x="20" y="453" width="335" height="22"/>
+                                <rect key="frame" x="20" y="459" width="335" height="22"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockGrey" translatesAutoresizingMaskIntoConstraints="NO" id="eKr-56-m4C">
                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -1234,7 +1237,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2x-b6-SgY" userLabel="LocationStackView">
-                                <rect key="frame" x="20" y="495" width="335" height="22"/>
+                                <rect key="frame" x="20" y="501" width="335" height="22"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greyMapPin" translatesAutoresizingMaskIntoConstraints="NO" id="KDH-To-vF5">
                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -1252,10 +1255,10 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greyLine2" translatesAutoresizingMaskIntoConstraints="NO" id="IRi-nN-PZV">
-                                <rect key="frame" x="20" y="424" width="335" height="13"/>
+                                <rect key="frame" x="20" y="430" width="335" height="13"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-Iz-zU7" userLabel="Event Description">
-                                <rect key="frame" x="15" y="551" width="345" height="101.5"/>
+                                <rect key="frame" x="15" y="557" width="345" height="101.5"/>
                                 <string key="text">Hey y'all! If you're down for PACN, we'll be having another Porto's Ring Road Fundraiser TOMORROW (2/26) from 10am-2pm! Come by and get your cheese rolls and guava. 1 for $2 and 2 for $3!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
