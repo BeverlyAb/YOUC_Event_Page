@@ -39,13 +39,19 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 
 **Required Must-have Stories**
 
+1) Login and Logout
+  * Persistent login
+2) Users can view events nearby 
+  * Displays events via pins on Map
+  * Can Search events using search bar and tableview
+3) Users can access their profile
+   * Users can modify their personal information using settings or seek help via contacts
+   * Users see their basic 
 * Relies on user's (clubs/vendors/anyone) to post events
 * User can say (going, interested)
 * Sort based on location
 * Mapkit!!
-* Login
-    * Guest mode
-    * Persistent login
+
 * Suggestions(based on user preferences - major, interests, location)
 * Target Market: Clubs/events that aren't specifically heard on facebook
 * Displays Events Nearby
@@ -77,9 +83,9 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 
 ## 2. Screen Archetypes
 
- * First Screen = App Logo
+ * Launch Screen = Logo
  * Login 
-     * (Request Access to FB & other user generated stuff)
+     * Request Access user generated information on parse
      * Separate btwn User vs. Organization Admin vs. Guest
 * Second Screen = Map with Interested Events 
  * User Profile page
