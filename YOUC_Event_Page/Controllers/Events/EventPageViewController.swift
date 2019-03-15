@@ -44,9 +44,16 @@ class EventPageViewController: UIViewController {
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "MM/dd/yyyy HH:mm"
+        dateFormatterGet.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatterGet.locale = Locale(identifier: "en_US")
         
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd,yyyy HH:mm"
+        dateFormatterPrint.dateFormat = "MMM dd, yyyy  hh:mm a"
+        dateFormatterPrint.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatterPrint.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatterPrint.amSymbol = "AM"
+        dateFormatterPrint.pmSymbol = "PM"
+       
         
         if let date = dateFormatterGet.date(from: event["date"]! as! String){
             self.dataLabel.text = dateFormatterPrint.string(from: date)
@@ -55,6 +62,7 @@ class EventPageViewController: UIViewController {
         }
         
         self.locationLabel.text = event["readable_addr"] as? String
+        self.locationLabel.sizeToFit()
         
         if event["coverImage"] != nil{
             let imageFile = event["coverImage"] as! PFFileObject
