@@ -1,11 +1,11 @@
-# YOUC Event Page
+# YOUC
 
 ## Developers
 * **Derek Chang**
    -Map view
    -Involves creating a map that shows all the events
    -Ability to filter events on the events coming soon
-   <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/E7lJxcl.gif" title="source: imgur.com" /></a>
+   <a href="https://imgur.com/E7lJxcl"><img src="https://i.imgur.com/I56qT2S.gif" /></a>
 * **Tejal Patel**
    - Login View
    - ![createUser](loginPage.gif)
@@ -44,9 +44,12 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 2) Users can view events nearby 
    + Displays events via pins on Map
    + Can Search events using search bar and tableview
-3) Users can access their profile
-   * Users can modify their personal information using settings or seek help via contacts
-   * Users see their basic 
+3) Users can see a detailed view of Events
+   + Displays cover image, name of event, time, place and summary
+4) Users can access their profile
+   + Users can modify their personal information using settings or seek help via contacts
+   + Users see their basic information (name, profile image, # of events going to)
+   +  Displays the list of events the user wants to go to
 * Relies on user's (clubs/vendors/anyone) to post events
 * User can say (going, interested)
 * Sort based on location
