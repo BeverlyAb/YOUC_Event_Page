@@ -88,8 +88,9 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
 ## 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
+
 * Map Tab
-      * includes searching for events
+     * includes searching for events
       * making events 
       * pins events, click to event details 
          * modally segues title, and summary of event
@@ -107,10 +108,8 @@ Yes, even without the optional goals, YOUC Event Page is still meritable app. Ou
       * Resets values after submit
 
 **Flow Navigation** (Screen to Screen)
-
    * Login Screen
-             * Sign in or Create (respectively)
-      * guest mode 
+   * Sign in or Create (respectively) 
    * otherwise sign up authorizes login/sign up
    * puts you to map events(MAP VIEW)
        * if no events, click add:
