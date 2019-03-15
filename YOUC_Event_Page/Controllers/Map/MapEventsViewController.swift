@@ -46,8 +46,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         query.findObjectsInBackground { (events, error) in
             if events != nil{
                 self.events = events!
-                self.filteredEvents = events
-                print(self.filteredEvents)
+                self.filteredEvents = self.events
                 self.tableView.reloadData()
             }
         }
@@ -73,12 +72,14 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     
     //pressed back button
     @IBAction func goBack(_ sender: Any) {
-//        performSegue(withIdentifier: "goBack", sender: nil)
+
         searchBar.resignFirstResponder()
+        
         dismiss(animated: true, completion: nil) 
         
     }
     
+    //dismiss keyboard when the user presses enter
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("dismiss")
         searchBar.resignFirstResponder()
@@ -88,12 +89,20 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     //USER IS TYPING
     @IBAction func activeSearching(_ sender: Any) {
         
-        filteredEvents = searchBar.text?.isEmpty ?? true ? events : events.filter { (item: PFObject) -> Bool in
-            // If dataItem matches the searchText, return true to include it
-            return (item["eventName"] as! String).range(of: searchBar.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil
-        }
+        filteredEvents.removeAll(keepingCapacity: false)
         
+        filteredEvents = events.filter({ (events: PFObject) -> Bool in
+            let name = events["eventName"] as! String
+            if name.contains(searchBar.text!){
+                return true
+            }
+            else{
+                return false
+            }
+        })
         tableView.reloadData()
+        
+       
     }
     
     
@@ -103,9 +112,12 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! MapEventsCell
         
+        
         let event = filteredEvents[indexPath.row]
+        
         
         cell.EventName.text = event["eventName"] as? String
         
@@ -132,7 +144,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
-        let event = events[indexPath.row]
+        let event = filteredEvents[indexPath.row]
         
         //Pass the selected movie to the details movies controller
         let eventsPage = segue.destination as! EventPageViewController
