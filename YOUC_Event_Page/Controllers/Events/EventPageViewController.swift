@@ -59,6 +59,7 @@ class EventPageViewController: UIViewController {
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             
+            self.organizationImageView.makeRounded()
             self.organizationImageView.af_setImage(withURL: url)
         }
     }
@@ -145,4 +146,13 @@ class EventPageViewController: UIViewController {
         
     }
     
+}
+
+extension UIImageView {
+ 
+    func makeRounded() {
+        let radius = self.frame.height/2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
 }
