@@ -40,7 +40,20 @@ class EventPageViewController: UIViewController {
         self.organizationNameLabel.text = event["organization_name"] as? String
         self.eventNameLabel.text = event["eventName"] as? String
         
-        self.dataLabel.text = event["date"] as? String
+//        self.dataLabel.text = event["date"] as? String
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "MM/dd/yyyy HH:mm"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd,yyyy HH:mm"
+        
+        if let date = dateFormatterGet.date(from: event["date"]! as! String){
+            self.dataLabel.text = dateFormatterPrint.string(from: date)
+        }else{
+            self.dataLabel.text = event["date"] as? String
+        }
+        
         self.locationLabel.text = event["readable_addr"] as? String
         
         if event["coverImage"] != nil{
