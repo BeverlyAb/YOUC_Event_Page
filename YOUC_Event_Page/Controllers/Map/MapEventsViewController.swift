@@ -37,6 +37,7 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         tableView.dataSource = self
         searchBar.delegate = self
         
+        
         //Populate filered Events
         let query = PFQuery(className: "Events")
         query.includeKeys(["author", "description", "date", "eventName", "coverImage", "location"])
@@ -76,6 +77,12 @@ class MapEventsViewController: UIViewController, UITableViewDataSource, UITextFi
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil) 
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("dismiss")
+        searchBar.resignFirstResponder()
+        return true
     }
     
     //USER IS TYPING
