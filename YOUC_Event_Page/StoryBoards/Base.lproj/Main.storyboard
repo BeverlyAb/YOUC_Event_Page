@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6v-hl-UTS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6v-hl-UTS">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -637,20 +637,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="CsM-CH-Muo">
-                                <rect key="frame" x="50" y="120" width="314" height="311"/>
+                                <rect key="frame" x="50" y="120" width="314" height="16"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="S1H-bx-ryu" appends="YES" id="3JR-cp-YMt"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-1W-8PI">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-1W-8PI">
                                 <rect key="frame" x="0.0" y="497" width="414" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="onUserSubmitButton:" destination="2kO-yO-6nA" eventType="touchUpInside" id="hTq-rj-5wj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-KE-rKn">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-KE-rKn">
                                 <rect key="frame" x="0.0" y="583" width="414" height="30"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
@@ -1907,15 +1907,15 @@
         <image name="Plus2" width="32" height="32"/>
         <image name="Teal-Background" width="640" height="360"/>
         <image name="backarrow" width="960" height="720"/>
-        <image name="clockGrey" width="138.72000122070312" height="138.72000122070312"/>
+        <image name="clockGrey" width="289" height="289"/>
         <image name="filter" width="960" height="720"/>
-        <image name="greyLine2" width="361" height="13"/>
-        <image name="greyMapPin" width="137.75999450683594" height="137.75999450683594"/>
+        <image name="greyLine2" width="752" height="27"/>
+        <image name="greyMapPin" width="287" height="287"/>
         <image name="iconTab0" width="25" height="25"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="location" width="512" height="512"/>
         <image name="profile_tab" width="25" height="25"/>
-        <image name="sample_event_image" width="368.6400146484375" height="245.8800048828125"/>
+        <image name="sample_event_image" width="1024" height="683"/>
         <image name="sample_org_image" width="188" height="188"/>
         <image name="shop" width="25" height="25"/>
     </resources>
